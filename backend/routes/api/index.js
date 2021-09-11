@@ -10,10 +10,6 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.post('/test', (req, res) => {
-  res.json({ requestBody: req.body });
-});
-
 //Auth middleware test routes
 // router.get('/set-token-cookie', asyncHandler(async (req, res) => {
 //   const user = await User.findOne({
