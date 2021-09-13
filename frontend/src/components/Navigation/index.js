@@ -33,14 +33,14 @@ function Navigation({ isLoaded }){
 
   return (
     <nav className='nav'>
-      <div className='logo'>
-        logo
-      </div>
+      <NavLink to='/' className='logo'>
+        carebnb
+      </NavLink>
       <div className='search'>
         search
       </div>
       <div className='links'>
-        <NavLink className='btn' to='/host/homes'>Become a host</NavLink>
+        <NavLink className='btn host' to='/host/homes'>Become a host</NavLink>
         <NavLink className='btn' to>
           <i class="fas fa-globe"></i>
         </NavLink>

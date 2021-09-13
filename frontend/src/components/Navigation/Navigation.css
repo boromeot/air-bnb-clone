@@ -3,8 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
+  padding: 20px 95px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 56, 92);
 }
 
 .links {
@@ -38,6 +44,10 @@
 
 .bars {
   margin-right: 12px;
+}
+
+.host {
+  font-weight: 600;
 }
 
 .btn {
