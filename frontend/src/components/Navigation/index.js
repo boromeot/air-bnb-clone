@@ -35,6 +35,10 @@ function Navigation({ isLoaded }){
         <NavLink className='btn' to>
           <i class="fas fa-globe"></i>
         </NavLink>
+        <div className='profile'>
+          <i class="fas fa-bars bars"></i>
+          <i class="fas fa-user-circle fa-2x"></i>
+        </div>
         {isLoaded && sessionLinks}
       </div>
     </div>
