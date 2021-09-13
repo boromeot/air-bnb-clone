@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import DropDown from './DropDown';
+import NavItem from './NavItem';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -39,19 +40,16 @@ function Navigation({ isLoaded }){
         search
       </div>
       <div className='links'>
-        <NavLink className='btn' to>Become a host</NavLink>
+        <NavLink className='btn' to='/host/homes'>Become a host</NavLink>
         <NavLink className='btn' to>
           <i class="fas fa-globe"></i>
         </NavLink>
-        <div className='profile'
-          onFocus={toggleDropdown}
-          onBlur={toggleDropdown}
-          tabIndex="0">
-          <i class="fas fa-bars bars"></i>
-          <i class="fas fa-user-circle fa-2x"></i>
-          {isLoaded && dropDown && profileMenu}
-        </div>
-        {isLoaded && sessionLinks}
+        <NavItem
+          items={[<i class="fas fa-bars bars"></i>,<i class="fas fa-user-circle fa-2x"></i>]}
+          className='profile'
+        >
+          <DropDown links={sessionLinks}/>
+        </NavItem>
       </div>
     </nav>
   );

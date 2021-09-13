@@ -1,11 +1,22 @@
 import { NavLink } from "react-router-dom"
+import { useState } from "react";
 
-const NavItem = () => {
+const NavItem = ({ items, className, children }) => {
+  const [dropDown, setDropDown] = useState(false);
   return (
-    <li className={'item'}>
-      <NavLink to='#' className='link-item'>
-
+    <div class={className}>
+      <NavLink
+        to='#'
+        className='flex-center'
+        onClick={() => setDropDown(prev => !prev)}
+      >
+        {items.map(item => (
+          item
+        ))}
       </NavLink>
-    </li>
+      {dropDown && children}
+    </div>
   )
 }
+
+export default NavItem;
