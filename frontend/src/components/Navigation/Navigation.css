@@ -1,0 +1,27 @@
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.links {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.links > * {
+  margin-right: 10px;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 12px;
+}
+
+.btn:hover {
+  background-color: #eee;
+}
