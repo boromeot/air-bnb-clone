@@ -18,9 +18,9 @@ function ProfileButton({ user }) {
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
+    document.body.addEventListener('click', closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
+    return () => document.body.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   const logout = (e) => {

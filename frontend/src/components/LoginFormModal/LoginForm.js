@@ -10,7 +10,6 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('gg');
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
