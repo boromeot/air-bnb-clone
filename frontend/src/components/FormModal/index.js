@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import LoginForm from './LoginForm';
-import './LoginForm.css';
+import './Form.css';
 
 function LoginFormModal({ className, title, children }) {
   const [showModal, setShowModal] = useState(false);

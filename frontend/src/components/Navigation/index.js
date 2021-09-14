@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import LoginFormModal from '../LoginFormModal';
-import LoginForm from '../LoginFormModal/LoginForm';
-import SignupForm from '../LoginFormModal/SignupForm';
+import LoginFormModal from '../FormModal';
+import LoginForm from '../FormModal/LoginForm';
+import SignupForm from '../FormModal/SignupForm';
 import DropDown from './DropDown';
 import NavItem from './NavItem';
 import * as sessionActions from '../../store/session';
