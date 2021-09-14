@@ -53,7 +53,9 @@ function LoginForm() {
               onChange={(e) => setPassword(e.target.value)}
               required />
           </label>
-          <button className='login-btn' type="submit">Continue</button>
+          <button className='login-btn' type="submit">
+            <div className='btn-text'>Continue</div>
+          </button>
         </form>
       </div>
     </div>

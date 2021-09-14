@@ -12,13 +12,13 @@ function Navigation({ isLoaded }){
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = (
+    sessionLinks = ([
       <ProfileButton user={sessionUser} />
-    );
+    ]);
   } else {
     sessionLinks = [
-        <LoginFormModal />,
-        <NavLink to="/signup">Sign Up</NavLink>
+        <LoginFormModal className='dropdown-item'/>,
+        <NavLink to="/signup" className='dropdown-item'>Sign Up</NavLink>
     ];
   }
 
