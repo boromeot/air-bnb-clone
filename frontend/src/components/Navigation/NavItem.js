@@ -3,7 +3,6 @@ import { useState,  } from "react";
 
 const NavItem = ({ items, className, children }) => {
   const [dropDown, setDropDown] = useState(false);
-  
   return (
     <div class={className}>
       <NavLink
