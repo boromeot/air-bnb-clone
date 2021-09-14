@@ -76,3 +76,7 @@
   padding: 15px 0;
   padding-left: 10px;
 }
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}

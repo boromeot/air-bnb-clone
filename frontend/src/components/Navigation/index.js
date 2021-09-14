@@ -9,26 +9,17 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
-  const [dropDown, setDropDown] = useState(false);
 
   let sessionLinks;
-  let profileMenu;
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
     );
-    profileMenu = <DropDown />
   } else {
     sessionLinks = [
         <LoginFormModal />,
         <NavLink to="/signup">Sign Up</NavLink>
     ];
-    profileMenu = <DropDown links={sessionLinks}/>
-  }
-
-  const toggleDropdown = (e) => {
-    e.preventDefault();
-    setDropDown(prevDropDown => !prevDropDown);
   }
 
   return (
@@ -48,7 +39,7 @@ function Navigation({ isLoaded }){
           items={[<i class="fas fa-bars bars"></i>,<i class="fas fa-user-circle fa-2x"></i>]}
           className='profile'
         >
-          <DropDown links={sessionLinks}/>
+          {isLoaded && <DropDown links={sessionLinks}/>}
         </NavItem>
       </div>
     </nav>

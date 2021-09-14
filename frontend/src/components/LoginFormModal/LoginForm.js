@@ -10,6 +10,7 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('gg');
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
@@ -20,32 +21,42 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <div className='modal-container'>
+      <div className='header flex-center'>
+        <h1>Log in</h1>
+      </div>
+      <div className='form-container'>
+        <div className='welcome'>
+          <h3 className='welcome-text'>Welcome to Carebnb</h3>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+          <label className='form-label'>
+            <div className='label-text'>Username / Email</div>
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required />
+          </label>
+          <label className='form-label'>
+            <div className='label-text'>
+              Password
+            </div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required />
+          </label>
+          <button className='login-btn' type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
   );
 }
 
