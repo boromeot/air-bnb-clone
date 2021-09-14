@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SpotCard from './SpotCard';
 
 const SpotsPage = () => {
+
   return (
     <>
       <h2>Spots page</h2>
