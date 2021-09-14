@@ -1,0 +1,21 @@
+.card-container {
+  height: 400px;
+  width: 300px;
+  border-radius: 12px;
+  background-color: blanchedalmond;
+}
+
+.image-container {
+  height: 80%;
+  background-color: cadetblue;
+  border-radius: inherit;
+}
+
+.info-container {
+
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
