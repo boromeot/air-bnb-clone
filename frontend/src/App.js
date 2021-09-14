@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink, Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SpotsPage from "./components/SpotsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function App() {
             <NavLink to='/s/home'>spots</NavLink>
           </Route>
           <Route path='/s/home'>
-
+            <SpotsPage />
           </Route>
         </Switch>
       )}
