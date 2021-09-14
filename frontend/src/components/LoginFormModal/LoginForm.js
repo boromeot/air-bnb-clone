@@ -43,9 +43,7 @@ function LoginForm() {
               required />
           </label>
           <label className='form-label'>
-            <div className='label-text'>
-              Password
-            </div>
+            <div className='label-text'>Password</div>
             <input
               type="password"
               value={password}
