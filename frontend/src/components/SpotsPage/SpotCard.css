@@ -18,10 +18,6 @@
   flex-wrap: wrap;
 }
 
-.info-container {
-
-}
-
 .info {
   display: flex;
   justify-content: space-between;
