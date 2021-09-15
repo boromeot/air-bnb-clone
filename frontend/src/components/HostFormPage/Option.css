@@ -1,0 +1,17 @@
+.option-btn {
+  width: 462px;
+  height: 88px;
+  border: 0.8px solid black;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.option-btn:hover {
+  box-shadow: rgb(34, 34, 34) 0px 0px 0px 2px;
+}
+
+.option-title {
+  font-weight: 600;
+  text-align: left;
+  margin-left: 20px;
+}

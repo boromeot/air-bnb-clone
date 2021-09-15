@@ -10,6 +10,13 @@
   background-image: linear-gradient(to bottom,#d70466, #440589);
 }
 
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .instructions-container,
 .actions-container {
   width: 50%;

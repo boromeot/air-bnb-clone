@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Instructions from "./Instructions";
-import './HostFormPage.css';
 import Action from "./Action";
+import './HostFormPage.css';
 
 const HostFormPage = () => {
-  const [steps, setSteps] = useState(0);
+  const [step, setStep] = useState(0);
 
   const instructionsArr = [
     'What kind of place will you host?',
@@ -21,13 +21,9 @@ const HostFormPage = () => {
     'Once you save, we\’ll ask you to confirm a few details before you can publish.',
   ];
 
-  const actionsArr = [
-    'hi'
-  ];
-
   //Potential array out of bounds bug
   const nextStep = () => {
-    setSteps(prevStep => prevStep + 1);
+    setStep(prevStep => prevStep + 1);
   }
 
   return (
@@ -36,11 +32,11 @@ const HostFormPage = () => {
           <NavLink to='/' className='logo home'>
             carebnb
           </NavLink>
-          <Instructions instructions={instructionsArr[steps]}/>
+          <Instructions instructions={instructionsArr[step]}/>
         </div>
         <div className='actions-container'>
-          <Action actions={actionsArr[steps]}/>
-          <span class='btn' onClick={nextStep}>Next</span>
+          <Action step={step} nextStep={nextStep} />
+          <span className='btn' onClick={nextStep}>Next</span>
         </div>
       </div>
     )
