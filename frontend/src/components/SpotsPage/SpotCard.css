@@ -9,6 +9,13 @@
   height: 80%;
   background-color: cadetblue;
   border-radius: inherit;
+  background-size: cover;
+}
+
+.spots-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .info-container {

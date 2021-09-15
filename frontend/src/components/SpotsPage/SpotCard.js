@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SpotCard.css';
 
 const SpotCard = ({ city, state, price, images }) => {
-  console.log('images', images[0]);
+  const [slideCount, setSlideCount] = useState(0);
+
+  //Image carousel event handlers
+  const toRight = () => {
+    if (slideCount === images.length - 1) {
+      setSlideCount(0);
+    } else {
+      setSlideCount(prevCount => prevCount + 1);
+    }
+  }
+
+  const toLeft = () => {
+    if (slideCount === 0) {
+      setSlideCount(images.length - 1);
+    } else {
+      setSlideCount(prevCount => prevCount - 1);
+    }
+  }
+
   return (
     <div className='card-container'>
-      <div className='image-container'>
-        {images[0].url}
+      <div className='image-container'
+        style={{backgroundImage: `url(${images[slideCount].url})`}}
+      >
+        <div className='toLeft' onClick={toLeft}>Left</div>
+        <div className='toRight' onClick={toRight}>Right</div>
       </div>
       <div className='info-container'>
         <div className='info'>
