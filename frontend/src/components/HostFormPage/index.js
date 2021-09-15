@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Instructions from "./Instructions";
 import './HostFormPage.css';
+import Action from "./Action";
 
 const HostFormPage = () => {
   const [steps, setSteps] = useState(0);
@@ -20,6 +21,10 @@ const HostFormPage = () => {
     'Once you save, we\’ll ask you to confirm a few details before you can publish.',
   ];
 
+  const actionsArr = [
+    'hi'
+  ];
+
   //Potential array out of bounds bug
   const nextStep = () => {
     setSteps(prevStep => prevStep + 1);
@@ -34,7 +39,7 @@ const HostFormPage = () => {
           <Instructions instructions={instructionsArr[steps]}/>
         </div>
         <div className='actions-container'>
-          right
+          <Action actions={actionsArr[steps]}/>
           <span class='btn' onClick={nextStep}>Next</span>
         </div>
       </div>
