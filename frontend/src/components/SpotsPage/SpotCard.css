@@ -12,6 +12,10 @@
   border-radius: inherit;
   background-size: cover;
 }
+/* On hover of image-container show the chevrons */
+.image-container:hover .chevron {
+  display: inline-flex;
+}
 
 .spots-container {
   display: flex;
@@ -25,7 +29,7 @@
 }
 
 .chevron {
-  display: inline-flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -34,6 +38,7 @@
   border-radius: 50%;
   background-color: whitesmoke;
   margin: 0 10px;
+  transition: -ms-transform 0.25s ease 0s, transform 0.25s ease 0s, transform 0.25s ease 0s;
 }
 
 .chevron:hover {
