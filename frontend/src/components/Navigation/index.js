@@ -40,7 +40,7 @@ function Navigation({ isLoaded }){
         search
       </div>
       <div className='links'>
-        <NavLink className='btn host' to='/host/homes'>Become a host</NavLink>
+        <NavLink className='btn host' to='/become-a-host'>Become a host</NavLink>
         <NavLink className='btn' to>
           <i class="fas fa-globe"></i>
         </NavLink>

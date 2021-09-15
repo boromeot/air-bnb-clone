@@ -1,0 +1,13 @@
+.become-a-host-container {
+  height: 100vh;
+  display: flex;
+}
+
+.instructions-container {
+  background-image: linear-gradient(to bottom,#d70466, #440589);
+}
+
+.instructions-container,
+.actions-container {
+  width: 50%;
+}
