@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ReactComponent as RightChevron } from '../../images/chevron-right.svg';
+import { ReactComponent as LeftChevron } from '../../images/chevron-left.svg';
 import './SpotCard.css';
 
 const SpotCard = ({ city, state, price, images }) => {
@@ -26,8 +28,8 @@ const SpotCard = ({ city, state, price, images }) => {
       <div className='image-container'
         style={{backgroundImage: `url(${images[slideCount].url})`}}
       >
-        <div className='toLeft' onClick={toLeft}>Left</div>
-        <div className='toRight' onClick={toRight}>Right</div>
+        <div className='toLeft chevron' onClick={toLeft}><LeftChevron /></div>
+        <div className='toRight chevron' onClick={toRight}><RightChevron /></div>
       </div>
       <div className='info-container'>
         <div className='info'>

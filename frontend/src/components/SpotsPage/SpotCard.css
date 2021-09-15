@@ -2,12 +2,13 @@
   height: 400px;
   width: 300px;
   border-radius: 12px;
-  background-color: blanchedalmond;
 }
 
 .image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 80%;
-  background-color: cadetblue;
   border-radius: inherit;
   background-size: cover;
 }
@@ -21,4 +22,22 @@
 .info {
   display: flex;
   justify-content: space-between;
+}
+
+.chevron {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  margin: 0 10px;
+}
+
+.chevron:hover {
+  box-shadow: 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  transform: scale(1.04);
+  cursor: pointer;
 }
