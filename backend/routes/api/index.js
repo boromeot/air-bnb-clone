@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sessionRouter = require('./session');
 const usersRouter = require('./users.js');
+const spotsRouter = require('./spots');
 
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
@@ -9,6 +10,8 @@ const { User } = require('../../db/models');
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
+
+router.use('/spots', spotsRouter);
 
 //Auth middleware test routes
 // router.get('/set-token-cookie', asyncHandler(async (req, res) => {

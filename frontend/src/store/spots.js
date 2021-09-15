@@ -18,6 +18,7 @@ const spotsReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case SET_SPOTS:
+      newState = Object.assign({}, state);
       newState = action.payload.map(spot => spot);
       return newState;
     default:
