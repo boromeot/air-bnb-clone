@@ -4,10 +4,27 @@
 }
 
 .instructions-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   background-image: linear-gradient(to bottom,#d70466, #440589);
 }
 
 .instructions-container,
 .actions-container {
   width: 50%;
+}
+
+.instructions {
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
+  margin: 0 12%;
+}
+
+.home {
+  color: white;
+  position: fixed;
+  top: 5%;
+  left: 2%;
 }
