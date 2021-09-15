@@ -1,6 +1,18 @@
+.spots-header {
+  text-align: center;
+  position: sticky;
+  top: 20px;
+}
+.spots-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
 .card-container {
   height: 400px;
-  width: 300px;
+  width: 320px;
   border-radius: 12px;
 }
 
@@ -8,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80%;
+  height: 85%;
   border-radius: inherit;
   background-size: cover;
 }
@@ -17,11 +29,6 @@
   display: inline-flex;
 }
 
-.spots-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
 .info {
   display: flex;

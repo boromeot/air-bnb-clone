@@ -13,7 +13,7 @@ const SpotsPage = () => {
 
   return (
     <>
-      <h2>Spots page</h2>
+      <h2 className='spots-header'>Spots page</h2>
       <div className='spots-container'>
         {spots.map(({city, state, price, Images}) => (
           <SpotCard city={city} state={state} price={price} images={Images} />
