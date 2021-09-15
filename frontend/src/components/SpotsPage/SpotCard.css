@@ -1,7 +1,7 @@
 .spots-header {
   text-align: center;
-  position: sticky;
-  top: 20px;
+  /* position: sticky; */
+  /* top: 20px; */
 }
 .spots-container {
   display: flex;
