@@ -1,0 +1,55 @@
+.spots-header {
+  text-align: center;
+  /* position: sticky; */
+  /* top: 20px; */
+}
+.spots-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+.card-container {
+  height: 400px;
+  width: 320px;
+  border-radius: 12px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85%;
+  border-radius: inherit;
+  background-size: cover;
+}
+/* On hover of image-container show the chevrons */
+.image-container:hover .chevron {
+  display: inline-flex;
+}
+
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chevron {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  margin: 0 10px;
+  transition: -ms-transform 0.25s ease 0s, transform 0.25s ease 0s, transform 0.25s ease 0s;
+}
+
+.chevron:hover {
+  box-shadow: 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  transform: scale(1.04);
+  cursor: pointer;
+}
