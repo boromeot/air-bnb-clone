@@ -17,6 +17,12 @@ const Action = ({ step, setStep }) => {
   const nextStep = () => {
     setStep(prevStep => prevStep + 1);
   }
+  const backStep = (e) => {
+    e.preventDefault();
+    if (step > 0) {
+      setStep(prevStep => prevStep - 1);
+    }
+  }
 
   const actionsArr = [
     <>
@@ -28,23 +34,24 @@ const Action = ({ step, setStep }) => {
       <Option title='Boutique hotel' value={{key: 'place', value: 'Boutique hotel'}} setValue={setValue} />
     </>,
     <>
-      <Option title='Hotel' value={{key: 'type', value: 'Hotel'}} setValue={setValue} />
+      <Option title='Hotel' value={{key: 'type', value: 'Hotel'}} setValue={setValue} description='A business offering private rooms, suites, or unique stats for guests.'/>
       <Option title='Hostel' value={{key: 'type', value: 'Hostel'}} setValue={setValue} />
       <Option title='Resort' value={{key: 'type', value: 'Resort'}} setValue={setValue} />
       <Option title='Nature lodge' value={{key: 'type', value: 'Nature lodge'}} setValue={setValue} />
       <Option title='Apartment' value={{key: 'type', value: 'Apartment'}} setValue={setValue} />
     </>,
     <>
-      <Option title='A private room' value={{key: 'space', value: 'private'}} setValue={setValue} />
-      <Option title='A shared room' value={{key: 'space', value: 'shared'}} setValue={setValue} />
+      <Option title='A private room' value={{key: 'space', value: 'Private'}} setValue={setValue} />
+      <Option title='A shared room' value={{key: 'space', value: 'Shared'}} setValue={setValue} />
     </>
 
   ];
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='action-form-container'>
       {actionsArr[step] || null}
-      <input type='submit' value='Submit' onClick={nextStep} />
+      <button onClick={backStep}>back</button>
+      <input type='submit' value='next' onClick={nextStep} />
     </form>
   )
 }

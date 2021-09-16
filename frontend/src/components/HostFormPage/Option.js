@@ -7,12 +7,21 @@ const Option = ({ title, description, value, setValue}) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setValue(e.target.value);
+    if (e.target.value) {
+      setValue(e.target.value);
+    } else {
+      setValue(e.target.parentNode.value);
+    }
   }
 
   return (
       <button className='option-btn' type='button' name='x' value={JSON.stringify(value)} onClick={handleClick}>
-        {title}
+        <div className='option-title'>
+          {title}
+        </div>
+        <div className='option-description'>
+          {description}
+        </div>
       </button>
   )
 }

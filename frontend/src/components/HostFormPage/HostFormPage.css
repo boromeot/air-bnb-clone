@@ -10,7 +10,8 @@
   background-image: linear-gradient(to bottom,#d70466, #440589);
 }
 
-.actions-container {
+.action-form-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
