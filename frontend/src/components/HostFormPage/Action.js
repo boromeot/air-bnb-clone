@@ -7,15 +7,12 @@ const Action = ({ step, setStep }) => {
   const [value, setValue] = useState({});
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(spotFormActions.addData(value));
-  }
-
  //Potential array out of bounds bug
  //Controls the question the user is currently on
   const nextStep = () => {
     setStep(prevStep => prevStep + 1);
+    dispatch(spotFormActions.addData(value));
+
   }
   const backStep = (e) => {
     e.preventDefault();
@@ -48,11 +45,15 @@ const Action = ({ step, setStep }) => {
   ];
 
   return (
-    <form onSubmit={handleSubmit} className='action-form-container'>
-      {actionsArr[step] || null}
-      <button onClick={backStep}>back</button>
-      <input type='submit' value='next' onClick={nextStep} />
-    </form>
+    <>
+      <div className='action-form-container'>
+        {actionsArr[step] || null}
+        <div className='action-btn-container'>
+          <span className='back-btn' onClick={backStep}>Back</span>
+          <span className='next-btn' onClick={nextStep}>Next</span>
+        </div>
+      </div>
+    </>
   )
 }
 
