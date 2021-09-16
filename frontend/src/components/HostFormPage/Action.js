@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import Option from "./Option";
 
 const Action = ({ step, setStep }) => {
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState(null);
   const dispatch = useDispatch();
 
  //Potential array out of bounds bug
@@ -12,7 +12,8 @@ const Action = ({ step, setStep }) => {
   const nextStep = () => {
     setStep(prevStep => prevStep + 1);
     dispatch(spotFormActions.addData(value));
-
+    //Set val back to null to disable the next button
+    setValue(null);
   }
   const backStep = (e) => {
     e.preventDefault();
@@ -50,7 +51,7 @@ const Action = ({ step, setStep }) => {
         {actionsArr[step] || null}
         <div className='action-btn-container'>
           <span className='back-btn' onClick={backStep}>Back</span>
-          <span className='next-btn' onClick={nextStep}>Next</span>
+          <button className='next-btn' onClick={nextStep} disabled={!value}>Next</button>
         </div>
       </div>
     </>
