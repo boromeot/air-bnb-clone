@@ -1,29 +1,25 @@
 import React, { useState } from "react";
+import * as spotFormActions from '../../store/spots-form';
+import { useDispatch } from "react-redux";
 import Option from "./Option";
 
 const Action = ({ step }) => {
-  const [value, setValue] = useState('');
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setValue(e.target.value);
-  }
+  const [value, setValue] = useState({});
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    console.log(value);
+    dispatch(spotFormActions.addData(value));
   }
-  
+
   const actionsArr = [
     <>
-      <Option title='Apartment' description={null} value='Apartment' onClick={handleClick}/>
-      <Option title='House' description={null} value='House' onClick={handleClick}/>
-      <Option title='Secondary unit' description={null} value='Secondary unit' onClick={handleClick}/>
-      <Option title='Unique space' description={null} value='Unique space' onClick={handleClick}/>
-      <Option title='Bed and Breakfast' description={null} value='Bed and Breakfast' onClick={handleClick}/>
-      <Option title='Boutique hotel' description={null} value='Boutique hotel' onClick={handleClick}/>
+      <Option title='Apartment' value={{key: 'place', value: 'Apartment'}} setValue={setValue} />
+      <Option title='House'  value={{key: 'place', value: 'House'}} setValue={setValue}/>
+      <Option title='Secondary unit' value={{key: 'place', value: 'Secondary unit'}} setValue={setValue} />
+      <Option title='Unique space' value={{key: 'place', value: 'Unique space'}} setValue={setValue} />
+      <Option title='Bed and Breakfast' value={{key: 'place', value: 'Bed and breakfast'}} setValue={setValue} />
+      <Option title='Boutique hotel' value={{key: 'place', value: 'Boutique hotel'}} setValue={setValue} />
     </>,
   ];
 
