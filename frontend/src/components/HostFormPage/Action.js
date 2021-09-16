@@ -33,12 +33,13 @@ const Action = ({ step, setStep }) => {
     </>,
     <>
       <Option title='Hotel' value={{key: 'type', value: 'Hotel'}} setValue={setValue} description='A business offering private rooms, suites, or unique stats for guests.'/>
-      <Option title='Hostel' value={{key: 'type', value: 'Hostel'}} setValue={setValue} />
-      <Option title='Resort' value={{key: 'type', value: 'Resort'}} setValue={setValue} />
-      <Option title='Nature lodge' value={{key: 'type', value: 'Nature lodge'}} setValue={setValue} />
-      <Option title='Apartment' value={{key: 'type', value: 'Apartment'}} setValue={setValue} />
+      <Option title='Hostel' value={{key: 'type', value: 'Hostel'}} setValue={setValue} description='A hospitality business that rents beds in shared dorms and private rooms.'/>
+      <Option title='Resort' value={{key: 'type', value: 'Resort'}} setValue={setValue} description='A hospitality business with more amenities and services than a hotel.'/>
+      <Option title='Nature lodge' value={{key: 'type', value: 'Nature lodge'}} setValue={setValue} description='A business offering stays near natural settings like forests or mountains.'/>
+      <Option title='Apartment' value={{key: 'type', value: 'Apartment'}} setValue={setValue} description='A rented place within a multi-unit residential building or complex.'/>
     </>,
     <>
+      <Option title='An entire place' value={{key: 'space', value: 'Entire'}} setValue={setValue} />
       <Option title='A private room' value={{key: 'space', value: 'Private'}} setValue={setValue} />
       <Option title='A shared room' value={{key: 'space', value: 'Shared'}} setValue={setValue} />
     </>
