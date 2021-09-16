@@ -21,11 +21,6 @@ const HostFormPage = () => {
     'Once you save, we\’ll ask you to confirm a few details before you can publish.',
   ];
 
-  //Potential array out of bounds bug
-  const nextStep = () => {
-    setStep(prevStep => prevStep + 1);
-  }
-
   return (
       <div className='become-a-host-container'>
         <div className='instructions-container'>
@@ -35,8 +30,7 @@ const HostFormPage = () => {
           <Instructions instructions={instructionsArr[step]}/>
         </div>
         <div className='actions-container'>
-          <Action step={step} nextStep={nextStep} />
-          <span className='btn' onClick={nextStep}>Next</span>
+          <Action step={step} setStep={setStep} />
         </div>
       </div>
     )
