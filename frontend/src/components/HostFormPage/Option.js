@@ -2,8 +2,9 @@ import React from "react";
 import './Option.css';
 
 //value prop become need to be stringifyied for some reason??
+//if value is not stringifyied its become [object Object]
 //Need to ask a TA on this one
-const Option = ({ title, description, value, setValue}) => {
+const Option = ({ title, description, payload, setValue}) => {
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ const Option = ({ title, description, value, setValue}) => {
   }
 
   return (
-      <button className='option-btn' type='button' name='x' value={JSON.stringify(value)} onClick={handleClick}>
+      <button className='option-btn' type='button' name='x' value={JSON.stringify(payload)} onClick={handleClick}>
         <div className='option-title'>
           {title}
         </div>

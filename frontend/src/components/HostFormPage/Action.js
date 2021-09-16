@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as spotFormActions from '../../store/spots-form';
 import { useDispatch } from "react-redux";
 import Option from "./Option";
+import TextOption from "./TextOption";
 
 const Action = ({ step, setStep }) => {
   const [value, setValue] = useState(null);
@@ -24,25 +25,40 @@ const Action = ({ step, setStep }) => {
 
   const actionsArr = [
     <>
-      <Option title='Apartment' value={{key: 'place', value: 'Apartment'}} setValue={setValue} />
-      <Option title='House'  value={{key: 'place', value: 'House'}} setValue={setValue}/>
-      <Option title='Secondary unit' value={{key: 'place', value: 'Secondary unit'}} setValue={setValue} />
-      <Option title='Unique space' value={{key: 'place', value: 'Unique space'}} setValue={setValue} />
-      <Option title='Bed and Breakfast' value={{key: 'place', value: 'Bed and breakfast'}} setValue={setValue} />
-      <Option title='Boutique hotel' value={{key: 'place', value: 'Boutique hotel'}} setValue={setValue} />
+      <Option title='Apartment' payload={{key: 'place', value: 'Apartment'}} setValue={setValue} />
+      <Option title='House'  payload={{key: 'place', value: 'House'}} setValue={setValue}/>
+      <Option title='Secondary unit' payload={{key: 'place', value: 'Secondary unit'}} setValue={setValue} />
+      <Option title='Unique space' payload={{key: 'place', value: 'Unique space'}} setValue={setValue} />
+      <Option title='Bed and Breakfast' payload={{key: 'place', value: 'Bed and breakfast'}} setValue={setValue} />
+      <Option title='Boutique hotel' payload={{key: 'place', value: 'Boutique hotel'}} setValue={setValue} />
     </>,
     <>
-      <Option title='Hotel' value={{key: 'type', value: 'Hotel'}} setValue={setValue} description='A business offering private rooms, suites, or unique stats for guests.'/>
-      <Option title='Hostel' value={{key: 'type', value: 'Hostel'}} setValue={setValue} description='A hospitality business that rents beds in shared dorms and private rooms.'/>
-      <Option title='Resort' value={{key: 'type', value: 'Resort'}} setValue={setValue} description='A hospitality business with more amenities and services than a hotel.'/>
-      <Option title='Nature lodge' value={{key: 'type', value: 'Nature lodge'}} setValue={setValue} description='A business offering stays near natural settings like forests or mountains.'/>
-      <Option title='Apartment' value={{key: 'type', value: 'Apartment'}} setValue={setValue} description='A rented place within a multi-unit residential building or complex.'/>
+      <Option title='Hotel' payload={{key: 'type', value: 'Hotel'}} setValue={setValue} description='A business offering private rooms, suites, or unique stats for guests.'/>
+      <Option title='Hostel' payload={{key: 'type', value: 'Hostel'}} setValue={setValue} description='A hospitality business that rents beds in shared dorms and private rooms.'/>
+      <Option title='Resort' payload={{key: 'type', value: 'Resort'}} setValue={setValue} description='A hospitality business with more amenities and services than a hotel.'/>
+      <Option title='Nature lodge' payload={{key: 'type', value: 'Nature lodge'}} setValue={setValue} description='A business offering stays near natural settings like forests or mountains.'/>
+      <Option title='Apartment' payload={{key: 'type', value: 'Apartment'}} setValue={setValue} description='A rented place within a multi-unit residential building or complex.'/>
     </>,
     <>
-      <Option title='An entire place' value={{key: 'space', value: 'Entire'}} setValue={setValue} />
-      <Option title='A private room' value={{key: 'space', value: 'Private'}} setValue={setValue} />
-      <Option title='A shared room' value={{key: 'space', value: 'Shared'}} setValue={setValue} />
-    </>
+      <Option title='An entire place' payload={{key: 'space', value: 'Entire'}} setValue={setValue} />
+      <Option title='A private room' payload={{key: 'space', value: 'Private'}} setValue={setValue} />
+      <Option title='A shared room' payload={{key: 'space', value: 'Shared'}} setValue={setValue} />
+    </>,
+    <>
+      <TextOption payload={{key: 'address', value: ''}} setValue={setValue}/>
+    </>,
+    <>
+      <TextOption payload={{key: 'guests', value: ''}} setValue={setValue}/>
+    </>,
+    <>
+      <TextOption payload={{key: 'price', value: ''}} setValue={setValue} />
+    </>,
+    <>
+      <TextOption payload={{key: 'title', value: ''}} setValue={setValue} placeholder='Cozy 2-bedroom log cabin with loft'/>
+    </>,
+    <>
+      <TextOption payload={{key: 'description', value: ''}} setValue={setValue} placeholder='Have fun with the whole family at this stylish place.'/>
+    </>,
 
   ];
 
