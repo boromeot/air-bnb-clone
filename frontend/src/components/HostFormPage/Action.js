@@ -3,6 +3,7 @@ import * as spotFormActions from '../../store/spots-form';
 import { useDispatch } from "react-redux";
 import Option from "./Option";
 import TextOption from "./TextOption";
+import UrlOption from "./UrlOption";
 
 const Action = ({ step, setStep }) => {
   const [value, setValue] = useState(null);
@@ -59,6 +60,9 @@ const Action = ({ step, setStep }) => {
     <>
       <TextOption payload={{key: 'description', value: ''}} setValue={setValue} placeholder='Have fun with the whole family at this stylish place.'/>
     </>,
+    <>
+      <UrlOption payload={{key: 'urls', value: ''}} setValue={setValue}/>
+    </>
 
   ];
 

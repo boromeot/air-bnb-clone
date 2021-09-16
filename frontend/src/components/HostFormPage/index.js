@@ -18,8 +18,7 @@ const HostFormPage = () => {
     'Now, let\'s describe your place',
     'Next, let\'s add some photos of your place',
     'Check out your listing!',
-    'Once you save, we\’ll ask you to confirm a few details before you can publish.',
-  ];
+    ];
 
   return (
       <div className='become-a-host-container'>
