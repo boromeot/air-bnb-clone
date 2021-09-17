@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 //This is not scalable at all and I know this,
 //But this is what I came up with. I am running out of time
+//I really don't like the way this came out
 const UrlOption = ({ payload, setValue}) => {
   const [payloadObj, setPayloadObj] = useState({});
   const [formValue, setFormValue ] = useState('');
@@ -19,7 +20,7 @@ const UrlOption = ({ payload, setValue}) => {
     setPayloadObj(newPayloadObj);
   };
 
-  //Took a long time to figure out I needed to use two use effects
+  //Took a long time to figure out I needed to use multiple use effects
   useEffect(() => {
     handleUpdate(0, formValue);
   }, [formValue])
