@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as spotFormActions from '../../store/spots-form';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { csrfFetch } from "../../store/csrf";
 import Option from "./Option";
 import TextOption from "./TextOption";
 import UrlOption from "./UrlOption";
@@ -8,15 +9,47 @@ import UrlOption from "./UrlOption";
 const Action = ({ step, setStep }) => {
   const [value, setValue] = useState(null);
   const dispatch = useDispatch();
+  const spotFormData = useSelector(state => state.spotForm);
+  const user = useSelector(state => state.session.user);
 
  //Potential array out of bounds bug
  //Controls the question the user is currently on
-  const nextStep = () => {
-    setStep(prevStep => prevStep + 1);
+  const nextStep = async () => {
     dispatch(spotFormActions.addData(value));
+
+    if (step === actionsArr.length - 1) {
+      const {address, price, title, city, state, urls} = spotFormData;
+      console.log('urls', urls);
+      const userId = user.id;
+      const spotResponse = await csrfFetch('/api/spots', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          userId,
+          address,
+          price,
+          name: title,
+          city: 'Reno',
+          state: 'Nevada',
+        }),
+      });
+      const spotData = await spotResponse.json();
+
+      const imageResponse = await csrfFetch('/api/images', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          spotId: spotData.spot.id,
+          urls,
+        })
+      });
+    }
+
+    setStep(prevStep => prevStep + 1);
     //Set val back to null to disable the next button
     setValue(null);
   }
+
   const backStep = (e) => {
     e.preventDefault();
     if (step > 0) {
