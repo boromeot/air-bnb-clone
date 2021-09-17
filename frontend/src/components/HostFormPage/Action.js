@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as spotFormActions from '../../store/spots-form';
 import { useDispatch, useSelector } from "react-redux";
 import { csrfFetch } from "../../store/csrf";
@@ -12,14 +12,29 @@ const Action = ({ step, setStep }) => {
   const spotFormData = useSelector(state => state.spotForm);
   const user = useSelector(state => state.session.user);
 
- //Potential array out of bounds bug
  //Controls the question the user is currently on
-  const nextStep = async () => {
+  const nextStep = () => {
     dispatch(spotFormActions.addData(value));
+    setStep(prevStep => prevStep + 1);
+    //Set val back to null to disable the next button
+    setValue(null);
+  }
 
-    if (step === actionsArr.length - 1) {
-      const {address, price, title, city, state, urls} = spotFormData;
-      console.log('urls', urls);
+  const backStep = (e) => {
+    e.preventDefault();
+    if (step > 0) {
+      setStep(prevStep => prevStep - 1);
+    }
+  }
+
+  useEffect(() => {
+    if (step === actionsArr.length) {
+      submit();
+    }
+  }, [spotFormData])
+
+  const submit = async () => {
+    const {address, price, title, city, state, urls} = spotFormData;
       const userId = user.id;
       const spotResponse = await csrfFetch('/api/spots', {
         method: 'POST',
@@ -43,18 +58,6 @@ const Action = ({ step, setStep }) => {
           urls,
         })
       });
-    }
-
-    setStep(prevStep => prevStep + 1);
-    //Set val back to null to disable the next button
-    setValue(null);
-  }
-
-  const backStep = (e) => {
-    e.preventDefault();
-    if (step > 0) {
-      setStep(prevStep => prevStep - 1);
-    }
   }
 
   const actionsArr = [
