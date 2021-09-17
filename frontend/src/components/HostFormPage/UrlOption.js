@@ -8,6 +8,8 @@ const UrlOption = ({ payload, setValue}) => {
   const [formValue, setFormValue ] = useState('');
   const [formValue1, setFormValue1 ] = useState('');
   const [formValue2, setFormValue2 ] = useState('');
+  const [formValue3, setFormValue3 ] = useState('');
+  const [formValue4, setFormValue4 ] = useState('');
   const placeholder = 'Enter the image url';
 
   const handleChange = (e, setFunc) => {
@@ -34,6 +36,14 @@ const UrlOption = ({ payload, setValue}) => {
   }, [formValue2])
 
   useEffect(() => {
+    handleUpdate(3, formValue3);
+  }, [formValue3])
+
+  useEffect(() => {
+    handleUpdate(3, formValue3);
+  }, [formValue3])
+
+  useEffect(() => {
     payload.value = payloadObj;
     setValue(JSON.stringify(payload));
   }, [payloadObj])
@@ -43,6 +53,8 @@ const UrlOption = ({ payload, setValue}) => {
       <input type='text' value={formValue} onChange={e => handleChange(e, setFormValue)} placeholder={placeholder}/>
       <input type='text' value={formValue1} onChange={e => handleChange(e, setFormValue1)} placeholder={placeholder}/>
       <input type='text' value={formValue2} onChange={e => handleChange(e, setFormValue2)} placeholder={placeholder}/>
+      <input type='text' value={formValue3} onChange={e => handleChange(e, setFormValue3)} placeholder={placeholder}/>
+      <input type='text' value={formValue4} onChange={e => handleChange(e, setFormValue4)} placeholder={placeholder}/>
     </>
   )
 }
