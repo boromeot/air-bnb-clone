@@ -1,5 +1,4 @@
 const ADD_FORM = 'spotsForm/addData';
-const SET_SPOT = 'spotsForm/setSpot';
 
 export const addData = (data) => {
   return {

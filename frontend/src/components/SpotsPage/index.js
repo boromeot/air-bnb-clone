@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SpotCard from './SpotCard';
-import * as spotActions from '../../store/spots';
+import * as spotsActions from '../../store/spots';
 import { useDispatch, useSelector } from 'react-redux';
 
 const SpotsPage = () => {
@@ -8,7 +8,7 @@ const SpotsPage = () => {
   const spots = useSelector(state => state.spots); //Returns arr of spot objects
 
   useEffect(() => {
-    dispatch(spotActions.getSpots());
+    dispatch(spotsActions.getSpots());
   }, [dispatch])
 
   return (

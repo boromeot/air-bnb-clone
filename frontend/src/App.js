@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SpotsPage from "./components/SpotsPage";
 import HostFormPage from "./components/HostFormPage";
+import SpotPage from "./components/SpotPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path='/become-a-host'>
             <HostFormPage />
+          </Route>
+          <Route path='/spots/:spotId'>
+            <SpotPage />
           </Route>
         </Switch>
       )}
