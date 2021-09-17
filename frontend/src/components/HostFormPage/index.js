@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { NavLink, Redirect } from "react-router-dom";
 import Instructions from "./Instructions";
 import Action from "./Action";
 import './HostFormPage.css';
@@ -19,6 +20,9 @@ const HostFormPage = () => {
     'Next, let\'s add some photos of your place',
     'Check out your listing!',
     ];
+
+    const sessionUser = useSelector((state) => state.session.user);
+    if (!sessionUser) return <Redirect to="/" />;
 
   return (
       <div className='become-a-host-container'>
