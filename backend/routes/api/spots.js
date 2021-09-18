@@ -24,17 +24,19 @@ router.post('/', asyncHandler(async (req, res) => {
     city,
     state,
   });
+
   return res.json({
     spot,
   });
 }))
 
 router.get('/:id', asyncHandler(async (req, res) => {
+  console.log('eneeeeeeeeeter');
   const { id } = req.params;
   const spot = await Spot.findByPk(id, {
     include: [Image, User]
   });
-  console.log('db spot', spot);
+
   return res.json({
     spot,
   });

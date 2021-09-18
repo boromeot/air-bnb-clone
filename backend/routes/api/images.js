@@ -7,7 +7,6 @@ const router = express.Router();
 //The urls should be refactored into an array, instead of being an object
 router.post('/', asyncHandler(async (req, res) => {
   const {spotId, urls} = req.body;
-  console.log('typeof', typeof urls);
   const images = Object.values(urls).map(async url => {
     return await Image.create({
       spotId,

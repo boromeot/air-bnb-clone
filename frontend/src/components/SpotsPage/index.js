@@ -17,7 +17,7 @@ const SpotsPage = () => {
       <h2 className='spots-header'>Spots page</h2>
       <div className='spots-container'>
         {spots.map(({id, city, state, price, Images}) => (
-            <SpotCard id={id} city={city} state={state} price={price} images={Images} />
+          <SpotCard id={id} city={city} state={state} price={price} images={Images} />
         ))}
       </div>
     </>
