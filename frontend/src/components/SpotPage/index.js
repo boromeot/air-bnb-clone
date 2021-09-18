@@ -19,10 +19,10 @@ const SpotPage = () => {
   return (
     <div className='spotpage-container'>
       <div className='spot-header'>
-        <h1>{spot.name}</h1>
+        <h1 className='spot-title'>{spot.name}</h1>
         <span>{`${spot.city}, ${spot.state}` }</span>
       </div>
-      <div className='image-container'>
+      <div className='spot-image-container'>
         { spot.Images && spot.Images.map(({url}, i) => (
           <div className={`display-image pic-${i}`} style={{backgroundImage: `url(${url})`}}>
 
@@ -30,11 +30,14 @@ const SpotPage = () => {
         ))}
       </div>
       <div className='spot-content'>
-        <div className='host'>
+        <div className='spot-host'>
           <h2>{spot.User && `Hosted by ${spot.User.username}`}</h2>
         </div>
-        {sessionUser.id && spot.id && <Reservation userId={sessionUser.id} spotId={spot.id} price={spot.price}/>}
-        <div className='description'>
+        <div className='spot-info'>
+          <div className='spot-description'>
+            Description
+          </div>
+          {sessionUser.id && spot.id && <Reservation userId={sessionUser.id} spotId={spot.id} price={spot.price}/>}
         </div>
       </div>
     </div>

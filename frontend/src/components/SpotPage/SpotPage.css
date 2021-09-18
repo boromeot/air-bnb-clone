@@ -1,8 +1,15 @@
 .spotpage-container {
-  margin: 0 10%;
+  margin: 0 13%;
 }
 
-.image-container {
+.spot-header {
+  padding: 20px 0;
+}
+.spot-title {
+  padding-bottom: 10px;
+}
+
+.spot-image-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -51,11 +58,29 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.spot-host h2 {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.spot-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  height: 600px;
+}
+
+.spot-description {
+  flex: 1;
+  background-color: blanchedalmond;
+}
+
 .reservation-form {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   height: 480px;
   width: 320px;
+  box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 .submit-btn {
