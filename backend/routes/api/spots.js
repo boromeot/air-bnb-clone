@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Spot, Image } = require('../../db/models');
+const { Spot, Image, User } = require('../../db/models');
 const router = express.Router();
 
 
@@ -31,7 +31,9 @@ router.post('/', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const spot = await Spot.findByPk(id);
+  const spot = await Spot.findByPk(id, {
+    include: [Image, User]
+  });
   console.log('db spot', spot);
   return res.json({
     spot,

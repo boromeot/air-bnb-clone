@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
+import './SpotPage.css';
 
 const SpotPage = () => {
   const { spotId } = useParams();
@@ -13,7 +14,26 @@ const SpotPage = () => {
   }, [dispatch])
 
   return (
-    <h1>{spot.name}</h1>
+    <div>
+      <div>
+        <h1>{spot.name}</h1>
+        <span>{`${spot.city}, ${spot.state}` }</span>
+      </div>
+      <div className='image-container'>
+        { spot.Images && spot.Images.map(({url}) => (
+          <div className='display-image' style={{backgroundImage: `url(${url})`}}>
+
+          </div>
+        ))}
+      </div>
+      <div className='spot-content'>
+        <div className='host'>
+          <h2>{spot.User && `Hosted by ${spot.User.username}`}</h2>
+        </div>
+        <div className='description'>
+        </div>
+      </div>
+    </div>
   );
 }
 
