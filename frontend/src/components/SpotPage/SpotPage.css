@@ -2,11 +2,47 @@
   margin: 0 10%;
 }
 
+.image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "main main pic1 pic2"
+    "main main pic3 pic4";
+  column-gap: 10px;
+  row-gap: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pic-0 {
+  grid-area: main;
+  height: 380px;
+}
+
+.pic-1 {
+  grid-area: pic1;
+  height: 185px;
+}
+
+.pic-2 {
+  grid-area: pic2;
+  height: 185px;
+}
+
+.pic-3 {
+  grid-area: pic3;
+  height: 185px;
+}
+
+.pic-4 {
+  grid-area: pic4;
+  height: 185px;
+}
+
 .display-image {
   background-size: cover ;
   background-position: center;
-  height: 200px;
-  width: 200px;
 }
 
 .spot-host {

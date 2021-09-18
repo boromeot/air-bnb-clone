@@ -23,8 +23,8 @@ const SpotPage = () => {
         <span>{`${spot.city}, ${spot.state}` }</span>
       </div>
       <div className='image-container'>
-        { spot.Images && spot.Images.map(({url}) => (
-          <div className='display-image' style={{backgroundImage: `url(${url})`}}>
+        { spot.Images && spot.Images.map(({url}, i) => (
+          <div className={`display-image pic-${i}`} style={{backgroundImage: `url(${url})`}}>
 
           </div>
         ))}
