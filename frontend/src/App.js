@@ -34,6 +34,7 @@ function App() {
             <HostFormPage />
           </Route>
           <Route path='/spots/:spotId'>
+            <Navigation isLoaded={isLoaded} />
             <SpotPage />
           </Route>
         </Switch>

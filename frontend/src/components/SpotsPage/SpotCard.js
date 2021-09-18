@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { ReactComponent as RightChevron } from '../../images/chevron-right.svg';
 import { ReactComponent as LeftChevron } from '../../images/chevron-left.svg';
+import { NavLink } from 'react-router-dom';
 import './SpotCard.css';
 
-const SpotCard = ({ city, state, price, images }) => {
+const SpotCard = ({ id, city, state, price, images }) => {
   const [slideCount, setSlideCount] = useState(0);
 
   //Image carousel event handlers
