@@ -4,12 +4,11 @@ import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
 import Reservation from './Reservation';
 import './SpotPage.css';
-import { NavLink } from 'react-router-dom';
 
 const SpotPage = () => {
   const { spotId } = useParams();
   const spot = useSelector(state => state.spot);
-  const sessionUser = useSelector(state => state.session.user);
+  const session = useSelector(state => state.session);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const SpotPage = () => {
           <div className='spot-description'>
             Description
           </div>
-          {sessionUser.id && spot.id && <Reservation userId={sessionUser.id} spotId={spot.id} price={spot.price}/>}
+          {session && spot.id && <Reservation userId={session.user.id || null} spotId={spot.id} price={spot.price}/>}
         </div>
       </div>
     </div>
