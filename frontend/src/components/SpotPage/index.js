@@ -39,15 +39,15 @@ const SpotPage = () => {
       <div className='spot-content'>
         <div className='spot-host'>
           <h2>{spot.User && `Hosted by ${spot.User.username}`}</h2>
+          {session.user && session.user.id === spot.userId ? <button onClick={e => handleDelete(e)}>delete</button> : null}
         </div>
         <div className='spot-info'>
           <div className='spot-description'>
             Description
           </div>
-          {session && spot.id && <Reservation userId={session.user.id || null} spotId={spot.id} price={spot.price}/>}
+          {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
         </div>
       </div>
-      <button onClick={e => handleDelete(e)}>delete</button>
     </div>
   );
 }
