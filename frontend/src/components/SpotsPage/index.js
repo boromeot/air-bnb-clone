@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import SpotCard from './SpotCard';
 import * as spotsActions from '../../store/spots';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import './SpotsPage.css';
 
 const SpotsPage = () => {
