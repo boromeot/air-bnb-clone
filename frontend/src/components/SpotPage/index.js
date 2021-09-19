@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import Reservation from './Reservation';
 import './SpotPage.css';
 
@@ -10,10 +11,17 @@ const SpotPage = () => {
   const spot = useSelector(state => state.spot);
   const session = useSelector(state => state.session);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(spotActions.getSpot(spotId));
   }, [dispatch])
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(spotActions.deleteSpot(spotId));
+    history.push('/s/home');
+  }
 
   return (
     <div className='spotpage-container'>
@@ -39,6 +47,7 @@ const SpotPage = () => {
           {session && spot.id && <Reservation userId={session.user.id || null} spotId={spot.id} price={spot.price}/>}
         </div>
       </div>
+      <button onClick={e => handleDelete(e)}>delete</button>
     </div>
   );
 }

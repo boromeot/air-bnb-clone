@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf";
+
 const GET_SPOT = 'spots/getSpot';
 
 const get_spot = (spot) => {
@@ -23,7 +25,7 @@ const delete_spot = () => {
 }
 
 export const deleteSpot = (id) => async dispatch => {
-  await fetch(`/api/spots/${id}`, {
+  await csrfFetch(`/api/spots/${id}`, {
     method: 'DELETE'
   });
   dispatch(delete_spot());
