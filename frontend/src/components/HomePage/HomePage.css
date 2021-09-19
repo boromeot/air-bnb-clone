@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100px;
+  height: 140px;
   width: 260px;
   position: absolute;
   top: 50%;
@@ -32,6 +32,12 @@
   border-radius: 54px;
   background-color: white;
   text-align: center;
+  box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px 0px;
+}
+
+.cta-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+  transition: 0.3s;
 }
 
 .cta-btn-text {
