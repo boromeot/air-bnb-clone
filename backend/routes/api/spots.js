@@ -31,7 +31,6 @@ router.post('/', asyncHandler(async (req, res) => {
 }))
 
 router.get('/:id', asyncHandler(async (req, res) => {
-  console.log('eneeeeeeeeeter');
   const { id } = req.params;
   const spot = await Spot.findByPk(id, {
     include: [Image, User]
@@ -41,5 +40,24 @@ router.get('/:id', asyncHandler(async (req, res) => {
     spot,
   });
 }));
+
+router.put('/:id', asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const {address, price, name, city, state} = req.body;
+  const spot = await Spot.findByPk(id);
+  await spot.update({
+    address,
+    price,
+    name,
+    city,
+    state,
+  });
+}))
+
+router.delete('/:id', asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const spot = await Spot.findByPk(id);
+  spot.destroy();
+}))
 
 module.exports = router;

@@ -4,7 +4,6 @@ const { Booking } = require('../../db/models');
 const router = express.Router();
 
 router.post('/', asyncHandler(async (req, res) => {
-  console.log('enter post');
   const {userId, spotId, startDate, endDate} = req.body;
   const booking = await Booking.create({
     userId,
