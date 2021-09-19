@@ -1,0 +1,12 @@
+.spots-page-container {
+  padding: 0 80px;
+}
+
+.spots-header {
+  margin-bottom: 60px;
+}
+.spots-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
