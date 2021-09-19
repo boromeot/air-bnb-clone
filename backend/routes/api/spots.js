@@ -52,6 +52,10 @@ router.put('/:id', asyncHandler(async (req, res) => {
     city,
     state,
   });
+
+  return res.json({
+    spot,
+  });
 }))
 
 router.delete('/:id', asyncHandler(async (req, res) => {
