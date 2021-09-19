@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import SpotsPage from "./components/SpotsPage";
 import HostFormPage from "./components/HostFormPage";
 import SpotPage from "./components/SpotPage";
+import HomePage from "./components/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,8 +24,9 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
-            <Navigation isLoaded={isLoaded} />
-            <NavLink to='/s/home'>spots</NavLink>
+            <HomePage >
+              <Navigation isLoaded={isLoaded} />
+            </HomePage>
           </Route>
           <Route path='/s/home'>
             <Navigation isLoaded={isLoaded} />
