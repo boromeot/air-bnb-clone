@@ -71,16 +71,56 @@
 }
 
 .spot-description {
-  flex: 1;
+  flex: 0.9;
   background-color: blanchedalmond;
 }
 
-.reservation-form {
+.reservation-form-container {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   height: 480px;
   width: 320px;
   box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+.reservation-price {
+  margin: 24px 0;
+  text-align: center;
+  font-size: 22px;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "startDate endDate"
+    "guestNumber guestNumber"
+    "submit submit"
+  ;
+  margin: 0 auto;
+  height: 45%;
+  width: 85%;
+}
+
+.startDate {
+  grid-area: startDate;
+}
+
+.endDate {
+  grid-area: endDate;
+}
+
+.guestNumber {
+  grid-area: guestNumber;
+}
+
+.submit-btn {
+  grid-area: submit;
+}
+
+.reservation-form-input {
+  padding: 10px;
 }
 
 .submit-btn {
@@ -97,4 +137,8 @@
   text-justify: center;
   color: white;
   background-image: linear-gradient(to right, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%);
+}
+
+.submit-btn:hover, .reservation-form-input:hover {
+  cursor: pointer;
 }

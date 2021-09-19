@@ -19,20 +19,18 @@ const Reservation = ({ userId, spotId, price }) => {
   }
 
   return (
-    <div className='reservation-form'>
-      <div className='form'>
-        <div>
-          <span>{`$${price} / night`}</span>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <input type='date' value={startDate} onChange={e => setStartDate(e.target.value)}/>
-          <input type='date' value={endDate} onChange={e => setEndDate(e.target.value)} />
-          <input type='number' />
-          <button className='submit-btn' type='submit' >
-            Reserve
-          </button>
-        </form>
+    <div className='reservation-form-container'>
+      <div className='reservation-price'>
+        <span>{`$${price} / night`}</span>
       </div>
+      <form className='reservation-form' onSubmit={handleSubmit}>
+        <input className='reservation-form-input startDate' type='date' value={startDate} onChange={e => setStartDate(e.target.value)}/>
+        <input className='reservation-form-input endDate' type='date' value={endDate} onChange={e => setEndDate(e.target.value)} />
+        <input className='reservation-form-input guestNumber' type='number' />
+        <button className='submit-btn' type='submit' >
+          Reserve
+        </button>
+      </form>
     </div>
   )
 }
