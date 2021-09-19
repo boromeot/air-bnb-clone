@@ -1,0 +1,49 @@
+.section-main {
+  height: 85vh;
+  background-image: url('https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.call-to-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 140px;
+  width: 260px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cta-header {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 54px;
+  background-color: white;
+  text-align: center;
+  box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px 0px;
+}
+
+.cta-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+  transition: 0.3s;
+}
+
+.cta-btn-text {
+  background: linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+}
