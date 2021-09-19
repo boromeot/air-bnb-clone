@@ -1,7 +1,5 @@
 .spots-header {
   text-align: center;
-  /* position: sticky; */
-  /* top: 20px; */
 }
 .spots-container {
   display: flex;
@@ -18,6 +16,7 @@
 
 .image-container {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   height: 85%;
@@ -37,6 +36,7 @@
 }
 
 .chevron {
+  position: absolute;
   display: none;
   justify-content: center;
   align-items: center;
@@ -53,4 +53,17 @@
   box-shadow: 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
   transform: scale(1.04);
   cursor: pointer;
+}
+
+.toLeft {
+  left: 0;
+}
+
+.toRight {
+  right: 0;
+}
+
+.spot-link {
+  height: 100%;
+  width: 100%;
 }

@@ -8,7 +8,8 @@ const SpotCard = ({ id, city, state, price, images }) => {
   const [slideCount, setSlideCount] = useState(0);
 
   //Image carousel event handlers
-  const toRight = () => {
+  const toRight = (e) => {
+    e.stopPropagation();
     if (slideCount === images.length - 1) {
       setSlideCount(0);
     } else {
@@ -16,7 +17,8 @@ const SpotCard = ({ id, city, state, price, images }) => {
     }
   }
 
-  const toLeft = () => {
+  const toLeft = (e) => {
+    e.stopPropagation();
     if (slideCount === 0) {
       setSlideCount(images.length - 1);
     } else {
@@ -26,22 +28,21 @@ const SpotCard = ({ id, city, state, price, images }) => {
 
   return (
     <div className='card-container'>
-      <div className='image-container'
-        style={{backgroundImage: `url(${images[slideCount].url})`}}
-      >
-        <div className='toLeft chevron' onClick={toLeft}><LeftChevron /></div>
-        <div className='toRight chevron' onClick={toRight}><RightChevron /></div>
-      </div>
-      <div className='info-container'>
-        <div className='info'>
-          <div className='location'>
-            <span>{`${city}, ${state}`}</span>
-          </div>
-          <div className='price'>
-            <span>{`$${price} / night`}</span>
+        <div className='image-container' style={{backgroundImage: `url(${images[slideCount].url})`}}>
+          <div className='toLeft chevron' onClick={e => toLeft(e)}><LeftChevron /></div>
+          <NavLink to={`/spots/${id}`} className='spot-link'/>
+          <div className='toRight chevron' onClick={e => toRight(e)}><RightChevron /></div>
+        </div>
+        <div className='info-container'>
+          <div className='info'>
+            <div className='location'>
+              <span>{`${city}, ${state}`}</span>
+            </div>
+            <div className='price'>
+              <span>{`$${price} / night`}</span>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   )
 }
