@@ -34,4 +34,10 @@ router.post('/', asyncHandler(async (req, res) => {
   });
 }))
 
+router.delete('/:id', asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const booking = await Spot.findByPk(id);
+  booking.destroy();
+}))
+
 module.exports = router;
