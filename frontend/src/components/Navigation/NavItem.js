@@ -4,7 +4,7 @@ import { useState,  } from "react";
 const NavItem = ({ items, className, children }) => {
   const [dropDown, setDropDown] = useState(false);
   return (
-    <div class={className}>
+    <div className={className}>
       <NavLink
         to='#'
         className='flex-center'

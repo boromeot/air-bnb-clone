@@ -40,11 +40,11 @@ function Navigation({ isLoaded }){
       </NavLink>
       <div className='links'>
         <NavLink className='btn host' to='/become-a-host'>Become a host</NavLink>
-        <NavLink className='btn' to>
-          <i class="fas fa-globe"></i>
-        </NavLink>
+        <div className='btn'>
+          <i className="fas fa-globe"></i>
+        </div>
         <NavItem
-          items={[<i class="fas fa-bars bars"></i>,<i class="fas fa-user-circle fa-2x"></i>]}
+          items={[<i key='bars' className="fas fa-bars bars"></i>,<i key='user-circle' className="fas fa-user-circle fa-2x"></i>]}
           className='profile'
         >
           {isLoaded && <DropDown links={sessionLinks}/>}

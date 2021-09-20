@@ -8,7 +8,7 @@ const HomePage = ({ children }) => {
       <section className='section-main'>
         {children}
         <div className='call-to-action'>
-          <span class='cta-header'>Not sure where to go? Perfect.</span>
+          <span className='cta-header'>Not sure where to go? Perfect.</span>
           <NavLink className='cta-btn' to='/s/home'>
             <span className='cta-btn-text'>I'm flexible</span>
           </NavLink>
@@ -16,8 +16,8 @@ const HomePage = ({ children }) => {
       </section>
       <section className='section-about'>
         <div className='about'>
-        <a target="_blank" href="https://github.com/boromeot">Github</a>
-        <a target="_blank" href="https://github.com/boromeot/air-bnb-clone/wiki">Wiki</a>
+        <a target="_blank" rel="noreferrer" href="https://github.com/boromeot">Github</a>
+        <a target="_blank" rel="noreferrer" href="https://github.com/boromeot/air-bnb-clone/wiki">Wiki</a>
         </div>
       </section>
     </>
