@@ -41,6 +41,7 @@ function App() {
             <SpotPage />
           </Route>
           <Route path='/reservations'>
+            <Navigation isLoaded={isLoaded} />
             <ResevervationsPage />
           </Route>
         </Switch>

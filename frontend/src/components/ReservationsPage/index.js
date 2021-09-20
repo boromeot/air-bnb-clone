@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as reservationsActions from '../../store/reservations';
 import SpotCard from '../SpotsPage/SpotCard';
+import './reservations.css';
 
 const ResevervationsPage = () => {
   const dispatch = useDispatch();
@@ -13,15 +14,26 @@ const ResevervationsPage = () => {
 
   return (
     <>
-      <h1>hi from ResevervationsPage</h1>
-      {bookings &&
-        bookings.map(booking => (
-          <div>
-            <h2>{`start date: ${booking.startDate}`}</h2>
-            <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
-          </div>
-        ))
-      }
+      <h1>My reservations </h1>
+      <div className='reservations-container'>
+        {bookings &&
+          bookings.map(booking => {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let startDate = new Date(booking.startDate);
+            startDate = `${months[startDate.getMonth()]} ${startDate.getDate()} ${startDate.getFullYear()}`
+
+            let endDate = new Date(booking.endDate);
+            endDate = `${months[endDate.getMonth()]} ${endDate.getDate()} ${endDate.getFullYear()}`
+
+            return (
+            <div className='reservation-container'>
+              <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
+              <span>{`check in: ${startDate}`}</span>
+              <span>{`check out: ${endDate}`}</span>
+            </div>
+          )})
+        }
+      </div>
     </>
   )
 }
