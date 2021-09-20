@@ -33,8 +33,9 @@ const Action = ({ step, setStep }) => {
     }
   }, [spotFormData])
 
+  //should refactor this into a thunk
   const submit = async () => {
-    const {address, price, title, city, state, urls} = spotFormData;
+    const {address, price, title, city, state, urls, description} = spotFormData;
       const userId = user.id;
       const spotResponse = await csrfFetch('/api/spots', {
         method: 'POST',
@@ -44,8 +45,9 @@ const Action = ({ step, setStep }) => {
           address,
           price,
           name: title,
-          city: 'Reno',
-          state: 'Nevada',
+          city,
+          state,
+          description,
         }),
       });
       const spotData = await spotResponse.json();
@@ -83,6 +85,12 @@ const Action = ({ step, setStep }) => {
     </>,
     <>
       <TextOption payload={{key: 'address', value: ''}} setValue={setValue}/>
+    </>,
+    <>
+      <TextOption payload={{key: 'state', value: ''}} setValue={setValue} />
+    </>,
+    <>
+      <TextOption payload={{key: 'city', value: ''}} setValue={setValue} />
     </>,
     <>
       <TextOption payload={{key: 'guests', value: ''}} setValue={setValue}/>

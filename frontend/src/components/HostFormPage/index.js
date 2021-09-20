@@ -13,6 +13,8 @@ const HostFormPage = () => {
     'Which of these best describes your place?',
     'What kind of space will guests have?',
     'What is the address?',
+    'What is the state?',
+    'What is the city?',
     'How many guests would you like to welcome?',
     'Now for the fun part—set your price',
     'Let\'s give your place a name',
