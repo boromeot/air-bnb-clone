@@ -14,6 +14,10 @@ const ResevervationsPage = () => {
     dispatch(reservationsActions.getReservations(session.user.id));
   }, [dispatch])
 
+  const handleDelete = () => {
+    
+  }
+
   if (!session.user) return <Redirect to="/" />;
 
   return (
