@@ -47,3 +47,17 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+
+.section-about {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
