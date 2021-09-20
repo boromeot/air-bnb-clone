@@ -1,25 +1,41 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import Reservation from './Reservation';
+import { Modal } from '../../context/Modal';
+import EditForm from './EditForm';
 import './SpotPage.css';
-import { NavLink } from 'react-router-dom';
 
 const SpotPage = () => {
   const { spotId } = useParams();
   const spot = useSelector(state => state.spot);
-  const sessionUser = useSelector(state => state.session.user);
+  const session = useSelector(state => state.session);
   const dispatch = useDispatch();
+  const history = useHistory();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(spotActions.getSpot(spotId));
   }, [dispatch])
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(spotActions.deleteSpot(spotId));
+    history.push('/s/home');
+  }
+
   return (
     <div className='spotpage-container'>
       <div className='spot-header'>
         <h1 className='spot-title'>{spot.name}</h1>
+        {session.user && session.user.id === spot.userId ? <span onClick={() => setShowModal(true) } >EDIT </span> : null}
+        {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <EditForm spot={spot} />
+          </Modal>
+        )}
         <span>{`${spot.city}, ${spot.state}` }</span>
       </div>
       <div className='spot-image-container'>
@@ -32,12 +48,13 @@ const SpotPage = () => {
       <div className='spot-content'>
         <div className='spot-host'>
           <h2>{spot.User && `Hosted by ${spot.User.username}`}</h2>
+          {session.user && session.user.id === spot.userId ? <button onClick={e => handleDelete(e)}>delete</button> : null}
         </div>
         <div className='spot-info'>
           <div className='spot-description'>
             Description
           </div>
-          {sessionUser.id && spot.id && <Reservation userId={sessionUser.id} spotId={spot.id} price={spot.price}/>}
+          {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
         </div>
       </div>
     </div>

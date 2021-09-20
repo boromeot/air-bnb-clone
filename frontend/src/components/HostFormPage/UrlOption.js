@@ -40,8 +40,8 @@ const UrlOption = ({ payload, setValue}) => {
   }, [formValue3])
 
   useEffect(() => {
-    handleUpdate(3, formValue3);
-  }, [formValue3])
+    handleUpdate(4, formValue4);
+  }, [formValue4])
 
   useEffect(() => {
     payload.value = payloadObj;
