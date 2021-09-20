@@ -15,7 +15,7 @@ router.get('/', asyncHandler(async (req, res) => {
 );
 
 router.post('/', asyncHandler(async (req, res) => {
-  const {userId, address, price, name, city, state} = req.body;
+  const {userId, address, price, name, city, state, description} = req.body;
   const spot = await Spot.create({
     userId,
     address,
@@ -23,6 +23,7 @@ router.post('/', asyncHandler(async (req, res) => {
     name,
     city,
     state,
+    description,
   });
 
   return res.json({
@@ -43,7 +44,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.put('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const {address, price, name, city, state} = req.body;
+  const {address, price, name, city, state, description} = req.body;
   const spot = await Spot.findByPk(id);
   await spot.update({
     address,
@@ -51,6 +52,7 @@ router.put('/:id', asyncHandler(async (req, res) => {
     name,
     city,
     state,
+    description,
   });
   return res.json({
     spot: spot.dataValues,

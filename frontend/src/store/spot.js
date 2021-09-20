@@ -40,7 +40,7 @@ const put_spot = (spot) => {
 }
 
 export const putSpot = (id, spot) => async dispatch => {
-  const {address, price, name, city, state } = spot;
+  const {address, price, name, city, state, description } = spot;
   const response = await csrfFetch(`/api/spots/${id}`, {
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
@@ -49,7 +49,8 @@ export const putSpot = (id, spot) => async dispatch => {
       price,
       name,
       city,
-      state
+      state,
+      description
     })
   });
   const data = await response.json();

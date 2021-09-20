@@ -30,7 +30,7 @@ const SpotPage = () => {
     <div className='spotpage-container'>
       <div className='spot-header'>
         <h1 className='spot-title'>{spot.name}</h1>
-        {session.user && session.user.id === spot.userId ? <span onClick={() => setShowModal(true) } >EDIT </span> : null}
+        {session.user && session.user.id === spot.userId ? <span className='btn' onClick={() => setShowModal(true) } >EDIT </span> : null}
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
             <EditForm spot={spot} />
@@ -52,7 +52,7 @@ const SpotPage = () => {
         </div>
         <div className='spot-info'>
           <div className='spot-description'>
-            Description
+            {spot.description}
           </div>
           {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
         </div>

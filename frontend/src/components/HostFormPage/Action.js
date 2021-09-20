@@ -33,8 +33,9 @@ const Action = ({ step, setStep }) => {
     }
   }, [spotFormData])
 
+  //should refactor this into a thunk
   const submit = async () => {
-    const {address, price, title, city, state, urls} = spotFormData;
+    const {address, price, title, city, state, urls, description} = spotFormData;
       const userId = user.id;
       const spotResponse = await csrfFetch('/api/spots', {
         method: 'POST',
@@ -46,6 +47,7 @@ const Action = ({ step, setStep }) => {
           name: title,
           city,
           state,
+          description,
         }),
       });
       const spotData = await spotResponse.json();
