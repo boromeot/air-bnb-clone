@@ -38,9 +38,6 @@ function Navigation({ isLoaded }){
       <NavLink to='/' className='logo'>
         carebnb
       </NavLink>
-      <div className='search'>
-        search
-      </div>
       <div className='links'>
         <NavLink className='btn host' to='/become-a-host'>Become a host</NavLink>
         <NavLink className='btn' to>
