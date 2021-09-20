@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import Reservation from './Reservation';
+import { Modal } from '../../context/Modal';
+import EditForm from './EditForm';
 import './SpotPage.css';
 
 const SpotPage = () => {
@@ -12,6 +14,7 @@ const SpotPage = () => {
   const session = useSelector(state => state.session);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(spotActions.getSpot(spotId));
@@ -27,6 +30,12 @@ const SpotPage = () => {
     <div className='spotpage-container'>
       <div className='spot-header'>
         <h1 className='spot-title'>{spot.name}</h1>
+        <span onClick={() => setShowModal(true) } >EDIT </span>
+        {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <EditForm spot={spot} />
+          </Modal>
+        )}
         <span>{`${spot.city}, ${spot.state}` }</span>
       </div>
       <div className='spot-image-container'>

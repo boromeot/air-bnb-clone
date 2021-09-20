@@ -52,9 +52,9 @@ router.put('/:id', asyncHandler(async (req, res) => {
     city,
     state,
   });
-
+  console.log('SPOOOOOOOOOOOOOOOOOOOT', spot.dataValues);
   return res.json({
-    spot,
+    spot: spot.dataValues,
   });
 }))
 
