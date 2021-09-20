@@ -36,8 +36,13 @@ router.post('/', asyncHandler(async (req, res) => {
 
 router.delete('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const booking = await Spot.findByPk(id);
+  const booking = await Booking.findByPk(+id);
   booking.destroy();
+
+  res.status(204);
+  return res.json({
+    message: 'Booking deleted. Ok'
+  });
 }))
 
 module.exports = router;

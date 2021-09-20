@@ -16,9 +16,10 @@ export const getReservations = (userId) => async dispatch => {
   dispatch(get_Reservations(data));
 }
 
-const delete_reservation = () => {
+const delete_reservation = (id) => {
   return {
     type: DELETE_RESERVATION,
+    payload: id,
   }
 }
 
@@ -26,7 +27,8 @@ export const deleteReservation = (id) => async dispatch => {
   await csrfFetch(`/api/bookings/${id}`, {
     method: 'DELETE'
   });
-  dispatch(delete_reservation);
+
+  dispatch(delete_reservation(id));
 }
 
 const reservationsReducer = (state = [], action) => {
@@ -34,6 +36,11 @@ const reservationsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_RESERVATIONS:
       newState = action.payload.bookings;
+      return newState;
+    case DELETE_RESERVATION:
+      newState = state.filter(reservation => {
+        return reservation.id !== +action.payload;
+      })
       return newState;
     default:
     return state;

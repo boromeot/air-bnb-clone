@@ -14,8 +14,9 @@ const ResevervationsPage = () => {
     dispatch(reservationsActions.getReservations(session.user.id));
   }, [dispatch])
 
-  const handleDelete = () => {
-    
+  const handleDelete = (e, bookingId) => {
+    e.preventDefault();
+    dispatch(reservationsActions.deleteReservation(bookingId));
   }
 
   if (!session.user) return <Redirect to="/" />;
@@ -38,6 +39,7 @@ const ResevervationsPage = () => {
               <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
               <span>{`check in: ${startDate}`}</span>
               <span>{`check out: ${endDate}`}</span>
+              <button onClick={(e) => handleDelete(e, booking.id)}>Delete</button>
             </div>
           )})
         }
