@@ -19,7 +19,7 @@ const reservationsReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case GET_RESERVATIONS:
-      newState = action.payload;
+      newState = action.payload.bookings;
       return newState;
     default:
     return state;
