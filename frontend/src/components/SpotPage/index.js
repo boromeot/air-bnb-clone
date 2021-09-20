@@ -30,7 +30,7 @@ const SpotPage = () => {
     <div className='spotpage-container'>
       <div className='spot-header'>
         <h1 className='spot-title'>{spot.name}</h1>
-        <span onClick={() => setShowModal(true) } >EDIT </span>
+        {session.user && session.user.id === spot.userId ? <span onClick={() => setShowModal(true) } >EDIT </span> : null}
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
             <EditForm spot={spot} />
