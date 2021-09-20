@@ -11,7 +11,7 @@ const ResevervationsPage = () => {
   const session = useSelector(state => state.session);
 
   useEffect(() => {
-    dispatch(reservationsActions.getReservations(session.user.id));
+    dispatch(reservationsActions.getReservations(session.user && session.user.id));
   }, [dispatch])
 
   const handleDelete = (e, bookingId) => {
