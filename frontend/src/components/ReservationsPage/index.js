@@ -9,7 +9,7 @@ const ResevervationsPage = () => {
   const dispatch = useDispatch();
   const bookings = useSelector(state => state.reservations);
   const session = useSelector(state => state.session);
-  
+
   useEffect(() => {
     dispatch(reservationsActions.getReservations(session.user.id));
   }, [dispatch])
