@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from "react-router-dom";
 import * as reservationsActions from '../../store/reservations';
 import SpotCard from '../SpotsPage/SpotCard';
 import './reservations.css';
@@ -8,9 +9,12 @@ const ResevervationsPage = () => {
   const dispatch = useDispatch();
   const bookings = useSelector(state => state.reservations);
   const session = useSelector(state => state.session);
+  
   useEffect(() => {
     dispatch(reservationsActions.getReservations(session.user.id));
   }, [dispatch])
+
+  if (!session.user) return <Redirect to="/" />;
 
   return (
     <>
