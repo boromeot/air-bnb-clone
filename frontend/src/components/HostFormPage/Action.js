@@ -44,8 +44,8 @@ const Action = ({ step, setStep }) => {
           address,
           price,
           name: title,
-          city: 'Reno',
-          state: 'Nevada',
+          city,
+          state,
         }),
       });
       const spotData = await spotResponse.json();
@@ -83,6 +83,12 @@ const Action = ({ step, setStep }) => {
     </>,
     <>
       <TextOption payload={{key: 'address', value: ''}} setValue={setValue}/>
+    </>,
+    <>
+      <TextOption payload={{key: 'state', value: ''}} setValue={setValue} />
+    </>,
+    <>
+      <TextOption payload={{key: 'city', value: ''}} setValue={setValue} />
     </>,
     <>
       <TextOption payload={{key: 'guests', value: ''}} setValue={setValue}/>
