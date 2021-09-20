@@ -5,6 +5,7 @@ import spotsReducer from "./spots";
 import spotFormReducer from "./spots-form";
 import spotReducer from "./spot";
 import reservationReducer from "./reservation";
+import reservationsReducer from "./reservations";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   spotForm: spotFormReducer,
   spot: spotReducer,
   reservation: reservationReducer,
+  reservations: reservationsReducer,
 });
 
 let enhancer;
