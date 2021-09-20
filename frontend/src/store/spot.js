@@ -53,7 +53,6 @@ export const putSpot = (id, spot) => async dispatch => {
     })
   });
   const data = await response.json();
-  console.log('daaaaaaaaaaaaaaaaaaaaaaata', data);
   dispatch(put_spot(data.spot));
 }
 

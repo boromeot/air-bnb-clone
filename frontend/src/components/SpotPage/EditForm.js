@@ -19,8 +19,6 @@ const EditForm = ({ spot }) => {
     newSpot.price = price;
     newSpot.city = city;
     newSpot.state = state;
-    console.log('oldspot', spot);
-    console.log('newspot', newSpot);
     dispatch(spotActions.putSpot(spot.id, newSpot));
   }
 

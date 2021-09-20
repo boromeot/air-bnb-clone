@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginFormModal from '../FormModal';
 import LoginForm from '../FormModal/LoginForm';
@@ -12,6 +12,7 @@ import './Navigation.css';
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const logout = () => {
     dispatch(sessionActions.logOut());
@@ -21,6 +22,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = ([
       <span className='dropdown-item btn' onClick={logout}>Sign Out</span>,
+      <span className='dropdown-item btn' onClick={() => history.push('/reservations')}>My reservations</span>,
       <span className='dropdown-item'>{sessionUser.username}</span>,
       <span className='dropdown-item'>{sessionUser.email}</span>
     ]);

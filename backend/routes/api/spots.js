@@ -52,7 +52,6 @@ router.put('/:id', asyncHandler(async (req, res) => {
     city,
     state,
   });
-  console.log('SPOOOOOOOOOOOOOOOOOOOT', spot.dataValues);
   return res.json({
     spot: spot.dataValues,
   });
@@ -62,6 +61,10 @@ router.delete('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
   const spot = await Spot.findByPk(id);
   spot.destroy();
+  res.status(204)
+  return res.json({
+    message: 'Spot deleted. Ok.'
+  })
 }))
 
 module.exports = router;

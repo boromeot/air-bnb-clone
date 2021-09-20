@@ -7,6 +7,7 @@ import SpotsPage from "./components/SpotsPage";
 import HostFormPage from "./components/HostFormPage";
 import SpotPage from "./components/SpotPage";
 import HomePage from "./components/HomePage";
+import ResevervationsPage from "./components/ReservationsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,10 @@ function App() {
           <Route path='/spots/:spotId'>
             <Navigation isLoaded={isLoaded} />
             <SpotPage />
+          </Route>
+          <Route path='/reservations'>
+            <Navigation isLoaded={isLoaded} />
+            <ResevervationsPage />
           </Route>
         </Switch>
       )}

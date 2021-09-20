@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const SET_RESERVATION = 'reservation/setReservation';
 
+
 const set_Reservation = (reservation) => {
   return {
     type: SET_RESERVATION,
@@ -25,7 +26,6 @@ export const setReservation = (booking) => async dispatch => {
   dispatch(set_Reservation(data));
   return response;
 }
-
 
 const reservationReducer = (state = {}, action) => {
   let newState;
