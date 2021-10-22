@@ -37,8 +37,8 @@ const ResevervationsPage = () => {
             return (
             <div className='reservation-container'>
               <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
-              <span>{`check in: ${startDate}`}</span>
-              <span>{`check out: ${endDate}`}</span>
+              <div>{`check in: ${startDate}`}</div>
+              <div>{`check out: ${endDate}`}</div>
               <button onClick={(e) => handleDelete(e, booking.id)}>Delete</button>
             </div>
           )})

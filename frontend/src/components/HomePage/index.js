@@ -5,8 +5,8 @@ import './HomePage.css';
 const HomePage = ({ children }) => {
   return (
     <>
+      {children}
       <section className='section-main'>
-        {children}
         <div className='call-to-action'>
           <span className='cta-header'>Not sure where to go? Perfect.</span>
           <NavLink className='cta-btn' to='/s/home'>

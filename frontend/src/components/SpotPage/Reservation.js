@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import * as reservationActions from "../../store/reservation";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
 
@@ -16,6 +18,7 @@ const Reservation = ({ userId, spotId, price }) => {
       endDate
     }
     dispatch(reservationActions.setReservation(booking));
+    history.push('/reservations');
   }
 
   return (

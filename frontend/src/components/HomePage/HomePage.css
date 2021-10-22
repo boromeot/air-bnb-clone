@@ -21,6 +21,8 @@
 .cta-header {
   font-size: 18px;
   font-weight: 600;
+  animation: moveToRight;
+  animation-duration: 2s;
 }
 
 .cta-btn {
@@ -33,6 +35,8 @@
   background-color: white;
   text-align: center;
   box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px 0px;
+  animation: moveToLeft;
+  animation-duration: 2s;
 }
 
 .cta-btn:hover {
@@ -60,4 +64,36 @@
   width: 40%;
   display: flex;
   justify-content: space-around;
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0%;
+    transform: translateX(-500px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0%;
+    transform: translateX(500px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
 }
