@@ -1,5 +1,5 @@
 .section-main {
-  height: 85vh;
+  height: 90vh;
   background-image: url('https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560');
   background-size: cover;
   background-position: bottom;
@@ -64,6 +64,13 @@
   width: 40%;
   display: flex;
   justify-content: space-around;
+}
+
+.about-links {
+  display: flex;
+}
+.about-links > svg {
+  margin-right: 5px;
 }
 
 @keyframes moveToRight {

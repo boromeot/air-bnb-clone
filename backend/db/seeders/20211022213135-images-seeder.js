@@ -135,7 +135,7 @@ module.exports = {
     url: 'https://a0.muscache.com/im/pictures/9bd1da8f-788d-4802-9dd2-e36893917182.jpg?im_w=720',
     createdAt: new Date(),
     updatedAt: new Date(),
-  },], {});
+  }], {});
   },
 
   down: (queryInterface, Sequelize) => {
