@@ -8,6 +8,7 @@ import HostFormPage from "./components/HostFormPage";
 import SpotPage from "./components/SpotPage";
 import HomePage from "./components/HomePage";
 import ResevervationsPage from "./components/ReservationsPage";
+import NewFormPage from "./components/NewFormPage/Index";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function App() {
             <SpotsPage />
           </Route>
           <Route path='/become-a-host'>
-            <HostFormPage />
+            <NewFormPage />
           </Route>
           <Route path='/spots/:spotId'>
             <Navigation isLoaded={isLoaded} />
