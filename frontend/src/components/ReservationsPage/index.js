@@ -12,7 +12,7 @@ const ResevervationsPage = () => {
 
   useEffect(() => {
     dispatch(reservationsActions.getReservations(session.user && session.user.id));
-  }, [dispatch])
+  }, [dispatch, session.user])
 
   const handleDelete = (e, bookingId) => {
     e.preventDefault();

@@ -31,7 +31,7 @@ const Action = ({ step, setStep }) => {
     if (step === actionsArr.length) {
       submit();
     }
-  }, [spotFormData, step])
+  }, [spotFormData, step, actionsArr.length, submit])
 
   //should refactor this into a thunk
   const submit = async () => {
