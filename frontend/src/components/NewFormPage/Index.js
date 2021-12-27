@@ -32,9 +32,10 @@ const NewFormPage = () => {
           </div>
           <div className="py2-5 flex align-center justify-space-between">
             <div className="ml8">
-              <button className="btn btn-back font-size--16 font-weight--600">
-                Back
-              </button>
+              <button className="btn btn-back font-size--16 font-weight--600">Back</button>
+            </div>
+            <div className="mr8">
+              <button className="btn btn-next font-size--16 font-weight--600">Next</button>
             </div>
           </div>
         </div>

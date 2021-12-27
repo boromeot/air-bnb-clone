@@ -84,3 +84,24 @@
 .btn-back:hover {
   background: rgb(247, 247, 247) none repeat scroll 0% 0%;
 }
+
+.btn-back:active {
+  transform: scale(.96);
+}
+
+.btn-next {
+  background: rgb(34, 34, 34);
+  color: white;
+  border-radius: 8px;
+  padding: 14px 24px;
+  border: medium none;
+}
+
+.btn-next:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-next:active {
+  transform: scale(.96);
+
+}
