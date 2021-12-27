@@ -186,8 +186,16 @@
   width: calc(8/12 * 100%);
 }
 
+.width-9-12 {
+  width: calc(9/12 * 100%);
+}
+
 .width-10-12 {
   width: calc(10/12 * 100%);
+}
+
+.max-width-75 {
+  max-width: 75%;
 }
 
 .aspect-ratio--16x9 {

@@ -14,6 +14,9 @@ const QuestionSection = ({ question }) => {
           <AirbnbLogo className='icon-32 fill-white' viewbox='0 0 32 32' />
         </NavLink>
       </div>
+      <div className="max-width-75" style={{marginLeft: 'min(10%, 56px)'}}>
+        <h1 className="font-size--48 font-weight--600 white mb2">What kind of place will you host?</h1>
+      </div>
     </div>
   )
 }
