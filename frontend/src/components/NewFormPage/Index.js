@@ -20,8 +20,25 @@ const NewFormPage = () => {
 
 
   return (
-    <div className="w100p">
-      <QuestionSection />
+    <div className="w100p flex">
+      <QuestionSection question={'What kind of place will you host?'}/>
+      <div className="ml50vw">
+        <div className="">
+
+        </div>
+        <div className="width-50vw fixed b0">
+          <div>
+
+          </div>
+          <div className="py2-5 flex align-center justify-space-between">
+            <div className="ml8">
+              <button className="btn btn-back font-size--16 font-weight--600">
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

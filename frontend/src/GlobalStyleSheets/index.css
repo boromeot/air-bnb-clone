@@ -73,6 +73,10 @@ li {
   justify-content: center;
 }
 
+.justify-space-between {
+  justify-content: space-between;
+}
+
 .grid-container {
   margin: 0 auto;
   padding-left: 60px;

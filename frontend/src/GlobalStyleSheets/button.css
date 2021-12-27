@@ -4,7 +4,6 @@
 
 .btn:hover {
   cursor: pointer;
-  box-shadow: 0px 2px 5px rgba(22, 22, 22, 0.16);
 }
 
 .btn-primary, .btn-delete, .btn-edit {
@@ -70,4 +69,18 @@
   background-color: rgb(105, 105, 105);
   color: white;
   fill: white;
+}
+
+.btn-back {
+  margin: 0 -10px;
+  border-radius: 8px;
+  padding: 10px;
+  border: medium none;
+  background: transparent;
+  color: rgb(34, 34, 34);
+  text-decoration: underline;
+}
+
+.btn-back:hover {
+  background: rgb(247, 247, 247) none repeat scroll 0% 0%;
 }

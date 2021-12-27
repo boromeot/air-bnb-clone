@@ -15,7 +15,7 @@ const QuestionSection = ({ question }) => {
         </NavLink>
       </div>
       <div className="max-width-75" style={{marginLeft: 'min(10%, 56px)'}}>
-        <h1 className="font-size--48 font-weight--600 white mb2">What kind of place will you host?</h1>
+        <h1 className="font-size--48 font-weight--600 white mb2">{question}</h1>
       </div>
     </div>
   )

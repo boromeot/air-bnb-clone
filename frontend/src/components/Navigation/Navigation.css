@@ -50,15 +50,6 @@
   font-weight: 600;
 }
 
-.btn {
-  border-radius: 30px;
-  padding: 12px;
-}
-
-.btn:hover {
-  background-color: #eee;
-}
-
 .dropdown {
   position: absolute;
   top: 70px;
