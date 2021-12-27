@@ -10,8 +10,8 @@ const QuestionSection = ({ question }) => {
       <div className="fixed"
         style={{top: '32px', left: '48px'}}
       >
-        <NavLink to='#'>
-          <AirbnbLogo className='icon-32' viewbox='0 0 32 32' />
+        <NavLink to='#' className='flex-center' style={{width: '40px', height: '40px'}}>
+          <AirbnbLogo className='icon-32 fill-white' viewbox='0 0 32 32' />
         </NavLink>
       </div>
     </div>
