@@ -12,7 +12,11 @@ const NewFormPage = () => {
   const [formData, setFormData] = useState({
     place: '',
     type: '',
-    space: ''
+    space: '',
+    guests: 0,
+    beds: 0,
+    bedrooms: 0,
+    bathrooms: 0,
   });
 
   const questions = [
@@ -30,7 +34,7 @@ const NewFormPage = () => {
     },
     {
       question: 'How many guests would you like to welcome?',
-      options: <GuestSection setFormData={ setFormData } />
+      options: <GuestSection formData={formData} setFormData={ setFormData } />
     }
   ];
 
