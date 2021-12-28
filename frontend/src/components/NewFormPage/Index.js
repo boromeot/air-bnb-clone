@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GuestSection from "./GuestSection";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
@@ -26,6 +27,10 @@ const NewFormPage = () => {
     {
       question: 'What kind of space will guests have?',
       options: <SpaceSection setFormData={ setFormData } />
+    },
+    {
+      question: 'How many guests would you like to welcome?',
+      option: <GuestSection setFormData={ setFormData } />
     }
   ];
 
