@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
+import SpaceSection from "./SpaceSection";
 import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
@@ -9,7 +10,8 @@ const NewFormPage = () => {
 
   const [formData, setFormData] = useState({
     place: '',
-    type: ''
+    type: '',
+    space: ''
   });
 
   const questions = [
@@ -20,6 +22,10 @@ const NewFormPage = () => {
     {
       question: 'Which of these best describes your place?',
       options: <TypeSection setFormData={ setFormData } />
+    },
+    {
+      question: 'What kind of space will guests have?',
+      options: <SpaceSection setFormData={ setFormData } />
     }
   ];
 
@@ -52,7 +58,7 @@ const NewFormPage = () => {
     <div className="w100p flex">
       <QuestionSection question={questions[index].question} />
       <div className="ml50vw w50p">
-        <div className="pz8 overflowY-auto w100p mt-88 mb-82" style={{height: 'calc(-170px + 100vh)'}}>
+        <div className="pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
           {questions[index].options}
         </div>
         <div className="width-50vw fixed b0">

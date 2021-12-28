@@ -155,3 +155,7 @@ li {
 .object-cover {
   object-fit: cover;
 }
+
+.scrollbar-none {
+  scrollbar-width: none;
+}

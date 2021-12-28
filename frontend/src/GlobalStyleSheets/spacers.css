@@ -93,6 +93,16 @@
   margin: 0 18px;
 }
 
+.mz--24 {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.my--32 {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .p2 {
   padding: 12px;
 }
