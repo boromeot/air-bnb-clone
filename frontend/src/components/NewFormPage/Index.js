@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Route, useRouteMatch } from "react-router-dom";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 
 const NewFormPage = () => {
   const { path } = useRouteMatch();
+
+  const [formData, setFormData] = useState({
+    place: ''
+  })
 
   // const formData = {
   //   'place': '',
@@ -28,8 +32,10 @@ const NewFormPage = () => {
           <PlaceSection />
         </div>
         <div className="width-50vw fixed b0">
-          <div className="">
+          <div className="flex">
+            <div className="overflowX-hidden bg-gray" style={{height: '2px', flexGrow: '1'}}>
 
+            </div>
           </div>
           <div className="py2-5 flex align-center justify-space-between">
             <div className="ml8">

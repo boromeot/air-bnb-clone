@@ -10,6 +10,10 @@
   background-color: #fff;
 }
 
+.bg-gray {
+  background-color: rgb(235, 235, 235);
+}
+
 .white {
   color: #fff;
 }

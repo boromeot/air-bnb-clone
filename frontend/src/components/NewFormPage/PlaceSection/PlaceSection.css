@@ -1,0 +1,8 @@
+.FMP-target:first-child {
+  padding-top: 16px;
+}
+
+.place-option-btn:hover {
+  box-shadow: rgb(34, 34, 34) 0px 0px 0px 2px;
+  border-color: transparent;
+}

@@ -116,6 +116,10 @@ li {
   overflow: hidden;
 }
 
+.overflowX-hidden {
+  overflow-x: hidden;
+}
+
 .overflowY-auto {
   overflow-y: auto;
 }
