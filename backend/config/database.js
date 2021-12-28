@@ -5,12 +5,13 @@ const username = db.username;
 const password = db.password;
 const database = db.database;
 const host = db.host;
+console.log(config);
 
 module.exports = {
   development: {
-    username,
-    password,
-    database,
+    username: 'auth_app',
+    password: 'password',
+    database: 'auth_db',
     host,
     dialect: 'postgres',
     seederStorage: 'sequelize',

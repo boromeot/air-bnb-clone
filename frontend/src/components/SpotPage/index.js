@@ -18,7 +18,7 @@ const SpotPage = () => {
 
   useEffect(() => {
     dispatch(spotActions.getSpot(spotId));
-  }, [dispatch])
+  }, [dispatch, spotId])
 
   const handleDelete = (e) => {
     e.preventDefault();
