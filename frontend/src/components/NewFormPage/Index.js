@@ -7,8 +7,16 @@ const NewFormPage = () => {
   const { path } = useRouteMatch();
 
   const [formData, setFormData] = useState({
-    place: ''
+    place: '',
+    type: ''
   });
+
+  const questions = [
+    {
+      question: <QuestionSection question={'What kind of place will you host?'}/>,
+      options: <PlaceSection setFormData={ setFormData }/>
+    },
+  ]
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -37,10 +45,10 @@ const NewFormPage = () => {
 
   return (
     <div className="w100p flex">
-      <QuestionSection question={'What kind of place will you host?'}/>
+      {questions[0].question}
       <div className="ml50vw w50p">
         <div className="pz8 overflowY-auto w100p mt-88 mb-82" style={{height: 'calc(-170px + 100vh)'}}>
-          <PlaceSection />
+          {questions[0].options}
         </div>
         <div className="width-50vw fixed b0">
           <div className="flex">
@@ -58,6 +66,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
+      <div onClick={console.log(formData)}>log</div>
     </div>
   )
 }
