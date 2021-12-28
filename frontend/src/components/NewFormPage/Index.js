@@ -30,7 +30,7 @@ const NewFormPage = () => {
     },
     {
       question: 'How many guests would you like to welcome?',
-      option: <GuestSection setFormData={ setFormData } />
+      options: <GuestSection setFormData={ setFormData } />
     }
   ];
 
@@ -41,7 +41,7 @@ const NewFormPage = () => {
   };
 
   const nextQuestion = () => {
-    if (index < 9) {
+    if (index < questions.length) {
       setIndex(prevIndex => prevIndex + 1);
     }
   };

@@ -23,6 +23,10 @@
   margin-left: 12px;
 }
 
+.ml--16 {
+  margin-left: 16px;
+}
+
 .ml7 {
   margin-left: 42px;
 }
@@ -125,6 +129,11 @@
 }
 
 /* padding top */
+
+.pt--32 {
+  padding-top: 32px;
+}
+
 .pt6 {
   padding-top: 36px;
 }
@@ -153,6 +162,10 @@
 
 
 /* padding top/bot */
+
+.py--8 {
+  padding: 8px 0;
+}
 
 .py2-5 {
   padding: 16px 0;
