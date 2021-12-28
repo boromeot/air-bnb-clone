@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
+import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
 
@@ -13,9 +14,13 @@ const NewFormPage = () => {
 
   const questions = [
     {
-      question: <QuestionSection question={'What kind of place will you host?'}/>,
+      question: 'What kind of place will you host?',
       options: <PlaceSection setFormData={ setFormData }/>
     },
+    {
+      question: 'Which of these best describes your place?',
+      options: <TypeSection setFormData={ setFormData } />
+    }
   ];
 
   const prevQuestion = () => {
@@ -45,7 +50,7 @@ const NewFormPage = () => {
 
   return (
     <div className="w100p flex">
-      {questions[index].question}
+      <QuestionSection question={questions[index].question} />
       <div className="ml50vw w50p">
         <div className="pz8 overflowY-auto w100p mt-88 mb-82" style={{height: 'calc(-170px + 100vh)'}}>
           {questions[index].options}
@@ -66,7 +71,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
-      <div onClick={() => console.log(index)}>log</div>
+      <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }

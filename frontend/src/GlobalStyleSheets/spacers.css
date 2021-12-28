@@ -6,6 +6,10 @@
   margin: 16px;
 }
 
+.m4 {
+  margin: 24px
+}
+
 /*Margin left*/
 .ml-auto {
   margin-left: auto;
@@ -44,6 +48,10 @@
   margin-right: 48px;
 }
 /*Margin top*/
+.mt-8 {
+  margin-top: 8px;
+}
+
 .mt2 {
   margin-top: 12px;
 }

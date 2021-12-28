@@ -1,10 +1,10 @@
 import React from "react";
 
-const PlaceOption = ({ place, setFormData, imgSrc }) => {
+const TypeOption = ({ type, desc, setFormData}) => {
 
   const handleChange = () => {
     setFormData(prevState => {
-      return {...prevState, place}
+      return {...prevState, type}
     });
   }
 
@@ -13,14 +13,12 @@ const PlaceOption = ({ place, setFormData, imgSrc }) => {
       <button className="btn place-option-btn flex justify-space-between align-center bg-white border-gray radius-12 w100p"
         onClick={handleChange}
       >
-        <div className="text-left w100p" style={{margin: '16px', marginLeft: '24px'}}>
+        <div className="m4 text-left">
           <div className="font-size--18 font-weight--600">
-            {place}
+            { type }
           </div>
-        </div>
-        <div className="m2-5">
-          <div className="" style={{height: '56px', width: '56px'}}>
-            <img className="object-cover radius-4 static h100p w100p" src={imgSrc} alt=""/>
+          <div className="font-size--14 mt-8 soft-gray">
+            { desc }
           </div>
         </div>
       </button>
@@ -28,4 +26,4 @@ const PlaceOption = ({ place, setFormData, imgSrc }) => {
   )
 }
 
-export default PlaceOption;
+export default TypeOption;
