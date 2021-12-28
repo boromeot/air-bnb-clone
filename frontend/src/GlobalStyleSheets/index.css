@@ -108,8 +108,16 @@ li {
   position: fixed;
 }
 
+.static {
+  position: static;
+}
+
 .clip {
   overflow: hidden;
+}
+
+.overflowY-auto {
+  overflow-y: auto;
 }
 
 .hidden {
@@ -140,6 +148,6 @@ li {
   transition: all 600ms;
 }
 
-.shadow-2 {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
+.object-cover {
+  object-fit: cover;
 }

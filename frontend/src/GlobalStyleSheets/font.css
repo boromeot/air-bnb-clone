@@ -18,6 +18,11 @@
   line-height: 20px;
 }
 
+.font-size--18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .font-size--21 {
   font-size: 21px;
   line-height: 30px;
@@ -55,6 +60,10 @@
 
 .font-weight--600 {
   font-weight: 600;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-right {

@@ -11,7 +11,7 @@
 }
 
 .border-gray {
-  border: 1px solid #E8E8E8;
+  border: 1px solid rgb(221, 221, 221);
 }
 
 .border-gray-500 {
@@ -30,8 +30,16 @@
   border-style: dashed;
 }
 
-.radius2px {
+.radius-2 {
   border-radius: 2px;
+}
+
+.radius-4 {
+  border-radius: 4px;
+}
+
+.radius-12 {
+  border-radius: 12px;
 }
 
 .radius-100 {

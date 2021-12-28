@@ -2,6 +2,10 @@
   margin: auto;
 }
 
+.m2-5 {
+  margin: 16px;
+}
+
 /*Margin left*/
 .ml-auto {
   margin-left: auto;
@@ -28,6 +32,10 @@
 }
 
 /*Margin right*/
+.mr-auto {
+  margin-right: auto;
+}
+
 .mr4 {
   margin-right: 24px;
 }
@@ -52,6 +60,10 @@
   margin-top: 48px;
 }
 
+.mt-88 {
+  margin-top: 88px;
+}
+
 /* Margin bottom */
 .mb2 {
   margin-bottom: 12px;
@@ -63,6 +75,10 @@
 
 .mb5 {
   margin-bottom: 30px;
+}
+
+.mb-82 {
+  margin-bottom: 82px;
 }
 
 .mz3 {

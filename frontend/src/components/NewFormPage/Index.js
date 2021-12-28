@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Route, useRouteMatch } from "react-router-dom";
+import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 
 const NewFormPage = () => {
@@ -22,12 +23,12 @@ const NewFormPage = () => {
   return (
     <div className="w100p flex">
       <QuestionSection question={'What kind of place will you host?'}/>
-      <div className="ml50vw">
-        <div className="">
-
+      <div className="ml50vw w50p">
+        <div className="pz8 overflowY-auto w100p mt-88 mb-82" style={{height: 'calc(-170px + 100vh)'}}>
+          <PlaceSection />
         </div>
         <div className="width-50vw fixed b0">
-          <div>
+          <div className="">
 
           </div>
           <div className="py2-5 flex align-center justify-space-between">
