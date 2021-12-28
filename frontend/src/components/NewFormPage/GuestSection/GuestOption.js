@@ -1,4 +1,6 @@
 import React from "react";
+import Minus from '../../SVGs/Minus';
+import Plus from '../../SVGs/Plus';
 
 const GuestOption = ()  => {
   return (
@@ -14,9 +16,15 @@ const GuestOption = ()  => {
           </div>
           <div className="ml--16">
             <div className="flex align-center justify-space-between" style={{height: '34px', width: '104px'}}>
-              <button className="btn btn-minus"></button>
-              <div></div>
-              <button className="btn btn-plus"></button>
+              <button className="btn btn-minus flex align-center justify-center">
+                <Minus className='icon-12' viewBox='0 0 30 30'/>
+              </button>
+              <div>
+                <span>5</span>
+              </div>
+              <button className="btn btn-plus flex align-center justify-center">
+                <Plus className='icon-12' viewBox='0 0 30 30'/>
+              </button>
             </div>
           </div>
         </div>
