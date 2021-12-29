@@ -20,6 +20,16 @@
   width: 32px;
 }
 
+.icon-52 {
+  height: 52px;
+  width: 52px;
+  fill: currentColor;
+}
+
 .fill-white {
   fill: white;
+}
+
+.fill-black {
+  fill: black;
 }
