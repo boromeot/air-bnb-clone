@@ -18,6 +18,7 @@ const NewFormPage = () => {
     beds: 0,
     bedrooms: 0,
     bathrooms: 0,
+    amenities: [],
   });
 
   const questions = [
@@ -39,7 +40,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Let guests know what your place has to offer',
-      options: <AmenitieSection setFormData={ setFormData } />
+      options: <AmenitieSection formData={formData} setFormData={ setFormData } />
     }
   ];
 
@@ -78,7 +79,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
-      {/* <div onClick={() => console.log(formData)}>log</div> */}
+      <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }
