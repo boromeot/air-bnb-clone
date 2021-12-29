@@ -104,3 +104,16 @@
 .btn-next:active {
   transform: scale(.96);
 }
+
+.btn-minus, .btn-plus {
+  height: 32px;
+  width: 32px;
+  color: rgb(113, 113, 113);
+  border-radius: 50%;
+  border: 1px solid rgb(176, 176, 176);
+  background-color: white;
+}
+
+.btn-minus:hover, .btn-plus:hover {
+  border-color: rgb(34, 34, 34);
+}

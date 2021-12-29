@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AmenitieSection from "./AmenitieSection";
+import GuestSection from "./GuestSection";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
@@ -11,7 +13,12 @@ const NewFormPage = () => {
   const [formData, setFormData] = useState({
     place: '',
     type: '',
-    space: ''
+    space: '',
+    guests: 0,
+    beds: 0,
+    bedrooms: 0,
+    bathrooms: 0,
+    amenities: [],
   });
 
   const questions = [
@@ -26,6 +33,14 @@ const NewFormPage = () => {
     {
       question: 'What kind of space will guests have?',
       options: <SpaceSection setFormData={ setFormData } />
+    },
+    {
+      question: 'How many guests would you like to welcome?',
+      options: <GuestSection formData={formData} setFormData={ setFormData } />
+    },
+    {
+      question: 'Let guests know what your place has to offer',
+      options: <AmenitieSection formData={formData} setFormData={ setFormData } />
     }
   ];
 
@@ -36,23 +51,10 @@ const NewFormPage = () => {
   };
 
   const nextQuestion = () => {
-    if (index < 9) {
+    if (index < questions.length) {
       setIndex(prevIndex => prevIndex + 1);
     }
   };
-
-  // const formData = {
-  //   'place': '',
-  //   'type': '',
-  //   'space': '',
-  //   'address': '',
-  //   'state': '',
-  //   'city': '',
-  //   'guests': '',
-  //   'price': '',
-  //   'title': '',
-  //   'description': '',
-  // };
 
   return (
     <div className="w100p flex">

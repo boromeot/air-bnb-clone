@@ -65,6 +65,14 @@ li {
   flex-direction: column;
 }
 
+.flex-1-1-auto {
+  flex: 1 1 auto;
+}
+
+.flex-row-wrap {
+  flex-flow: row wrap;
+}
+
 .align-center {
   align-items: center;
 }
