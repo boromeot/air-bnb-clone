@@ -9,8 +9,12 @@ import { ModalProvider } from "./context/Modal";
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
-
 const store = configureStore();
+
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve('config.env'),
+});
 
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
