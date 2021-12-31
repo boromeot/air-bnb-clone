@@ -66,7 +66,6 @@ const NewFormPage = () => {
     <div className="w100p flex">
       <QuestionSection question={questions[index].question} />
       <div className="ml50vw w50p">
-        <div onClick={() => console.log(formData)}>log</div>
         <div className="pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
           {questions[index].options}
         </div>
@@ -86,6 +85,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
+        <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }
