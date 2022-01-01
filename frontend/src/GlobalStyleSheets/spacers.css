@@ -120,6 +120,10 @@
   padding: 18px;
 }
 
+.p--80 {
+  padding: 80px
+}
+
 /* padding left */
 .pl0 {
   padding-left: 0px;
@@ -152,6 +156,10 @@
 }
 
 /* padding right */
+.pr--8 {
+  padding-right: 8px;
+}
+
 .pr3 {
   padding-right: 18px;
 }

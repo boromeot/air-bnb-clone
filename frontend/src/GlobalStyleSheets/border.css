@@ -6,6 +6,10 @@
   border: 1px solid rgb(221, 221, 221);
 }
 
+.border-dotted-gray {
+  border: 1px dashed rgb(176, 176, 176);
+}
+
 .border3px {
   border-width: 3px;
 }

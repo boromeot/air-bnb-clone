@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AdressSection from "./AdressSection";
 import AmenitieSection from "./AmenitieSection";
 import GuestSection from "./GuestSection";
+import PhotoSection from "./PhotoSection";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
@@ -47,6 +48,10 @@ const NewFormPage = () => {
     {
       question: 'Let guests know what your place has to offer',
       options: <AmenitieSection setFormData={ setFormData } />
+    },
+    {
+      question: 'Next, let\'s add some photos of your place',
+      options: <PhotoSection setFormData={ setFormData } />
     }
   ];
 

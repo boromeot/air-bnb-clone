@@ -26,6 +26,11 @@
   fill: currentColor;
 }
 
+.icon-64 {
+  height: 64px;
+  width: 64px;
+}
+
 .fill-white {
   fill: white;
 }
