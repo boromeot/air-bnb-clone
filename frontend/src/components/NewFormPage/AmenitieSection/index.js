@@ -5,7 +5,11 @@ import Pool from "../../SVGs/Pool";
 import HotTub from "../../SVGs/HotTub";
 import Patio from "../../SVGs/Patio";
 import Grill from "../../SVGs/Grill";
+import FirePit from "../../SVGs/FirePit";
 import PoolTable from "../../SVGs/PoolTable";
+import FirePlace from "../../SVGs/FirePlace";
+import DiningArea from "../../SVGs/DiningArea";
+import Dumbell from "../../SVGs/Dumbell";
 
 const AmenitieSection = ({ formData, setFormData }) => {
   return (
@@ -17,11 +21,11 @@ const AmenitieSection = ({ formData, setFormData }) => {
           <AmenitieOption amenitie='Hot tub'formData={formData} setFormData={setFormData} svg={<HotTub className='icon-52' viewBox='0 0 100 100' />} />
           <AmenitieOption amenitie='Patio'formData={formData} setFormData={setFormData} svg={<Patio className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='BBQ grill'formData={formData} setFormData={setFormData} svg={<Grill className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Fire pit'formData={formData} setFormData={setFormData} svg={null}/>
+          <AmenitieOption amenitie='Fire pit'formData={formData} setFormData={setFormData} svg={<FirePit className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Pool table'formData={formData} setFormData={setFormData} svg={<PoolTable className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Indoor fireplace'formData={formData} setFormData={setFormData} svg={null}/>
-          <AmenitieOption amenitie='Outdoor dining area'formData={formData} setFormData={setFormData} svg={null}/>
-          <AmenitieOption amenitie='Exercise equipment'formData={formData} setFormData={setFormData} svg={null}/>
+          <AmenitieOption amenitie='Indoor fireplace'formData={formData} setFormData={setFormData} svg={<FirePlace className='icon-52' viewBox='0 0 100 100' />}/>
+          <AmenitieOption amenitie='Outdoor dining area'formData={formData} setFormData={setFormData} svg={<DiningArea className='icon-52' viewBox='0 0 100 100' />}/>
+          <AmenitieOption amenitie='Exercise equipment'formData={formData} setFormData={setFormData} svg={<Dumbell className='icon-52' viewBox='0 0 100 100' />}/>
         </div>
       </div>
     </div>
