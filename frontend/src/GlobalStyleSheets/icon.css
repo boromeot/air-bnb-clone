@@ -2,7 +2,7 @@
   height: 12px;
   width: 12px;
   stroke: currentColor;
-  stroke-width: 5;
+  strokeWidth: 5;
 }
 
 .icon-20 {
@@ -24,6 +24,11 @@
   height: 52px;
   width: 52px;
   fill: currentColor;
+}
+
+.icon-64 {
+  height: 64px;
+  width: 64px;
 }
 
 .fill-white {
