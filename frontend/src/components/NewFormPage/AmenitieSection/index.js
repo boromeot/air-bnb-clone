@@ -7,6 +7,7 @@ import Patio from "../../SVGs/Patio";
 import Grill from "../../SVGs/Grill";
 import PoolTable from "../../SVGs/PoolTable";
 import FirePlace from "../../SVGs/FirePlace";
+import DiningArea from "../../SVGs/DiningArea";
 
 const AmenitieSection = ({ formData, setFormData }) => {
   return (
@@ -21,7 +22,7 @@ const AmenitieSection = ({ formData, setFormData }) => {
           <AmenitieOption amenitie='Fire pit'formData={formData} setFormData={setFormData} svg={null}/>
           <AmenitieOption amenitie='Pool table'formData={formData} setFormData={setFormData} svg={<PoolTable className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Indoor fireplace'formData={formData} setFormData={setFormData} svg={<FirePlace className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Outdoor dining area'formData={formData} setFormData={setFormData} svg={null}/>
+          <AmenitieOption amenitie='Outdoor dining area'formData={formData} setFormData={setFormData} svg={<DiningArea className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Exercise equipment'formData={formData} setFormData={setFormData} svg={null}/>
         </div>
       </div>
