@@ -11,7 +11,7 @@ const Dumbell = ({ className, viewBox }) => {
         <path stroke="#222222" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="2" stroke-opacity="1" d=" M53 40 C53,40 56,40 56,40 "></path>
         <path stroke="#222222" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="2" stroke-opacity="1" d=" M35 40 C35,40 45,40 45,40 "></path>
         <path stroke="#222222" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="2" stroke-opacity="1" d=" M24 40 C24,40 27,40 27,40 "></path>
-
+      </g>
     </svg>
   )
 }
