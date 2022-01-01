@@ -20,7 +20,7 @@ const GuestOption = ({ x, formData, setFormData })  => {
     setFormData(prevState => {
       return {...prevState, [x.toLowerCase()]: count}
     });
-  }, [count])
+  }, [count, x, setFormData])
 
   return (
     <div className="py--8 w100p">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AdressSection from "./AdressSection";
 import AmenitieSection from "./AmenitieSection";
 import GuestSection from "./GuestSection";
 import PlaceSection from "./PlaceSection";
@@ -18,6 +19,7 @@ const NewFormPage = () => {
     beds: 0,
     bedrooms: 0,
     bathrooms: 0,
+    adress: '',
     amenities: [],
   });
 
@@ -33,6 +35,10 @@ const NewFormPage = () => {
     {
       question: 'What kind of space will guests have?',
       options: <SpaceSection setFormData={ setFormData } />
+    },
+    {
+      question: 'Where is your place?',
+      options: <AdressSection setFormData={ setFormData } />
     },
     {
       question: 'How many guests would you like to welcome?',
@@ -79,7 +85,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
-      <div onClick={() => console.log(formData)}>log</div>
+        <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }
