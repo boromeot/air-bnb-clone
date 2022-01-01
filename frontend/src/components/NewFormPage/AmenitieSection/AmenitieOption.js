@@ -1,14 +1,25 @@
 import React from "react";
 
-const AmenitieOption = ({ amenitie, formData, setFormData, svg }) => {
+const AmenitieOption = ({ amenitie, setFormData, svg }) => {
 
   const handleChange = () => {
-    if (!(formData.amenities.includes(amenitie))) {
-      setFormData(prevState => {
+    setFormData(prevState => {
 
-      });
-    }
-    console.log(formData);
+      if (prevState.amenities.has(amenitie)) {
+        const newAmenities = new Set (prevState.amenities);
+        newAmenities.delete(amenitie);
+        return {
+          ...prevState,
+          amenities: newAmenities
+        }
+      }
+
+      return {
+        ...prevState,
+        amenities: new Set([...prevState.amenities, amenitie])
+      }
+
+    });
   }
 
   return (
