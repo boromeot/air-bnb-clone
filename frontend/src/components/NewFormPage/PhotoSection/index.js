@@ -3,11 +3,16 @@ import Photos from "../../SVGs/Photos";
 
 const PhotoSection = ({ setFormData }) => {
   return (
-    <div id="FMP-target" className="FMP-target relative mz--24 w100p" style={{maxWidth: '500px'}}>
-      <div className='overflowY-auto pr--8' style={{maxHeight: 'calc(-294px + 100vh)', marginRight: '-8px'}}>
-        <div className="flex absolute t0 l0 w100p h100p border-dotted-gray">
-          <div className="flex align-center flex-column text-center soft-black m-auto">
-            <Photos className='icon-64' viewBox='0 0 64 64' />
+    <div id="FMP-target" className="FMP-target relative mz--24 w100p" style={{maxWidth: '500px', left: '62px', top: '35px'}}>
+      <div className="h65vh" style={{maxWidth: '500px', maxHeight: '700px', minHeight: '440px'}}>
+        <div className='flex absolute t0 l0 w100p h100p pr--8'>
+          <div className="flex absolute t0 l0 w100p h100p border-dotted-gray">
+            <div className="flex align-center flex-column text-center soft-black m-auto">
+              <Photos className='icon-64' viewBox='0 0 64 64' />
+              <div className="pb--8 pt--16 font-size--22 font-weight--600 ">Drag your photos here</div>
+              <div className="pz--64 font--size--16">Add at least 5 photos</div>
+              <div className='absolute' style={{bottom: '80px'}}>Upload from your device</div>
+            </div>
           </div>
         </div>
       </div>

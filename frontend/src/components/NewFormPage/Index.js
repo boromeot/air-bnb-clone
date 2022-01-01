@@ -90,7 +90,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
-      <div onClick={() => console.log(formData)}>log</div>
+      {/* <div onClick={() => console.log(formData)}>log</div> */}
     </div>
   )
 }
