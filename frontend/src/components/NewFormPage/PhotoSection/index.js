@@ -2,8 +2,27 @@ import React from "react";
 import Photos from "../../SVGs/Photos";
 
 const PhotoSection = ({ setFormData }) => {
+
+  const onDropHandler = async e => {
+    e.preventDefault();
+    const file = e.dataTransfer.items[0].getAsFile();
+
+    setFormData(prevState => {
+
+      return {
+        ...prevState,
+        photos: [...prevState.photos, file]
+      };
+
+    });
+
+  };
+
   return (
-    <div id="FMP-target" className="FMP-target relative mz--24 w100p" style={{maxWidth: '500px', left: '62px', top: '35px'}}>
+    <div id="FMP-target" className="FMP-target relative mz--24 w100p" style={{maxWidth: '500px', left: '62px', top: '35px'}}
+      onDragOver={e => e.preventDefault()}
+      onDrop={onDropHandler}
+    >
       <div className="h65vh" style={{maxWidth: '500px', maxHeight: '700px', minHeight: '440px'}}>
         <div className='flex absolute t0 l0 w100p h100p pr--8'>
           <div className="flex absolute t0 l0 w100p h100p border-dotted-gray">

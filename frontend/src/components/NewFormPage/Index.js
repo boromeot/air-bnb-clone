@@ -22,6 +22,7 @@ const NewFormPage = () => {
     bathrooms: 0,
     adress: '',
     amenities: new Set(),
+    photos: [],
   });
 
   const questions = [
@@ -90,7 +91,7 @@ const NewFormPage = () => {
           </div>
         </div>
       </div>
-      {/* <div onClick={() => console.log(formData)}>log</div> */}
+      <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }
