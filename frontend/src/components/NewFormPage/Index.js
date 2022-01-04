@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import AdressSection from "./AdressSection";
 import AmenitieSection from "./AmenitieSection";
+import DescriptionSection from "./DescriptionSection";
 import GuestSection from "./GuestSection";
 import PhotoSection from "./PhotoSection";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
+import TitleSeciton from "./TitleSection/Index";
 import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
@@ -23,6 +25,8 @@ const NewFormPage = () => {
     adress: '',
     amenities: new Set(),
     photos: [],
+    title: '',
+    description: '',
   });
 
   const questions = [
@@ -53,6 +57,14 @@ const NewFormPage = () => {
     {
       question: 'Next, let\'s add some photos of your place',
       options: <PhotoSection setFormData={ setFormData } />
+    },
+    {
+      question: 'Let\'s give your place a name',
+      options: <TitleSeciton setFormData={ setFormData } formTitle={ formData.title} />
+    },
+    {
+      question: 'Now, let\'s describe your place',
+      options: <DescriptionSection setFormData={ setFormData } formDescription={ formData.description }/>
     }
   ];
 
@@ -72,8 +84,10 @@ const NewFormPage = () => {
     <div className="w100p flex">
       <QuestionSection question={questions[index].question} />
       <div className="ml50vw w50p">
-        <div className="pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
-          {questions[index].options}
+        <div className="flex pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
+          <div className="mz-auto w100p">
+            {questions[index].options}
+          </div>
         </div>
         <div className="width-50vw fixed b0">
           <div className="flex">

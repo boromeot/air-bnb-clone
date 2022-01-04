@@ -19,7 +19,7 @@ const PhotoSection = ({ setFormData }) => {
   };
 
   return (
-    <div id="FMP-target" className="FMP-target relative mz--24 w100p" style={{maxWidth: '500px', left: '62px', top: '35px'}}
+    <div id="FMP-target" className="FMP-target relative mz--24 w100p"
       onDragOver={e => e.preventDefault()}
       onDrop={onDropHandler}
     >

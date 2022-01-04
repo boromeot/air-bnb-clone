@@ -93,6 +93,11 @@
   margin-bottom: 82px;
 }
 
+.mz-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mz3 {
   margin: 0 18px;
 }
@@ -118,6 +123,10 @@
 
 .p3 {
   padding: 18px;
+}
+
+.p4 {
+  padding: 24px;
 }
 
 .p--80 {
@@ -249,6 +258,10 @@
 
 .h100vh {
   height: 100vh;
+}
+
+.mh50vh {
+  max-height: 50vh;
 }
 
 .w50p {
