@@ -120,6 +120,10 @@
   padding: 18px;
 }
 
+.p4 {
+  padding: 24px;
+}
+
 .p--80 {
   padding: 80px
 }
@@ -249,6 +253,10 @@
 
 .h100vh {
   height: 100vh;
+}
+
+.mh50vh {
+  max-height: 50vh;
 }
 
 .w50p {

@@ -6,6 +6,7 @@ import PhotoSection from "./PhotoSection";
 import PlaceSection from "./PlaceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
+import TitleSeciton from "./TitleSection/Index";
 import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
@@ -23,6 +24,7 @@ const NewFormPage = () => {
     adress: '',
     amenities: new Set(),
     photos: [],
+    title: ''
   });
 
   const questions = [
@@ -53,6 +55,10 @@ const NewFormPage = () => {
     {
       question: 'Next, let\'s add some photos of your place',
       options: <PhotoSection setFormData={ setFormData } />
+    },
+    {
+      question: 'Let\'s give your place a name',
+      options: <TitleSeciton setFormData={ setFormData } />
     }
   ];
 
