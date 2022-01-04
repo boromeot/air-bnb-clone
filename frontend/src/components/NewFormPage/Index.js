@@ -78,8 +78,10 @@ const NewFormPage = () => {
     <div className="w100p flex">
       <QuestionSection question={questions[index].question} />
       <div className="ml50vw w50p">
-        <div className="pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
-          {questions[index].options}
+        <div className="flex pz8 overflowY-auto w100p mt-88 mb-82 scrollbar-none" style={{height: 'calc(-170px + 100vh)'}}>
+          <div className="mz-auto w100p">
+            {questions[index].options}
+          </div>
         </div>
         <div className="width-50vw fixed b0">
           <div className="flex">

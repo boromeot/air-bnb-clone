@@ -93,6 +93,11 @@
   margin-bottom: 82px;
 }
 
+.mz-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mz3 {
   margin: 0 18px;
 }
