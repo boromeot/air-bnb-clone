@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AdressSection from "./AdressSection";
 import AmenitieSection from "./AmenitieSection";
+import DescriptionSection from "./DescriptionSection";
 import GuestSection from "./GuestSection";
 import PhotoSection from "./PhotoSection";
 import PlaceSection from "./PlaceSection";
@@ -24,7 +25,8 @@ const NewFormPage = () => {
     adress: '',
     amenities: new Set(),
     photos: [],
-    title: ''
+    title: '',
+    description: '',
   });
 
   const questions = [
@@ -59,6 +61,10 @@ const NewFormPage = () => {
     {
       question: 'Let\'s give your place a name',
       options: <TitleSeciton setFormData={ setFormData } formTitle={ formData.title} />
+    },
+    {
+      question: 'Now, let\'s describe your place',
+      options: <DescriptionSection setFormData={ setFormData } formDescription={ formData.description }/>
     }
   ];
 
