@@ -112,6 +112,11 @@
   margin-right: 24px;
 }
 
+.mz--32 {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
 .mz--24 {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -163,6 +168,10 @@
 
 .pt--32 {
   padding-top: 32px;
+}
+
+.pt2 {
+  padding-top: 12px;
 }
 
 .pt4 {

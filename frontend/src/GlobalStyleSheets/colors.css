@@ -14,6 +14,10 @@
   color: rgb(101, 105, 105);
 }
 
+.black {
+  color: black;
+}
+
 .bg-white {
   background-color: #fff;
 }
