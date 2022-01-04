@@ -5,6 +5,7 @@ import DescriptionSection from "./DescriptionSection";
 import GuestSection from "./GuestSection";
 import PhotoSection from "./PhotoSection";
 import PlaceSection from "./PlaceSection";
+import PriceSection from "./PriceSection";
 import QuestionSection from "./QuestionSection";
 import SpaceSection from "./SpaceSection";
 import TitleSeciton from "./TitleSection/Index";
@@ -27,6 +28,7 @@ const NewFormPage = () => {
     photos: [],
     title: '',
     description: '',
+    price: 0,
   });
 
   const questions = [
@@ -65,6 +67,10 @@ const NewFormPage = () => {
     {
       question: 'Now, let\'s describe your place',
       options: <DescriptionSection setFormData={ setFormData } formDescription={ formData.description }/>
+    },
+    {
+      question: 'Now for the fun part—set your price',
+      options: <PriceSection setFormData={ setFormData } />
     }
   ];
 

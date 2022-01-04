@@ -98,6 +98,11 @@
   margin-bottom: auto;
 }
 
+.mz--8 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .mz3 {
   margin: 0 18px;
 }
