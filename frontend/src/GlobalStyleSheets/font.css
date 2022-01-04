@@ -77,6 +77,10 @@
   font-weight: 600;
 }
 
+.font-weight--800 {
+  font-weight: 800;
+}
+
 .text-left {
   text-align: left;
 }

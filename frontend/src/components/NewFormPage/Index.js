@@ -58,7 +58,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Let\'s give your place a name',
-      options: <TitleSeciton setFormData={ setFormData } />
+      options: <TitleSeciton setFormData={ setFormData } formTitle={ formData.title} />
     }
   ];
 
