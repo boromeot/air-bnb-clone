@@ -46,7 +46,6 @@ const AdressSection = ({ setFormData }) => {
           position="top-right"
           onResult={({ result }) => {
             const address = result.place_name;
-            console.log(address);
             setFormData(prevState => {
               return {
                 ...prevState, address
