@@ -70,7 +70,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Now for the fun part—set your price',
-      options: <PriceSection setFormData={ setFormData } />
+      options: <PriceSection setFormData={ setFormData } formPrice={ formData.price }/>
     }
   ];
 

@@ -5,6 +5,7 @@
 @import 'border.css';
 @import 'colors.css';
 @import 'font.css';
+@import 'input.css';
 
 :root {
   --nav-bar-height: 66px;
