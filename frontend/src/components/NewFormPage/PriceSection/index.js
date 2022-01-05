@@ -17,6 +17,18 @@ const PriceSection = ({ setFormData, formPrice }) => {
     }
   }
 
+  const decrement = e => {
+    e.preventDefault();
+    if (formPrice >= 5) {
+      setPrice(prevPrice => prevPrice - 5);
+    }
+  }
+
+  const increment = e => {
+    e.preventDefault();
+    setPrice(prevPrice => prevPrice + 5);
+  }
+
   useEffect(() => {
     setFormData(prevState => {
       return {
@@ -30,7 +42,9 @@ const PriceSection = ({ setFormData, formPrice }) => {
     <div id="FMP-target" className="flex flex-column m-auto align-center justify-center" style={{maxWidth: '500px'}}>
       <div className="flex flex-column align-center justify-center">
         <div className="inline-flex align-center">
-          <button className='flex btn-minus align-center justify-center' style={{flexShrink: '0', height: '48px', width: '48px'}}>
+          <button className='flex btn-minus align-center justify-center' style={{flexShrink: '0', height: '48px', width: '48px'}}
+            onClick={decrement}
+          >
             <Minus className='icon-12' viewBox='0 0 32 32' />
           </button>
           <div className="mz--8 text-center">
@@ -45,7 +59,9 @@ const PriceSection = ({ setFormData, formPrice }) => {
               />
             </div>
           </div>
-          <button className="flex btn-plus align-center justify-center" style={{flexShrink: '0', height: '48px', width: '48px'}}>
+          <button className="flex btn-plus align-center justify-center" style={{flexShrink: '0', height: '48px', width: '48px'}}
+            onClick={increment}
+          >
             <Plus className='icon-12' viewBox='0 0 32 32' />
           </button>
         </div>
