@@ -51,6 +51,10 @@ li {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .flex1 {
   flex: 1;
 }

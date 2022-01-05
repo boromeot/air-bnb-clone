@@ -42,6 +42,10 @@
   border-radius: 100%;
 }
 
+.box-shadow-gray {
+  box-shadow:  rgb(176, 176, 176) 0px 0px 0px 1px inset;
+}
+
 .hover-shadow-black:hover {
   box-shadow: black 0px 0px 0px 2px;
 }

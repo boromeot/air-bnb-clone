@@ -98,6 +98,11 @@
   margin-bottom: auto;
 }
 
+.mz--8 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .mz3 {
   margin: 0 18px;
 }
@@ -105,6 +110,11 @@
 .mz--24 {
   margin-left: 24px;
   margin-right: 24px;
+}
+
+.mz--32 {
+  margin-left: 32px;
+  margin-right: 32px;
 }
 
 .mz--24 {
@@ -158,6 +168,10 @@
 
 .pt--32 {
   padding-top: 32px;
+}
+
+.pt2 {
+  padding-top: 12px;
 }
 
 .pt4 {
