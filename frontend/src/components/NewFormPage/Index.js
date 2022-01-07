@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { csrfFetch } from "../../store/csrf";
 import AdressSection from "./AdressSection";
 import AmenitieSection from "./AmenitieSection";
 import DescriptionSection from "./DescriptionSection";
@@ -30,6 +31,26 @@ const NewFormPage = () => {
     description: '',
     price: 0,
   });
+
+  const submit = async () => {
+    const {
+      place, type, space,
+      guests, beds, bedrooms, bathrooms,
+      adress, photos, title, price
+    } = formData;
+
+    const spotResponse = await csrfFetch('/api/spots', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        place, type, space,
+        guests, beds, bedrooms, bathrooms,
+        adress, photos, title, price
+      })
+    })
+  }
 
   const questions = [
     {
@@ -106,7 +127,11 @@ const NewFormPage = () => {
               <button onClick={prevQuestion} className="btn btn-back font-size--16 font-weight--600">Back</button>
             </div>
             <div className="mr8">
-              <button onClick={nextQuestion} className="btn btn-next font-size--16 font-weight--600">Next</button>
+              {
+                index === questions.length - 1
+                ? <button onClick={null} className="btn btn-next font-size--16 font-weight--600">Submit your listing</button>
+                : <button onClick={nextQuestion} className="btn btn-next font-size--16 font-weight--600">Next</button>
+              }
             </div>
           </div>
         </div>
