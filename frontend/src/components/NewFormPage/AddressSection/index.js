@@ -6,7 +6,7 @@ import Geocoder from 'react-map-gl-geocoder'
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiYm9yb21lb3QiLCJhIjoiY2t4czN5ZXBuMDQ2ZDJvcGRrdW94YTR2dCJ9.9rCr2ZJ7YUKkm7U3HHEctw';
 
-const AdressSection = ({ setFormData }) => {
+const AddressSection = ({ setFormData }) => {
   const [viewport, setViewport] = useState({
     latitude: 37.7577,
     longitude: -122.4376,
@@ -58,4 +58,4 @@ const AdressSection = ({ setFormData }) => {
   );
 };
 
-export default AdressSection;
+export default AddressSection;

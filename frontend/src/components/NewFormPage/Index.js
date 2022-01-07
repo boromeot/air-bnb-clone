@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { csrfFetch } from "../../store/csrf";
-import AdressSection from "./AdressSection";
+import AddressSection from "./AddressSection";
 import AmenitieSection from "./AmenitieSection";
 import DescriptionSection from "./DescriptionSection";
 import GuestSection from "./GuestSection";
@@ -14,6 +15,7 @@ import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
 
+  const { id:userId } = useSelector(state => state.session.user);
   const [index, setIndex] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -24,7 +26,7 @@ const NewFormPage = () => {
     beds: 0,
     bedrooms: 0,
     bathrooms: 0,
-    adress: '',
+    address: '',
     amenities: new Set(),
     photos: [],
     title: '',
@@ -32,11 +34,12 @@ const NewFormPage = () => {
     price: 0,
   });
 
-  const submit = async () => {
+  const submit = async e => {
+    e.preventDefault();
     const {
-      place, type, space,
+      place, type, space, description,
       guests, beds, bedrooms, bathrooms,
-      adress, photos, title, price
+      address, photos, title, price
     } = formData;
 
     const spotResponse = await csrfFetch('/api/spots', {
@@ -45,9 +48,9 @@ const NewFormPage = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        place, type, space,
+        userId, place, type, space, description,
         guests, beds, bedrooms, bathrooms,
-        adress, photos, title, price
+        address, photos, title, price
       })
     })
   }
@@ -67,7 +70,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Where is your place?',
-      options: <AdressSection setFormData={ setFormData } />
+      options: <AddressSection setFormData={ setFormData } />
     },
     {
       question: 'How many guests would you like to welcome?',
@@ -129,7 +132,7 @@ const NewFormPage = () => {
             <div className="mr8">
               {
                 index === questions.length - 1
-                ? <button onClick={null} className="btn btn-next font-size--16 font-weight--600">Submit your listing</button>
+                ? <button onClick={submit} className="btn btn-next font-size--16 font-weight--600">Submit your listing</button>
                 : <button onClick={nextQuestion} className="btn btn-next font-size--16 font-weight--600">Next</button>
               }
             </div>
