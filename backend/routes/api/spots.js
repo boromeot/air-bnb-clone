@@ -20,7 +20,7 @@ router.post('/', asyncHandler(async (req, res) => {
     guests, beds, bedrooms, bathrooms,
     address, photos, amenities, title, price
   } = req.body;
-  console.log(req.body, 'yooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo');
+  
   const spot = await Spot.create({
     userId, place, type, space, description,
     guests, beds, bedrooms, bathrooms,
