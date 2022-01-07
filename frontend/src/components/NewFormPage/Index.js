@@ -39,7 +39,7 @@ const NewFormPage = () => {
     const {
       place, type, space, description,
       guests, beds, bedrooms, bathrooms,
-      address, amenities, photos, title, price
+      address, amenities, title, price
     } = formData;
 
     const spotResponse = await csrfFetch('/api/spots', {
@@ -54,7 +54,7 @@ const NewFormPage = () => {
       })
     });
 
-    const spot = await spotResponse.json();
+    const { spot } = await spotResponse.json();
 
     // const imageResponse = await csrfFetch('/api/images', {
     //   method: 'POST',
@@ -73,9 +73,10 @@ const NewFormPage = () => {
       },
       body: JSON.stringify({
         spotId: spot.id,
-        amenities
+        amenities: [...amenities]
       })
-    })
+    });
+
   }
 
   const questions = [

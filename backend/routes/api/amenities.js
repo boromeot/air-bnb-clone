@@ -4,18 +4,19 @@ const { Amenity } = require('../../db/models');
 const router = express.Router();
 
 router.post('/', asyncHandler(async (req, res) => {
-  const { userId, amenities } = req.body;
+  const { spotId, amenities } = req.body;
 
-  
-
-  // const amentiy = await Amentity.create({
-  //   userId,
-
-  // })
+  const dbAmenities = amenities.map(async amentiy => {
+    return await Amenity.create({
+      spotId,
+      name: amentiy
+    });
+  });
 
   return res.json({
-    images,
+    dbAmenities
   });
+
 }));
 
 module.exports = router;
