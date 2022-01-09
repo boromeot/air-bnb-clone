@@ -1,16 +1,17 @@
 import React from "react";
 
-const PlaceOption = ({ place, setFormData, imgSrc }) => {
+const PlaceOption = ({ place, selected, setSelected, setFormData, imgSrc }) => {
 
   const handleChange = () => {
     setFormData(prevState => {
       return {...prevState, place}
     });
-  }
+    setSelected(place);
+  };
 
   return (
     <div className="mb2 ml-auto mr-auto w100p ml-auto mr-auto" style={{maxWidth: '464px'}}>
-      <button className="btn place-option-btn flex justify-space-between align-center bg-white border-gray radius-12 w100p"
+      <button className={`place-option-btn ${selected === place && 'selected-place-option'}`}
         onClick={handleChange}
       >
         <div className="text-left w100p" style={{margin: '16px', marginLeft: '24px'}}>

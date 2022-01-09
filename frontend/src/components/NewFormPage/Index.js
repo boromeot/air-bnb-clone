@@ -77,6 +77,8 @@ const NewFormPage = () => {
       })
     });
 
+    console.log(amenitiesResponse);
+
   }
 
   const questions = [
