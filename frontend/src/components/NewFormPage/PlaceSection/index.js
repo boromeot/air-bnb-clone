@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import PlaceOption from "./PlaceOption";
 import './PlaceSection.css';
 
-const PlaceSection = ({ setFormData }) => {
+const PlaceSection = ({ setFormData, formPlace }) => {
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState(formPlace);
 
   return (
     <div id="FMP-target" className="FMP-target flex flex-column">
