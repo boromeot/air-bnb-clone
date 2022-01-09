@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SpaceOption from "./SpaceOption";
 
-const SpaceSection = ({ setFormData }) => {
+const SpaceSection = ({ setFormData, formSpace }) => {
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState(formSpace);
 
   return (
     <div id="FMP-target" className="FMP-target flex flex-column">

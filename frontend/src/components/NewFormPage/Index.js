@@ -88,11 +88,11 @@ const NewFormPage = () => {
     },
     {
       question: 'Which of these best describes your place?',
-      options: <TypeSection setFormData={ setFormData } />
+      options: <TypeSection setFormData={ setFormData } formType={ formData.type } />
     },
     {
       question: 'What kind of space will guests have?',
-      options: <SpaceSection setFormData={ setFormData } />
+      options: <SpaceSection setFormData={ setFormData } formSpace={ formData.space } />
     },
     {
       question: 'Where is your place?',

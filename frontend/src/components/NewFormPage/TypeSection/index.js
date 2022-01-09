@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import TypeOption from "./TypeOption";
 
-const TypeSection = ({ setFormData }) => {
+const TypeSection = ({ setFormData, formType }) => {
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState(formType);
 
   return (
     <div id="FMP-target" className="FMP-target flex flex-column">
