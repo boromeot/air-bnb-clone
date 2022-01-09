@@ -84,7 +84,7 @@ const NewFormPage = () => {
   const questions = [
     {
       question: 'What kind of place will you host?',
-      options: <PlaceSection setFormData={ setFormData }/>
+      options: <PlaceSection setFormData={ setFormData } formPlace={ formData.place } />
     },
     {
       question: 'Which of these best describes your place?',

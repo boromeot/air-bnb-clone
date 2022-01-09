@@ -4,7 +4,7 @@ import './PlaceSection.css';
 
 const PlaceSection = ({ setFormData }) => {
 
-  const [selected, setSelected] = useState('Apartment')
+  const [selected, setSelected] = useState('');
 
   return (
     <div id="FMP-target" className="FMP-target flex flex-column">
