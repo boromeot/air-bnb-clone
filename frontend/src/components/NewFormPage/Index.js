@@ -104,7 +104,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Let guests know what your place has to offer',
-      options: <AmenitieSection setFormData={ setFormData } />
+      options: <AmenitieSection setFormData={ setFormData } formAmenities={ formData.amenities } />
     },
     {
       question: 'Next, let\'s add some photos of your place',
