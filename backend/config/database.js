@@ -11,7 +11,7 @@ module.exports = {
   development: {
     username: 'auth_app',
     password: 'password',
-    database: 'auth_db',
+    database: 'air_bnb_clone',
     host,
     dialect: 'postgres',
     seederStorage: 'sequelize',

@@ -10,6 +10,7 @@ const isProduction = environment === 'production';
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
 
+console.log('environtment', environment);
 const app = express();
 
 app.use(morgan('dev'));

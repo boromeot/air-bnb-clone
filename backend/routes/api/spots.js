@@ -15,15 +15,16 @@ router.get('/', asyncHandler(async (req, res) => {
 );
 
 router.post('/', asyncHandler(async (req, res) => {
-  const {userId, address, price, name, city, state, description} = req.body;
+  const {
+    userId, place, type, space, description,
+    guests, beds, bedrooms, bathrooms,
+    address, title, price
+  } = req.body;
+
   const spot = await Spot.create({
-    userId,
-    address,
-    price,
-    name,
-    city,
-    state,
-    description,
+    userId, place, type, space, description,
+    guests, beds, bedrooms, bathrooms,
+    address, title, price
   });
 
   return res.json({

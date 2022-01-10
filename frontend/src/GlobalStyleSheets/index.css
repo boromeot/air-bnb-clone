@@ -5,6 +5,7 @@
 @import 'border.css';
 @import 'colors.css';
 @import 'font.css';
+@import 'input.css';
 
 :root {
   --nav-bar-height: 66px;
@@ -25,6 +26,10 @@
 a {
   text-decoration: none;
   color: rgb(40, 40, 40);
+}
+
+button {
+  background-color: white;
 }
 
 /* a:hover {

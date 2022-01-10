@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import AdressSection from "./AdressSection";
+import { useSelector } from "react-redux";
+import { csrfFetch } from "../../store/csrf";
+import AddressSection from "./AddressSection";
 import AmenitieSection from "./AmenitieSection";
 import DescriptionSection from "./DescriptionSection";
 import GuestSection from "./GuestSection";
@@ -13,6 +15,7 @@ import TypeSection from "./TypeSection";
 
 const NewFormPage = () => {
 
+  const { id:userId } = useSelector(state => state.session.user);
   const [index, setIndex] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -23,7 +26,7 @@ const NewFormPage = () => {
     beds: 0,
     bedrooms: 0,
     bathrooms: 0,
-    adress: '',
+    address: '',
     amenities: new Set(),
     photos: [],
     title: '',
@@ -31,22 +34,69 @@ const NewFormPage = () => {
     price: 0,
   });
 
+  const submit = async e => {
+    e.preventDefault();
+    const {
+      place, type, space, description,
+      guests, beds, bedrooms, bathrooms,
+      address, amenities, title, price
+    } = formData;
+
+    const spotResponse = await csrfFetch('/api/spots', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userId, place, type, space, description,
+        guests, beds, bedrooms, bathrooms,
+        address, title, price
+      })
+    });
+
+    const { spot } = await spotResponse.json();
+
+    // const imageResponse = await csrfFetch('/api/images', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     photos
+    //   })
+    // })
+
+    const amenitiesResponse = await csrfFetch('/api/amenities', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        spotId: spot.id,
+        amenities: [...amenities]
+      })
+    });
+
+    console.log(amenitiesResponse);
+
+  }
+
   const questions = [
     {
       question: 'What kind of place will you host?',
-      options: <PlaceSection setFormData={ setFormData }/>
+      options: <PlaceSection setFormData={ setFormData } formPlace={ formData.place } />
     },
     {
       question: 'Which of these best describes your place?',
-      options: <TypeSection setFormData={ setFormData } />
+      options: <TypeSection setFormData={ setFormData } formType={ formData.type } />
     },
     {
       question: 'What kind of space will guests have?',
-      options: <SpaceSection setFormData={ setFormData } />
+      options: <SpaceSection setFormData={ setFormData } formSpace={ formData.space } />
     },
     {
       question: 'Where is your place?',
-      options: <AdressSection setFormData={ setFormData } />
+      options: <AddressSection setFormData={ setFormData } />
     },
     {
       question: 'How many guests would you like to welcome?',
@@ -54,7 +104,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Let guests know what your place has to offer',
-      options: <AmenitieSection setFormData={ setFormData } />
+      options: <AmenitieSection setFormData={ setFormData } formAmenities={ formData.amenities } />
     },
     {
       question: 'Next, let\'s add some photos of your place',
@@ -70,7 +120,7 @@ const NewFormPage = () => {
     },
     {
       question: 'Now for the fun part—set your price',
-      options: <PriceSection setFormData={ setFormData } />
+      options: <PriceSection setFormData={ setFormData } formPrice={ formData.price }/>
     }
   ];
 
@@ -106,7 +156,11 @@ const NewFormPage = () => {
               <button onClick={prevQuestion} className="btn btn-back font-size--16 font-weight--600">Back</button>
             </div>
             <div className="mr8">
-              <button onClick={nextQuestion} className="btn btn-next font-size--16 font-weight--600">Next</button>
+              {
+                index === questions.length - 1
+                ? <button onClick={submit} className="btn btn-next font-size--16 font-weight--600">Submit your listing</button>
+                : <button onClick={nextQuestion} className="btn btn-next font-size--16 font-weight--600">Next</button>
+              }
             </div>
           </div>
         </div>

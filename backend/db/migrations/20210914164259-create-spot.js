@@ -15,7 +15,7 @@ module.exports = {
           model: 'Users'
         },
       },
-      name: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -27,24 +27,36 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      city: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      state: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      lat: {
-        type: Sequelize.DECIMAL,
-        allowNull: false,
-      },
-      long: {
-        type: Sequelize.DECIMAL,
-        allowNull: false,
-      },
       description: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      place: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      space: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      guests: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      beds: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      bedrooms: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      bathrooms: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {

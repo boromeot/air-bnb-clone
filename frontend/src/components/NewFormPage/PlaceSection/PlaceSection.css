@@ -5,4 +5,14 @@
 .place-option-btn:hover {
   box-shadow: rgb(34, 34, 34) 0px 0px 0px 2px;
   border-color: transparent;
+  cursor: pointer;
+}
+
+.place-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(221, 221, 221);
+  width: 100%;
+  border-radius: 12px;
 }
