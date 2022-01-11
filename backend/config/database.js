@@ -9,7 +9,7 @@ console.log(config);
 
 module.exports = {
   development: {
-    username: 'auth_app',
+    username: 'air_bnb_user',
     password: 'password',
     database: 'air_bnb_clone',
     host,

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Amenity.associate = function(models) {
     // associations can be defined here
-    Amenity.belongsTo(models.Spot, { foriegnKey: 'spotId' })
+    Amenity.belongsTo(models.Spot, { foreignKey: 'spotId'});
   };
   return Amenity;
 };
