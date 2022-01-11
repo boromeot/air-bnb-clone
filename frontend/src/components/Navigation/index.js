@@ -8,6 +8,7 @@ import DropDown from './DropDown';
 import NavItem from './NavItem';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
+import Globe from '../SVGs/Globe';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -41,7 +42,7 @@ function Navigation({ isLoaded }){
       <div className='links'>
         <NavLink className='btn host' to='/become-a-host'>Become a host</NavLink>
         <div className='btn'>
-          <i className="fas fa-globe"></i>
+          <Globe className='icon-16' viewBox='0 0 16 16' />
         </div>
         <NavItem
           items={[<i key='bars' className="fas fa-bars bars"></i>,<i key='user-circle' className="fas fa-user-circle fa-2x"></i>]}
