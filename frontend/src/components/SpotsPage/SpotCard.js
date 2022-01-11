@@ -28,7 +28,7 @@ const SpotCard = ({ id, city, state, price, images }) => {
 
   return (
     <div className='card-container'>
-        <div className='image-container' style={images?.url ? {backgroundImage: `url(${images[slideCount].url})`} : {}}>
+        <div className='image-container' style={{backgroundImage: `url(${images[slideCount]?.url})`}}>
           <div className='toLeft chevron' onClick={e => toLeft(e)}><LeftChevron /></div>
           <NavLink to={`/spots/${id}`} className='spot-link'/>
           <div className='toRight chevron' onClick={e => toRight(e)}><RightChevron /></div>
