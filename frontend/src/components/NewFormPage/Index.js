@@ -39,7 +39,8 @@ const NewFormPage = () => {
     const {
       place, type, space, description,
       guests, beds, bedrooms, bathrooms,
-      address, amenities, title, price
+      address, city, state,
+      amenities, title, price
     } = formData;
 
     const spotResponse = await csrfFetch('/api/spots', {
@@ -50,7 +51,7 @@ const NewFormPage = () => {
       body: JSON.stringify({
         userId, place, type, space, description,
         guests, beds, bedrooms, bathrooms,
-        address, title, price
+        address, city, state, title, price
       })
     });
 

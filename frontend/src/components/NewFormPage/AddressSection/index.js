@@ -45,12 +45,29 @@ const AddressSection = ({ setFormData }) => {
           mapboxApiAccessToken={MAPBOX_TOKEN}
           position="top-right"
           onResult={({ result }) => {
-            const address = result.place_name;
-            setFormData(prevState => {
-              return {
-                ...prevState, address
-              }
-            })
+
+            if (result.place_type[0] === 'address') {
+
+              const address = result.place_name;
+
+              const city = result.context.find(obj => {
+                return obj.id.includes('place');
+              })?.text;
+
+              const state = result.context.find(obj => {
+                return obj.id.includes('region');
+              })?.text;
+
+              setFormData(prevState => {
+                return {
+                  ...prevState, address, city, state
+                }
+              });
+
+            } else {
+              alert('This is not a valid address');
+            }
+
           }}
         />
       </MapGL>
