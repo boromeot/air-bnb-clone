@@ -1,5 +1,7 @@
 import React from "react";
 import Photos from "../../SVGs/Photos";
+import Cookies from 'js-cookie';
+import { csrfFetch } from '../../../store/csrf';
 
 const PhotoSection = ({ setFormData }) => {
 
@@ -18,8 +20,30 @@ const PhotoSection = ({ setFormData }) => {
 
   };
 
+  const handleSubmit = async file => {
+    const formData = new FormData();
+    formData.append("image1", file);
+    console.log(file, 'file');
+    const response = await fetch('/api/images', {
+      method: "POST",
+      headers: {
+        'XSRF-Token':  Cookies.get('XSRF-TOKEN')
+      },
+      body: formData,
+    });
+    const data = await response.json();
+    console.log(data);
+  }
+
+  const updateImage = async e => {
+    e.preventDefault();
+    const file = e.target.files[0];;
+    handleSubmit(file);
+  }
+
   return (
-    <div id="FMP-target" className="FMP-target relative mz--24 w100p"
+    <>
+    <div id="FMP-target" name='photo1' className="FMP-target relative mz--24 w100p"
       onDragOver={e => e.preventDefault()}
       onDrop={onDropHandler}
     >
@@ -36,6 +60,11 @@ const PhotoSection = ({ setFormData }) => {
         </div>
       </div>
     </div>
+    <input type="file" name="sampleFile"
+        encType="multipart/form-data"
+      onChange={updateImage}
+    />
+    </>
   )
 }
 
