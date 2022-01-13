@@ -39,7 +39,8 @@ const NewFormPage = () => {
     const {
       place, type, space, description,
       guests, beds, bedrooms, bathrooms,
-      address, amenities, title, price
+      address, city, state, photos,
+      amenities, title, price
     } = formData;
 
     const spotResponse = await csrfFetch('/api/spots', {
@@ -50,21 +51,21 @@ const NewFormPage = () => {
       body: JSON.stringify({
         userId, place, type, space, description,
         guests, beds, bedrooms, bathrooms,
-        address, title, price
+        address, city, state, title, price
       })
     });
 
     const { spot } = await spotResponse.json();
 
-    // const imageResponse = await csrfFetch('/api/images', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     photos
-    //   })
-    // })
+    const imageResponse = await csrfFetch('/api/images', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: photos[0]
+    })
+
+    console.log(imageResponse, 'imageResponse');
 
     const amenitiesResponse = await csrfFetch('/api/amenities', {
       method: 'POST',
@@ -77,7 +78,7 @@ const NewFormPage = () => {
       })
     });
 
-    console.log(amenitiesResponse);
+    console.log(amenitiesResponse, 'amenitiesResponse');
 
   }
 

@@ -4,6 +4,7 @@ const cors = require('cors');
 const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const fileupload = require('express-fileupload');
 
 const { environment } = require('./config');
 const isProduction = environment === 'production';
@@ -12,10 +13,10 @@ const { ValidationError } = require('sequelize');
 
 console.log('environtment', environment);
 const app = express();
-
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
+app.use(fileupload());
 
 // Security Middleware
 if (!isProduction) {

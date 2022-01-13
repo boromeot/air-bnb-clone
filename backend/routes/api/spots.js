@@ -18,13 +18,13 @@ router.post('/', asyncHandler(async (req, res) => {
   const {
     userId, place, type, space, description,
     guests, beds, bedrooms, bathrooms,
-    address, title, price
+    address, city, state, title, price
   } = req.body;
 
   const spot = await Spot.create({
     userId, place, type, space, description,
     guests, beds, bedrooms, bathrooms,
-    address, title, price
+    address, city, state, title, price
   });
 
   return res.json({
