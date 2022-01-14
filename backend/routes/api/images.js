@@ -22,35 +22,35 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const s3 = new aws.S3();
 
-  // Binary data base64
-  const file = req.files.image1;
-  const fileContent  = Buffer.from(file.data, 'binary');
-  // Setting up S3 upload parameters
-  const params = {
+  const { spotId } = req.body;
+  const createdImages = [];
+  for (const imageKey in req.files) { //Iterate through all the files
+    const file = req.files[imageKey];
+    const fileContent = Buffer.from(file.data, 'binary'); //File data
+    const params = { //Set the aws settings for upload
       Bucket: awsConfig.bucketName,
-      Key: file.name, // File name you want to save as in S3
+      Key: file.name,
       Body: fileContent
-  };
-
-   // Uploading files to the bucket
-  s3.upload(params, async (err, data) => {
-    if (err) {
+    };
+    s3.upload(params, async (err, data) => { //Upload file to the s3 bucket
+      if (err) {
         throw err;
-    }
+      }
 
-    const url = data.Location;
-    const { spotId } = req.body;
+      const url = data.Location;  //Set the returned url
 
-    const image = await Image.create({
-      spotId,
-      url
+      const dbImage = await Image.create({ //Create an entry in the db using the url and spotId
+        spotId,
+        url
+      });
+      createdImages.push(dbImage);
     });
+  }
 
-    return res.send({
-        "response_code": 200,
-        "response_message": "Success",
-        "response_data": data
-    });
+  return res.send({
+      "response_code": 200,
+      "response_message": "Success",
+      "response_data": createdImages,
   });
 
 }));

@@ -1,6 +1,5 @@
 import React from "react";
 import Photos from "../../SVGs/Photos";
-import Cookies from 'js-cookie';
 
 const PhotoSection = ({ setFormData }) => {
 

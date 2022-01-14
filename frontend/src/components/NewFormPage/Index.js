@@ -59,8 +59,12 @@ const NewFormPage = () => {
     const { spot } = await spotResponse.json();
 
     const imageData = new FormData();
+
     imageData.append('spotId', spot.id);
-    imageData.append("image1", photos[0]);
+    photos.forEach((photo, i) => {
+      imageData.append(`image${i}`, photo);
+    });
+
     const imageResponse = await fetch('/api/images', {
       method: "POST",
       headers: {
