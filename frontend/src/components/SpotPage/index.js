@@ -68,12 +68,13 @@ const SpotPage = () => {
           </div>
         </div>
       </div>
-      <div className='spot-image-container'>
-        { spot.Images && spot.Images.map(({url}, i) => (
-          <div className={`display-image pic-${i}`} style={{backgroundImage: `url(${url})`}}>
-
-          </div>
-        ))}
+      <div className='pz--80' >
+        <div className='spot-image-container ml-auto mr-auto' style={{maxWidth: '1120px'}}>
+          { spot.Images && spot.Images.map(({url}, i) => (
+            <div className={`display-image pic-${i}`} style={{backgroundImage: `url(${url})`}}>
+            </div>
+          ))}
+        </div>
       </div>
       <div className='spot-content'>
         <div className='spot-host'>
