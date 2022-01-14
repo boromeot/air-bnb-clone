@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { csrfFetch } from "../../store/csrf";
+import Cookies from 'js-cookie';
 import AddressSection from "./AddressSection";
 import AmenitieSection from "./AmenitieSection";
 import DescriptionSection from "./DescriptionSection";
@@ -57,15 +58,21 @@ const NewFormPage = () => {
 
     const { spot } = await spotResponse.json();
 
-    const imageResponse = await csrfFetch('/api/images', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: photos[0]
-    })
+    const imageData = new FormData();
 
-    console.log(imageResponse, 'imageResponse');
+    imageData.append('spotId', spot.id);
+    photos.forEach((photo, i) => {
+      imageData.append(`image${i}`, photo);
+    });
+
+    const imageResponse = await fetch('/api/images', {
+      method: "POST",
+      headers: {
+        'XSRF-Token':  Cookies.get('XSRF-TOKEN')
+      },
+      body: imageData,
+    });
+    const data = await imageResponse.json();
 
     const amenitiesResponse = await csrfFetch('/api/amenities', {
       method: 'POST',
