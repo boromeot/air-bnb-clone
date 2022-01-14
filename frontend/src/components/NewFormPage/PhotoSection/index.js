@@ -9,40 +9,14 @@ const PhotoSection = ({ setFormData }) => {
     const file = e.dataTransfer.items[0].getAsFile();
 
     setFormData(prevState => {
-
       return {
         ...prevState,
         photos: [...prevState.photos, file]
       };
-
     });
-
   };
 
-  const handleSubmit = async file => {
-    const formData = new FormData();
-    formData.append('spotId', 2);
-    formData.append("image1", file);
-    console.log(file, 'file');
-    const response = await fetch('/api/images', {
-      method: "POST",
-      headers: {
-        'XSRF-Token':  Cookies.get('XSRF-TOKEN')
-      },
-      body: formData,
-    });
-    const data = await response.json();
-    console.log(data, 'response');
-  }
-
-  const updateImage = async e => {
-    e.preventDefault();
-    const file = e.target.files[0];;
-    handleSubmit(file);
-  }
-
   return (
-    <>
     <div id="FMP-target" name='photo1' className="FMP-target relative mz--24 w100p"
       onDragOver={e => e.preventDefault()}
       onDrop={onDropHandler}
@@ -60,11 +34,6 @@ const PhotoSection = ({ setFormData }) => {
         </div>
       </div>
     </div>
-    <input type="file" name="sampleFile"
-        encType="multipart/form-data"
-      onChange={updateImage}
-    />
-    </>
   )
 }
 
