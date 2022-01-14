@@ -39,7 +39,7 @@ const SpotPage = () => {
         )}
         <span>{`${spot.city}, ${spot.state}` }</span>
       </div> */}
-      <div className='pz--80'>
+      <div className='pz--80 mb5'>
         <div className='ml-auto mr-auto' style={{maxWidth: '1120px'}}>
           <div className='pt4'>
             <div className='mb1'>
@@ -52,6 +52,15 @@ const SpotPage = () => {
                 <span className='inline-flex align-center'>
                   <span className='mr1'><Star className='icon-14 fill-red' viewBox='0 0 32 32' /></span>
                   <span className='mr1 font-size--14 font-weight--600 soft-black'>4.85 ·</span>
+                  <span className='mr1 font-size--14 font-weight--600 soft-black underline'>440 reviews</span>
+                </span>
+                <span className='mr1 soft-gray'>·</span>
+                <span className='inline-flex align-center'>
+                  <span className='mr1 soft-gray font-size--14'>Superhost</span>
+                </span>
+                <span className='mr1 soft-gray'>·</span>
+                <span className='inline-flex align-center'>
+                  <span className='font-size--14 font-weight--500 soft-gray underline'>{`${spot.city},${spot.state},United States`}</span>
                 </span>
               </div>
               <div></div>

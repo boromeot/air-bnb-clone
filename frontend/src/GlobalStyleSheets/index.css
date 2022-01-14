@@ -36,7 +36,7 @@ button {
   color: rgb(3, 115, 98);
 } */
 
-.underline:hover {
+.underline {
   text-decoration: underline;
 }
 
