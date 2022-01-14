@@ -1,12 +1,13 @@
 const express = require('express');
-const aws = require('aws-sdk');
 const asyncHandler = require('express-async-handler');
+const aws = require('aws-sdk');
 const router = express.Router();
 const { awsConfig } = require('../../config');
 const { Image } = require('../../db/models');
 
 router.post('/', asyncHandler(async (req, res) => {
-  console.log(req.files, 'enter');
+  console.log(req.files, 'files');
+
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -32,11 +33,19 @@ router.post('/', asyncHandler(async (req, res) => {
   };
 
    // Uploading files to the bucket
-  s3.upload(params, function(err, data) {
+  s3.upload(params, async (err, data) => {
     if (err) {
         throw err;
     }
-    console.log('success');
+
+    const url = data.Location;
+    const { spotId } = req.body;
+
+    const image = await Image.create({
+      spotId,
+      url
+    });
+
     return res.send({
         "response_code": 200,
         "response_message": "Success",

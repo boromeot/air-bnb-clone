@@ -1,7 +1,6 @@
 import React from "react";
 import Photos from "../../SVGs/Photos";
 import Cookies from 'js-cookie';
-import { csrfFetch } from '../../../store/csrf';
 
 const PhotoSection = ({ setFormData }) => {
 
@@ -22,6 +21,7 @@ const PhotoSection = ({ setFormData }) => {
 
   const handleSubmit = async file => {
     const formData = new FormData();
+    formData.append('spotId', 2);
     formData.append("image1", file);
     console.log(file, 'file');
     const response = await fetch('/api/images', {
@@ -32,7 +32,7 @@ const PhotoSection = ({ setFormData }) => {
       body: formData,
     });
     const data = await response.json();
-    console.log(data);
+    console.log(data, 'response');
   }
 
   const updateImage = async e => {
