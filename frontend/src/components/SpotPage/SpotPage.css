@@ -61,6 +61,8 @@
 .spot-host h2 {
   font-weight: 600;
   font-size: 22px;
+  line-height: 26px;
+  color: rgb(34, 34, 34);
 }
 
 .spot-info {

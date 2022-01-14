@@ -27,6 +27,14 @@ const SpotPage = () => {
     history.push('/s/home');
   }
 
+  const plural = (amount, text) => {
+    if (amount > 1) {
+      return `${text}s`;
+    } else {
+      return text;
+    }
+  };
+
   return (
     <>
       {/* <div className='spot-header'>
@@ -79,9 +87,25 @@ const SpotPage = () => {
       <div className='pz--80'>
         <div className='spot-content ml-auto mr-auto' style={{maxWidth: '1120px'}}>
           <div className='spot-host'>
-            <h2>{spot.User && `Hosted by ${spot.User.username}`}</h2>
-            {session.user && session.user.id === spot.userId ? <button onClick={e => handleDelete(e)}>delete</button> : null}
+            <div>
+              <div className='mb1'>
+                <h2>{spot.User && `${spot.type} hosted by ${spot.User.username}`}</h2>
+              </div>
+              <div className='soft-black'>
+                <span>{`${spot.guests} ${plural(spot.guests, 'guest')}`}</span>
+                <span> · </span>
+                <span>{`${spot.bedrooms} ${plural(spot.bedrooms, 'bedroom')}`}</span>
+                <span> · </span>
+                <span>{`${spot.beds} ${plural(spot.beds, 'bed')}`}</span>
+                <span> · </span>
+                <span>{`${spot.bathrooms} ${plural(spot.bathrooms, 'bathroom')}`}</span>
+              </div>
+            </div>
+            <div>
+
+            </div>
           </div>
+          {session.user && session.user.id === spot.userId ? <button onClick={e => handleDelete(e)}>delete</button> : null}
           <div className='spot-info'>
             <div className='spot-description'>
               {spot.description}
