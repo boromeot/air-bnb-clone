@@ -44,6 +44,10 @@
   margin-right: auto;
 }
 
+.mr1 {
+  margin-right: 6px;
+}
+
 .mr4 {
   margin-right: 24px;
 }
@@ -52,6 +56,10 @@
   margin-right: 48px;
 }
 /*Margin top*/
+.ml-auto {
+  margin-left: auto;
+}
+
 .mt-8 {
   margin-top: 8px;
 }
@@ -77,6 +85,10 @@
 }
 
 /* Margin bottom */
+.mb1 {
+  margin-bottom: 6px;
+}
+
 .mb2 {
   margin-bottom: 12px;
 }
@@ -256,6 +268,11 @@
 .pz--64 {
   padding-left: 64px;
   padding-right: 64px;
+}
+
+.pz--80 {
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .h20p {
