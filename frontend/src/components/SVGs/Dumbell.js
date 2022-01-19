@@ -1,9 +1,9 @@
 import React from "react";
 
-const Dumbell = ({ className, viewBox }) => {
+const Dumbell = ({ className, viewBox, transform }) => {
   return (
     <svg className={ className } viewBox={ viewBox }>
-      <g transform="translate(-31, -30) scale(2, 2)">
+      <g transform={transform}>
         <path stroke="#222222" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeWidth="2" strokeOpacity="1" d=" M50 34 C50,34 52,34 52,34 C52.55,34 53,34.45 53,35 C53,35 53,45 53,45 C53,45.55 52.55,46 52,46 C52,46 50,46 50,46 C49.45,46 49,45.55 49,45 C49,45 49,35 49,35 C49,34.45 49.45,34 50,34z "></path>
         <path stroke="#222222" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeWidth="2" strokeOpacity="1" d=" M46 30 C46,30 48,30 48,30 C48.55,30 49,30.45 49,31 C49,31 49,49 49,49 C49,49.55 48.55,50 48,50 C48,50 46,50 46,50 C45.45,50 45,49.55 45,49 C45,49 45,31 45,31 C45,30.45 45.45,30 46,30z "></path>
         <path stroke="#222222" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeWidth="2" strokeOpacity="1" d=" M32 30 C32,30 34,30 34,30 C34.55,30 35,30.45 35,31 C35,31 35,49 35,49 C35,49.55 34.55,50 34,50 C34,50 32,50 32,50 C31.45,50 31,49.55 31,49 C31,49 31,31 31,31 C31,30.45 31.45,30 32,30z "></path>

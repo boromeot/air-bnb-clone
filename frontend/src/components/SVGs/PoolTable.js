@@ -1,9 +1,9 @@
 import React from "react";
 
-const PoolTable = ({ className, viewBox }) => {
+const PoolTable = ({ className, viewBox, transform }) => {
   return (
     <svg className={ className } viewBox={ viewBox }>
-      <g transform="translate(-31, -30) scale(2, 2)">
+      <g transform={transform}>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M43.63 38.73 C43.63,38.73 48.95,54.68 48.95,54.68 C48.95,54.68 47.05,55.32 47.05,55.32 C47.05,55.32 41.73,39.36 41.73,39.36 C41.73,39.36 43.63,38.73 43.63,38.73z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M42 36 C42.55,36 43,36.45 43,37 C43,37.55 42.55,38 42,38 C41.45,38 41,37.55 41,37 C41,36.45 41.45,36 42,36z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M52 29 C52,29 28,29 28,29 C26.34,29 25,30.34 25,32 C25,32 25,48 25,48 C25,49.66 26.34,51 28,51 C28,51 52,51 52,51 C53.66,51 55,49.66 55,48 C55,48 55,32 55,32 C55,30.34 53.66,29 52,29z  M28 31 C28,31 52,31 52,31 C52.55,31 53,31.45 53,32 C53,32 53,48 53,48 C53,48.55 52.55,49 52,49 C52,49 28,49 28,49 C27.45,49 27,48.55 27,48 C27,48 27,32 27,32 C27,31.45 27.45,31 28,31z "></path>

@@ -15,20 +15,32 @@ const AmenitieSection = ({ setFormData, formAmenities }) => {
 
   const [selected, setSelected] = useState(formAmenities);
 
+  const amenityProps = {
+    selected: selected,
+    setSelected: setSelected,
+    setFormData: setFormData
+  }
+
+  const svgProps = {
+    className: 'icon-52',
+    viewBox: '0 0 100 100',
+    transform: 'translate(-31, -30) scale(2, 2)'
+  }
+
   return (
     <div id="FMP-target" className="FMP-target flex flex-column">
       <div className="mz--24" style={{maxWidth: '656px'}}>
         <h2 className="font-size--22 pl--8 font-weight--600" style={{marginBottom: '15px'}}>Do you have any standout amenities?</h2>
         <div className="flex flex-row-wrap mt4">
-          <AmenitieOption amenitie='Pool' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Pool className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Hot tub'selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<HotTub className='icon-52' viewBox='0 0 100 100' />} />
-          <AmenitieOption amenitie='Patio' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Patio className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='BBQ grill' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Grill className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Fire pit' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<FirePit className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Pool table' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<PoolTable className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Indoor fireplace'selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<FirePlace className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Outdoor dining area' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<DiningArea className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Exercise equipment' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Dumbell className='icon-52' viewBox='0 0 100 100' />}/>
+          <AmenitieOption amenitie='Pool' {...amenityProps} svg={<Pool {...svgProps} />}/>
+          <AmenitieOption amenitie='Hot tub'{...amenityProps} svg={<HotTub {...svgProps} />} />
+          <AmenitieOption amenitie='Patio' {...amenityProps} svg={<Patio {...svgProps} />}/>
+          <AmenitieOption amenitie='BBQ grill' {...amenityProps} svg={<Grill {...svgProps} transform='scale(2, 2)' />}/>
+          <AmenitieOption amenitie='Fire pit' {...amenityProps} svg={<FirePit {...svgProps} />}/>
+          <AmenitieOption amenitie='Pool table' {...amenityProps} svg={<PoolTable {...svgProps} />}/>
+          <AmenitieOption amenitie='Indoor fireplace'{...amenityProps} svg={<FirePlace {...svgProps} />}/>
+          <AmenitieOption amenitie='Outdoor dining area' {...amenityProps} svg={<DiningArea {...svgProps} />}/>
+          <AmenitieOption amenitie='Exercise equipment' {...amenityProps} svg={<Dumbell {...svgProps} />}/>
         </div>
       </div>
     </div>
