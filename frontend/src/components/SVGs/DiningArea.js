@@ -1,9 +1,9 @@
 import React from "react";
 
-const DiningArea = ({ className, viewBox }) => {
+const DiningArea = ({ className, viewBox, transform }) => {
   return (
     <svg className={className} viewBox={viewBox} >
-      <g transform=" translate(-31, -30) scale(2, 2)">
+      <g transform={transform}>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M53 39 C53,39 53,55 53,55 C53,55 51,55 51,55 C51,55 51,39 51,39 C51,39 53,39 53,39z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M52 47 C52,47 52,49 52,49 C52,49 45,49 45,49 C45,49 45,55 45,55 C45,55 43,55 43,55 C43,55 43,49 43,49 C43,47.95 43.81,47.08 44.85,47.01 C44.85,47.01 45,47 45,47 C45,47 52,47 52,47z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M29 39 C29,39 29,55 29,55 C29,55 27,55 27,55 C27,55 27,39 27,39 C27,39 29,39 29,39z "></path>

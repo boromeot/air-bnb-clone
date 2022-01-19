@@ -1,9 +1,9 @@
 import React from "react";
 
-const Patio = ({ className, viewBox }) => {
+const Patio = ({ className, viewBox, transform }) => {
   return (
     <svg className={className} viewBox={viewBox} >
-      <g transform="translate(-31, -30) scale(2, 2)">
+      <g transform={transform}>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M51 44 C51,44 51,54 51,54 C51,54 49,54 49,54 C49,54 49,44 49,44 C49,44 51,44 51,44z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M47 44 C47,44 47,54 47,54 C47,54 45,54 45,54 C45,54 45,44 45,44 C45,44 47,44 47,44z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M43 44 C43,44 43,54 43,54 C43,54 41,54 41,54 C41,54 41,44 41,44 C41,44 43,44 43,44z "></path>
