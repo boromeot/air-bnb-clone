@@ -11,6 +11,7 @@ import Star from '../SVGs/Star';
 import SpotImages from './SpotImages';
 import SpotOverview from './SpotOverview';
 import SpotHighlights from './SpotHighlights';
+import SpotAmenities from './SpotAmenities';
 
 const SpotPage = () => {
   const { spotId } = useParams();
@@ -76,6 +77,9 @@ const SpotPage = () => {
           </div>
           <div className='spot-info--section'>
             {spot.description}
+          </div>
+          <div className='spot-info--section'>
+            <SpotAmenities amenities={spot?.Amenities} />
           </div>
         </div>
         <div className='spot-reservation'>
