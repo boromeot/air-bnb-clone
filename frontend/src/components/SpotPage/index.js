@@ -9,6 +9,7 @@ import Reservation from './Reservation';
 import './SpotPage.css';
 import Star from '../SVGs/Star';
 import SpotImages from './SpotImages';
+import SpotOverview from './SpotOverview';
 
 const SpotPage = () => {
   const { spotId } = useParams();
@@ -27,14 +28,6 @@ const SpotPage = () => {
     dispatch(spotActions.deleteSpot(spotId));
     history.push('/s/home');
   }
-
-  const plural = (amount, text) => {
-    if (amount > 1) {
-      return `${text}s`;
-    } else {
-      return text;
-    }
-  };
 
   return (
     <>
@@ -71,20 +64,15 @@ const SpotPage = () => {
       <div className='spotpage-spacer flex'> {/* spot info */}
         <div className='spot-info'>
           <div className='spot-info--section'>
-            <div className='mb1'>
-              <h2>{spot.User && `${spot.type} hosted by ${spot.User.username}`}</h2>
-            </div>
-            <div className='soft-black'>
-              <span>{`${spot.guests} ${plural(spot.guests, 'guest')}`}</span>
-              <span> · </span>
-              <span>{`${spot.bedrooms} ${plural(spot.bedrooms, 'bedroom')}`}</span>
-              <span> · </span>
-              <span>{`${spot.beds} ${plural(spot.beds, 'bed')}`}</span>
-              <span> · </span>
-              <span>{`${spot.bathrooms} ${plural(spot.bathrooms, 'bathroom')}`}</span>
-            </div>
+            <SpotOverview type={spot.type} hostName={spot.User?.username} guests={spot.guests}
+              bedrooms={spot.bedrooms}
+              beds={spot.beds}
+              bathrooms={spot.bathrooms}
+            />
           </div>
-          <div className='spot-info--section'></div>
+          <div className='spot-info--section'>
+
+          </div>
           <div className='spot-info--section'>
             {spot.description}
           </div>
