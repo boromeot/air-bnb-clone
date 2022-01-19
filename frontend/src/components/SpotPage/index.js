@@ -72,7 +72,7 @@ const SpotPage = () => {
             />
           </div>
           <div className='spot-info--section'>
-            <SpotHighlights />
+            <SpotHighlights space={spot.space} type={spot.type} />
           </div>
           <div className='spot-info--section'>
             {spot.description}
