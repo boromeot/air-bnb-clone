@@ -1,12 +1,30 @@
-.spotpage-container {
-  margin: 0 13%;
+.spotpage-spacer {
+  max-width: 1280px;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.spot-header {
-  padding: 20px 0;
+.spot-info {
+  position: relative;
+  width: 58.3%;
+  margin-left: 0;
+  margin-right: 0;
 }
-.spot-title {
-  padding-bottom: 10px;
+
+.spot-reservation {
+  position: relative;
+  width: 33.3%;
+  margin-left: 8.3%;
+  margin-right: 0;
+
+}
+
+.spot-host {
+  padding-top: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .spot-image-container {
@@ -18,7 +36,7 @@
     "main main pic3 pic4";
   column-gap: 10px;
   row-gap: 10px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -52,24 +70,11 @@
   background-position: center;
 }
 
-.spot-host {
-  padding-top: 48px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
 .spot-host h2 {
   font-weight: 600;
   font-size: 22px;
   line-height: 26px;
   color: rgb(34, 34, 34);
-}
-
-.spot-info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-  height: 600px;
 }
 
 .spot-description {
