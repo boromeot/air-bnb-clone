@@ -1,9 +1,9 @@
 import React from "react";
 
-const Grill = ({ className, viewBox }) => {
+const Grill = ({ className, viewBox, transform }) => {
   return (
     <svg  className={ className } viewBox={ viewBox } >
-        <g transform="scale(2, 2)">
+        <g transform={transform}>
             <g transform="translate(-15, -15)">
                 <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M35.09 42.59 C35.09,42.59 36.91,43.41 36.91,43.41 C36.91,43.41 31.91,54.41 31.91,54.41 C31.91,54.41 30.09,53.59 30.09,53.59 C30.09,53.59 35.09,42.59 35.09,42.59z "></path>
                 <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M44.91 42.59 C44.91,42.59 43.09,43.41 43.09,43.41 C43.09,43.41 48.09,54.41 48.09,54.41 C48.09,54.41 49.91,53.59 49.91,53.59 C49.91,53.59 44.91,42.59 44.91,42.59z "></path>
