@@ -10,6 +10,7 @@ import './SpotPage.css';
 import Star from '../SVGs/Star';
 import SpotImages from './SpotImages';
 import SpotOverview from './SpotOverview';
+import SpotHighlights from './SpotHighlights';
 
 const SpotPage = () => {
   const { spotId } = useParams();
@@ -71,7 +72,7 @@ const SpotPage = () => {
             />
           </div>
           <div className='spot-info--section'>
-
+            <SpotHighlights />
           </div>
           <div className='spot-info--section'>
             {spot.description}
