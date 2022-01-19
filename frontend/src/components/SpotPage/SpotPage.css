@@ -21,9 +21,9 @@
 
 }
 
-.spot-host {
-  padding-top: 48px;
-  padding-bottom: 24px;
+.spot-info--section {
+  padding-top: 32px;
+  padding-bottom: 32px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .spot-description {
-  flex: 0.9;
+
 }
 
 .reservation-form-container {

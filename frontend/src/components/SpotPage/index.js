@@ -8,6 +8,7 @@ import Reservation from './Reservation';
 // import EditForm from './EditForm';
 import './SpotPage.css';
 import Star from '../SVGs/Star';
+import SpotImages from './SpotImages';
 
 const SpotPage = () => {
   const { spotId } = useParams();
@@ -65,32 +66,28 @@ const SpotPage = () => {
         </div>
       </div>
       <div className='spotpage-spacer'> {/* spot image */}
-        <div className='spot-image-container'>
-          { spot.Images && spot.Images.map(({url}, i) => (
-            <div className={`display-image pic-${i}`} style={{backgroundImage: `url(${url})`}}>
-            </div>
-          ))}
-        </div>
+        <SpotImages images={spot.Images} />
       </div>
       <div className='spotpage-spacer flex'> {/* spot info */}
         <div className='spot-info'>
-          <div className='spot-host'>
-            <div>
-              <div className='mb1'>
-                <h2>{spot.User && `${spot.type} hosted by ${spot.User.username}`}</h2>
-              </div>
-              <div className='soft-black'>
-                <span>{`${spot.guests} ${plural(spot.guests, 'guest')}`}</span>
-                <span> · </span>
-                <span>{`${spot.bedrooms} ${plural(spot.bedrooms, 'bedroom')}`}</span>
-                <span> · </span>
-                <span>{`${spot.beds} ${plural(spot.beds, 'bed')}`}</span>
-                <span> · </span>
-                <span>{`${spot.bathrooms} ${plural(spot.bathrooms, 'bathroom')}`}</span>
-              </div>
+          <div className='spot-info--section'>
+            <div className='mb1'>
+              <h2>{spot.User && `${spot.type} hosted by ${spot.User.username}`}</h2>
+            </div>
+            <div className='soft-black'>
+              <span>{`${spot.guests} ${plural(spot.guests, 'guest')}`}</span>
+              <span> · </span>
+              <span>{`${spot.bedrooms} ${plural(spot.bedrooms, 'bedroom')}`}</span>
+              <span> · </span>
+              <span>{`${spot.beds} ${plural(spot.beds, 'bed')}`}</span>
+              <span> · </span>
+              <span>{`${spot.bathrooms} ${plural(spot.bathrooms, 'bathroom')}`}</span>
             </div>
           </div>
-          <div></div>
+          <div className='spot-info--section'></div>
+          <div className='spot-info--section'>
+            {spot.description}
+          </div>
         </div>
         <div className='spot-reservation'>
           {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
