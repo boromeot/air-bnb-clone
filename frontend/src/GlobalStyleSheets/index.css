@@ -36,7 +36,7 @@ button {
   color: rgb(3, 115, 98);
 } */
 
-.underline:hover {
+.underline {
   text-decoration: underline;
 }
 
@@ -78,12 +78,20 @@ li {
   flex: 1 1 auto;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-row-wrap {
   flex-flow: row wrap;
 }
 
 .align-center {
   align-items: center;
+}
+
+.align-flex-end {
+  align-items: flex-end;
 }
 
 .justify-center {

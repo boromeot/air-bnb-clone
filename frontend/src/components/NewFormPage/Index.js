@@ -72,7 +72,7 @@ const NewFormPage = () => {
       },
       body: imageData,
     });
-    const data = await imageResponse.json();
+  console.log(await imageResponse.json());
 
     const amenitiesResponse = await csrfFetch('/api/amenities', {
       method: 'POST',

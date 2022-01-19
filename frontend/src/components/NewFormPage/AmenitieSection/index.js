@@ -26,7 +26,7 @@ const AmenitieSection = ({ setFormData, formAmenities }) => {
           <AmenitieOption amenitie='BBQ grill' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Grill className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Fire pit' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<FirePit className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Pool table' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<PoolTable className='icon-52' viewBox='0 0 100 100' />}/>
-          <AmenitieOption amenitie='Indoor fireplace'nselected={selected} setSelected={setSelected} setFormData={setFormData} svg={<FirePlace className='icon-52' viewBox='0 0 100 100' />}/>
+          <AmenitieOption amenitie='Indoor fireplace'selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<FirePlace className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Outdoor dining area' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<DiningArea className='icon-52' viewBox='0 0 100 100' />}/>
           <AmenitieOption amenitie='Exercise equipment' selected={selected} setSelected={setSelected} setFormData={setFormData} svg={<Dumbell className='icon-52' viewBox='0 0 100 100' />}/>
         </div>
