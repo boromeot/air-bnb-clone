@@ -20,15 +20,15 @@ const SpotAmenities = ({ amenities }) => {
   }
 
   const obj = {
-    'Pool' : <Amenity svg={<Pool {...props} /> } desc='Pool' />,
-    'Hot tub' : <Amenity svg={<HotTub {...props} />} desc='Hot tub' />,
-    'Patio' : <Amenity svg={<Patio {...props} />} desc='Open patio' />,
-    'BBQ grill' : <Amenity svg={<Grill {...props} transform='translate(-7, -7)'/>} desc='Grill' />,
-    'Fire pit' : <Amenity svg={<FirePit {...props} />} desc='Fire pit' />    ,
-    'Pool table' : <Amenity svg={<PoolTable {...props} />} desc='Pool table' />,
-    'Indoor fireplace' : <Amenity svg={<FirePlace {...props} />} desc='Indoor fireplace' />,
-    'Outdoor dining area' : <Amenity svg={<DiningArea {...props} />} desc='Outdoor dining area' />,
-    'Exercise equipment' : <Amenity svg={<Dumbell {...props} />} desc='Exercise equipment' />,
+    'Pool' : <Amenity svg={<Pool {...props} /> } desc='Pool' key='Pool'/>,
+    'Hot tub' : <Amenity svg={<HotTub {...props} />} desc='Hot tub' key='Hot tub'/>,
+    'Patio' : <Amenity svg={<Patio {...props} />} desc='Open patio' key='Patio'/>,
+    'BBQ grill' : <Amenity svg={<Grill {...props} transform='translate(-7, -7)'/>} desc='Grill' key='BBQ grill'/>,
+    'Fire pit' : <Amenity svg={<FirePit {...props} />} desc='Fire pit' key='Fire pit' />,
+    'Pool table' : <Amenity svg={<PoolTable {...props} />} desc='Pool table' key='Pool Table'/>,
+    'Indoor fireplace' : <Amenity svg={<FirePlace {...props} />} desc='Indoor fireplace' key='Indoor fireplace'/>,
+    'Outdoor dining area' : <Amenity svg={<DiningArea {...props} />} desc='Outdoor dining area' key='Outdoor dining area'/>,
+    'Exercise equipment' : <Amenity svg={<Dumbell {...props} />} desc='Exercise equipment' key='Exercise equipment'/>,
   }
 
   return (
