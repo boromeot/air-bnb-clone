@@ -20,6 +20,27 @@ const Reservation = ({ userId, spotId, price }) => {
     pets: 0,
   });
 
+  const guestCount = formData.adults + formData.children;
+  const infantCount = formData.infants;
+
+  const guestInfantStringFormatter = (guestCount, infantCount) => {
+    let guestString = '';
+    let infantString = '';
+
+    if (guestCount === 0 || guestCount === 1) {
+      guestString = `${guestCount} guest`
+    } else if (guestCount > 1) {
+      guestString = `${guestCount} guests`
+    }
+
+    if (infantCount === 1) {
+      infantString = ', 1 infant';
+    } else if (infantCount > 1) {
+      infantString = `, ${infantCount} infants`;
+    }
+    return `${guestString}${infantString}`
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const booking = {
@@ -64,10 +85,10 @@ const Reservation = ({ userId, spotId, price }) => {
               onClick={() => setShowForm(prev => !prev)}
             >
               <div className="relative flex">
-                <label className="w100p pointer">
-                  <div className="reservation-text">Guests</div>
-                  <div className="reservation-guest">
-                    <div className="font-size--14">1 guest</div>
+                <label className="w100p">
+                  <div className="reservation-text text">Guests</div>
+                  <div className="reservation-guest pointer">
+                    <div className="font-size--14">{guestInfantStringFormatter(guestCount, infantCount)}</div>
                   </div>
                 </label>
                 <div className="reservation-chevron">

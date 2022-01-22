@@ -161,6 +161,10 @@ li {
   cursor: pointer;
 }
 
+.text:hover {
+  cursor: text;
+}
+
 .opacity-0 {
   opacity: 0;
 }
