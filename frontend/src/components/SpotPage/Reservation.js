@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import * as reservationActions from "../../store/reservation";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import './SpotReservation.css';
+import * as reservationActions from "../../store/reservation";
+import GuestForm from "./GuestForm/GuestForm";
 import Star from "../SVGs/Star";
 import DownChevron from "../SVGs/DownChevron";
+import './SpotReservation.css';
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
@@ -79,6 +80,7 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
+      <GuestForm />
     </div>
   )
 }
