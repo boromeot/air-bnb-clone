@@ -1,16 +1,48 @@
 import React, { useState } from "react";
-import * as reservationActions from "../../store/reservation";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import './SpotReservation.css';
+import * as reservationActions from "../../store/reservation";
+import GuestForm from "./GuestForm/GuestForm";
 import Star from "../SVGs/Star";
 import DownChevron from "../SVGs/DownChevron";
+import './SpotReservation.css';
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
+
+  const maxGuests = useSelector(state => state.spot.guests);
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    adults: 1,
+    children: 0,
+    infants: 0,
+    pets: 0,
+    totalGuests: 1,
+  });
+
+  const guestCount = formData.adults + formData.children;
+  const infantCount = formData.infants;
+
+  const guestInfantStringFormatter = (guestCount, infantCount) => {
+    let guestString = '';
+    let infantString = '';
+
+    if (guestCount === 1) {
+      guestString = `${guestCount} guest`
+    } else if (guestCount === 0 || guestCount > 1) {
+      guestString = `${guestCount} guests`
+    }
+
+    if (infantCount === 1) {
+      infantString = ', 1 infant';
+    } else if (infantCount > 1) {
+      infantString = `, ${infantCount} infants`;
+    }
+    return `${guestString}${infantString}`
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,10 +55,6 @@ const Reservation = ({ userId, spotId, price }) => {
     dispatch(reservationActions.setReservation(booking));
     history.push('/reservations');
   }
-
-  console.log(setStartDate);
-  console.log(setEndDate);
-  console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -56,12 +84,14 @@ const Reservation = ({ userId, spotId, price }) => {
                 <div className="reservation-date">4/23/2021</div>
               </div>
             </div>
-            <div className="reservation-guest-container w100p relative">
-              <div className="relative flex cursor">
+            <div className="reservation-guest-container"
+              onClick={() => setShowForm(prev => !prev)}
+            >
+              <div className="relative flex">
                 <label className="w100p">
-                  <div className="reservation-text">Guests</div>
-                  <div className="reservation-guest">
-                    <div className="font-size--14">1 guest</div>
+                  <div className="reservation-text text">Guests</div>
+                  <div className="reservation-guest pointer">
+                    <div className="font-size--14">{guestInfantStringFormatter(guestCount, infantCount)}</div>
                   </div>
                 </label>
                 <div className="reservation-chevron">
@@ -69,22 +99,17 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
+            { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
+          </div>
+          <div>
+            <button className="reservation-button">
+              <div>Reserve</div>
+            </button>
           </div>
         </div>
         <ul></ul>
         <div></div>
       </div>
-      {/* <div className='reservation-price'>
-        <span>{`$${price} / night`}</span>
-      </div>
-      <form className='reservation-form' onSubmit={handleSubmit}>
-        <input className='reservation-form-input startDate' type='date' value={startDate} onChange={e => setStartDate(e.target.value)}/>
-        <input className='reservation-form-input endDate' type='date' value={endDate} onChange={e => setEndDate(e.target.value)} />
-        <input className='reservation-form-input guestNumber' type='number' />
-        <button className='submit-btn' type='submit' >
-          Reserve
-        </button>
-      </form> */}
     </div>
   )
 }
