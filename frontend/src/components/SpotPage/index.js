@@ -33,6 +33,7 @@ const SpotPage = () => {
     dispatch(spotActions.deleteSpot(spotId));
     history.push('/s/home');
   }
+  console.log(handleDelete);
 
   return (
     <>

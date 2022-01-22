@@ -23,6 +23,10 @@ const Reservation = ({ userId, spotId, price }) => {
     history.push('/reservations');
   }
 
+  console.log(setStartDate);
+  console.log(setEndDate);
+  console.log(handleSubmit);
+
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
       <div className="test">
@@ -40,8 +44,21 @@ const Reservation = ({ userId, spotId, price }) => {
               </span>
             </div>
           </div>
+          <div className="flex justify-space mb4">
+            <div className="reservation-check-container">
+              <div className='reservation-check'> {/* check in */}
+                <div className='reservation-text'>CHECK-IN</div>
+                <div className="reservation-date">4/20/2021</div>
+              </div>
+              <div className='reservation-check' style={{borderLeft: '1px solid rgb(176, 176, 176)'}}> {/* check in */}
+                <div className='reservation-text'>CHECKOUT</div>
+                <div className="reservation-date">4/23/2021</div>
+              </div>
+            </div>
+            <div></div>
+          </div>
         </div>
-        <div></div>
+        <ul></ul>
         <div></div>
       </div>
       {/* <div className='reservation-price'>
