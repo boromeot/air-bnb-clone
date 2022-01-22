@@ -84,3 +84,21 @@
   height: 100%;
   align-items: center;
 }
+
+.reservation-button {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 600;
+  border: medium none;
+	border-radius: 8px;
+	padding: 14px 24px;
+	transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, transform 0.1s ease 0s, transform 0.1s ease 0s;
+	background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) repeat scroll 0% 0%;
+	color: rgb(255, 255, 255);
+	width: 100%;
+}

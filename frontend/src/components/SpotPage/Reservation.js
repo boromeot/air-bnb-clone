@@ -70,6 +70,11 @@ const Reservation = ({ userId, spotId, price }) => {
               </div>
             </div>
           </div>
+          <div>
+            <button className="reservation-button">
+              <div>Reserve</div>
+            </button>
+          </div>
         </div>
         <ul></ul>
         <div></div>
