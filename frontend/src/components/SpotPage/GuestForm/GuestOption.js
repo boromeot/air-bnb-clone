@@ -1,32 +1,52 @@
+import { userSelector, useSelector } from 'react-redux';
 import React from "react";
 import Minus from '../../SVGs/Minus';
 import Plus from '../../SVGs/Plus';
 
 const GuestOption = ({ name, ageRange, formData, setFormData }) => {
   const optionCount = formData[name];
+  const maxGuests = useSelector(state => state.spot.guests);
+  const totalGuests = formData['totalGuests'];
 
   const decrement = e => { //Uses the name attribute as a key for the formData object
     const name = e.currentTarget.name;
-    if (formData[name] > 0) {
-
+    if (optionCount > 0) {
       setFormData(prev => {
         return {
           ...prev,
-          [name]: prev[name] - 1
+          [name]: prev[name] - 1,
         };
       });
-
+    }
+    if (name !== 'infants' && formData['totalGuests'] > 0) {
+      setFormData(prev => {
+        return {
+          ...prev,
+          ['totalGuests'] : prev['totalGuests'] - 1,
+        }
+      })
     }
   }
 
   const increment = e => {
+    console.log(formData['totalGuests'] < maxGuests, formData['totalGuests'], '<', maxGuests);
     const name = e.currentTarget.name;
-    setFormData(prev => {
-      return {
-        ...prev,
-        [name]: prev[name] + 1
-      };
-    })
+    if (name === 'infants') { //If infants just increase the infant count
+      setFormData(prev => {
+        return {
+          ...prev,
+          [name]: prev[name] + 1,
+        };
+      });
+    } else if (name !== 'infants' && totalGuests < maxGuests) { //else increase the adult or children count and the totalGuests count
+      setFormData(prev => {
+        return {
+          ...prev,
+          [name]: prev[name] + 1,
+          ['totalGuests']: prev['totalGuests'] + 1,
+        };
+      });
+    }
   }
 
   return (

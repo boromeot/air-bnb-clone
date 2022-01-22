@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import * as reservationActions from "../../store/reservation";
 import GuestForm from "./GuestForm/GuestForm";
@@ -12,12 +12,15 @@ const Reservation = ({ userId, spotId, price }) => {
   const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
+
+  const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     adults: 1,
     children: 0,
     infants: 0,
     pets: 0,
+    totalGuests: 1,
   });
 
   const guestCount = formData.adults + formData.children;
@@ -27,9 +30,9 @@ const Reservation = ({ userId, spotId, price }) => {
     let guestString = '';
     let infantString = '';
 
-    if (guestCount === 0 || guestCount === 1) {
+    if (guestCount === 1) {
       guestString = `${guestCount} guest`
-    } else if (guestCount > 1) {
+    } else if (guestCount === 0 || guestCount > 1) {
       guestString = `${guestCount} guests`
     }
 
@@ -96,7 +99,7 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
-            { showForm && <GuestForm formData={formData} setFormData={setFormData} />}
+            { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
           </div>
           <div>
             <button className="reservation-button">
