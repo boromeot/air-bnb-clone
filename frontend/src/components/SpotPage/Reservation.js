@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import './SpotReservation.css';
 import Star from "../SVGs/Star";
+import DownChevron from "../SVGs/DownChevron";
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
@@ -56,14 +57,16 @@ const Reservation = ({ userId, spotId, price }) => {
               </div>
             </div>
             <div className="reservation-guest-container w100p relative">
-              <div className="">
-                <label>
+              <div className="relative flex cursor">
+                <label className="w100p">
                   <div className="reservation-text">Guests</div>
-                  <div className="test2">
+                  <div className="reservation-guest">
                     <div className="font-size--14">1 guest</div>
                   </div>
                 </label>
-                <div></div>
+                <div className="reservation-chevron">
+                  <DownChevron className='icon-16' viewBox='0 0 18 18' />
+                </div>
               </div>
             </div>
           </div>

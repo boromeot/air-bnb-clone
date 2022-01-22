@@ -65,10 +65,22 @@
   text-overflow: ellipsis;
 }
 
-.test2 {
+.reservation-guest {
   height: 56px;
   width: 100%;
   border: 1px solid rgb(176, 176, 176);
   border-radius: 0 0 8px 8px;
   padding: 26px 36px 10px 12px;
+}
+
+.reservation-chevron {
+  position: absolute;
+  right: 0;
+  display: flex;
+  max-width: 50%;
+  min-width: 36px;
+  padding-right: 12px;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
