@@ -12,6 +12,7 @@ const Reservation = ({ userId, spotId, price }) => {
   const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
+  const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     adults: 1,
     children: 0,
@@ -59,9 +60,11 @@ const Reservation = ({ userId, spotId, price }) => {
                 <div className="reservation-date">4/23/2021</div>
               </div>
             </div>
-            <div className="reservation-guest-container w100p relative">
-              <div className="relative flex cursor">
-                <label className="w100p">
+            <div className="reservation-guest-container"
+              onClick={() => setShowForm(prev => !prev)}
+            >
+              <div className="relative flex">
+                <label className="w100p pointer">
                   <div className="reservation-text">Guests</div>
                   <div className="reservation-guest">
                     <div className="font-size--14">1 guest</div>
@@ -72,6 +75,7 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
+            { showForm && <GuestForm formData={formData} setFormData={setFormData} />}
           </div>
           <div>
             <button className="reservation-button">
@@ -82,7 +86,6 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
-      <GuestForm formData={formData} setFormData={setFormData} />
     </div>
   )
 }

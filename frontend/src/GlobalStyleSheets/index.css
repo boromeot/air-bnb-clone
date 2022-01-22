@@ -32,10 +32,6 @@ button {
   background-color: white;
 }
 
-/* a:hover {
-  color: rgb(3, 115, 98);
-} */
-
 .underline {
   text-decoration: underline;
 }
@@ -161,7 +157,7 @@ li {
   float: left;
 }
 
-.pointer {
+.pointer:hover {
   cursor: pointer;
 }
 

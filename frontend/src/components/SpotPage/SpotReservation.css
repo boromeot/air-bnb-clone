@@ -65,6 +65,11 @@
   text-overflow: ellipsis;
 }
 
+.reservation-guest-container {
+  width: 100%;
+  position: relative;
+}
+
 .reservation-guest {
   height: 56px;
   width: 100%;
