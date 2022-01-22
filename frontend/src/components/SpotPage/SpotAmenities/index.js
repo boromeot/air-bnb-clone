@@ -12,10 +12,23 @@ import DiningArea from "../../SVGs/DiningArea";
 import Dumbell from "../../SVGs/Dumbell";
 
 const SpotAmenities = ({ amenities }) => {
+
   const props = {
     className: 'icon-24',
     viewBox: '0 0 32 32',
     transform: 'translate(-23, -23)'
+  }
+
+  const obj = {
+    'Pool' : <Amenity svg={<Pool {...props} /> } desc='Pool' key='Pool'/>,
+    'Hot tub' : <Amenity svg={<HotTub {...props} />} desc='Hot tub' key='Hot tub'/>,
+    'Patio' : <Amenity svg={<Patio {...props} />} desc='Open patio' key='Patio'/>,
+    'BBQ grill' : <Amenity svg={<Grill {...props} transform='translate(-7, -7)'/>} desc='Grill' key='BBQ grill'/>,
+    'Fire pit' : <Amenity svg={<FirePit {...props} />} desc='Fire pit' key='Fire pit' />,
+    'Pool table' : <Amenity svg={<PoolTable {...props} />} desc='Pool table' key='Pool Table'/>,
+    'Indoor fireplace' : <Amenity svg={<FirePlace {...props} />} desc='Indoor fireplace' key='Indoor fireplace'/>,
+    'Outdoor dining area' : <Amenity svg={<DiningArea {...props} />} desc='Outdoor dining area' key='Outdoor dining area'/>,
+    'Exercise equipment' : <Amenity svg={<Dumbell {...props} />} desc='Exercise equipment' key='Exercise equipment'/>,
   }
 
   return (
@@ -25,15 +38,11 @@ const SpotAmenities = ({ amenities }) => {
       </div>
       <div className="flex flex-wrap">
         <Amenity svg={<Wifi {...props} />} desc='Fast wifi' />
-        <Amenity svg={<Pool {...props} /> } desc='Pool' />
-        <Amenity svg={<HotTub {...props} />} desc='Hot tub' />
-        <Amenity svg={<Patio {...props} />} desc='Open patio' />
-        <Amenity svg={<Grill {...props} transform='translate(-7, -7)'/>} desc='Grill' />
-        <Amenity svg={<FirePit {...props} />} desc='Fire pit' />
-        <Amenity svg={<PoolTable {...props} />} desc='Pool table' />
-        <Amenity svg={<FirePlace {...props} />} desc='Indoor fireplace' />
-        <Amenity svg={<DiningArea {...props} />} desc='Outdoor dining area' />
-        <Amenity svg={<Dumbell {...props} />} desc='Exercise equipment' />
+        {
+          amenities?.map(({ name }) => {
+            return obj[name];
+          })
+        }
       </div>
     </>
   )

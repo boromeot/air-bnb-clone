@@ -77,38 +77,6 @@
   color: rgb(34, 34, 34);
 }
 
-.spot-description {
-
-}
-
-.reservation-form-container {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  height: 480px;
-  width: 320px;
-  box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px;
-}
-
-.reservation-price {
-  margin: 24px 0;
-  text-align: center;
-  font-size: 22px;
-}
-
-.reservation-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "startDate endDate"
-    "guestNumber guestNumber"
-    "submit submit"
-  ;
-  margin: 0 auto;
-  height: 45%;
-  width: 85%;
-}
-
 .startDate {
   grid-area: startDate;
 }

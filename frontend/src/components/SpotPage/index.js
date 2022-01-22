@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import * as spotActions from '../../store/spot';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,12 +17,15 @@ const SpotPage = () => {
   const { spotId } = useParams();
   const spot = useSelector(state => state.spot);
   const session = useSelector(state => state.session);
-  const dispatch = useDispatch();
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const history = useHistory();
+  const dispatch = useDispatch();
   // const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(spotActions.getSpot(spotId));
+    setIsLoaded(true);
   }, [dispatch, spotId])
 
   const handleDelete = (e) => {
@@ -30,10 +33,11 @@ const SpotPage = () => {
     dispatch(spotActions.deleteSpot(spotId));
     history.push('/s/home');
   }
+  console.log(handleDelete);
 
   return (
     <>
-      <div className='spotpage-spacer mb5'>
+      {isLoaded && (<><div className='spotpage-spacer mb5'>
         <div className='pt4'>
           <div className='mb1'>
             <span className=''>
@@ -59,56 +63,30 @@ const SpotPage = () => {
             <div></div>
           </div>
         </div>
-      </div>
-      <div className='spotpage-spacer'> {/* spot image */}
-        <SpotImages images={spot.Images} />
-      </div>
-      <div className='spotpage-spacer flex'> {/* spot info */}
-        <div className='spot-info'>
-          <div className='spot-info--section'>
-            <SpotOverview type={spot.type} hostName={spot.User?.username} guests={spot.guests}
-              bedrooms={spot.bedrooms}
-              beds={spot.beds}
-              bathrooms={spot.bathrooms}
-            />
-          </div>
-          <div className='spot-info--section'>
-            <SpotHighlights space={spot.space} type={spot.type} />
-          </div>
-          <div className='spot-info--section'>
-            {spot.description}
-          </div>
-          <div className='spot-info--section'>
-            <SpotAmenities amenities={spot?.Amenities} />
-          </div>
-        </div>
-        <div className='spot-reservation'>
-          {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
-        </div>
-        {/* <div className='spot-host'>
-          <div>
-            <div className='mb1'>
-              <h2>{spot.User && `${spot.type} hosted by ${spot.User.username}`}</h2>
+      </div><div className='spotpage-spacer'> {/* spot image */}
+          <SpotImages images={spot.Images} />
+        </div><div className='spotpage-spacer flex'> {/* spot info */}
+          <div className='spot-info'>
+            <div className='spot-info--section'>
+              <SpotOverview type={spot.type} hostName={spot.User?.username} guests={spot.guests}
+                bedrooms={spot.bedrooms}
+                beds={spot.beds}
+                bathrooms={spot.bathrooms} />
             </div>
-            <div className='soft-black'>
-              <span>{`${spot.guests} ${plural(spot.guests, 'guest')}`}</span>
-              <span> · </span>
-              <span>{`${spot.bedrooms} ${plural(spot.bedrooms, 'bedroom')}`}</span>
-              <span> · </span>
-              <span>{`${spot.beds} ${plural(spot.beds, 'bed')}`}</span>
-              <span> · </span>
-              <span>{`${spot.bathrooms} ${plural(spot.bathrooms, 'bathroom')}`}</span>
+            <div className='spot-info--section'>
+              <SpotHighlights space={spot.space} type={spot.type} />
+            </div>
+            <div className='spot-info--section'>
+              {spot.description}
+            </div>
+            <div className='spot-info--section'>
+              <SpotAmenities amenities={spot?.Amenities} />
             </div>
           </div>
-        </div>
-        {session.user && session.user.id === spot.userId ? <button onClick={e => handleDelete(e)}>delete</button> : null}
-        <div className='spot-info'>
-          <div className='spot-description'>
-            {spot.description}
+          <div className='spot-reservation'>
+            {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price} />}
           </div>
-          {session.user && spot.id && <Reservation userId={session.user.id} spotId={spot.id} price={spot.price}/>}
-        </div> */}
-      </div>
+        </div></>)}
     </>
   );
 }
