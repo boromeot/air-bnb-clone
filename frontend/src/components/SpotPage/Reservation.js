@@ -44,7 +44,7 @@ const Reservation = ({ userId, spotId, price }) => {
               </span>
             </div>
           </div>
-          <div className="flex justify-space mb4">
+          <div className="mb3">
             <div className="reservation-check-container">
               <div className='reservation-check'> {/* check in */}
                 <div className='reservation-text'>CHECK-IN</div>
@@ -55,7 +55,17 @@ const Reservation = ({ userId, spotId, price }) => {
                 <div className="reservation-date">4/23/2021</div>
               </div>
             </div>
-            <div></div>
+            <div className="reservation-guest-container w100p relative">
+              <div className="">
+                <label>
+                  <div className="reservation-text">Guests</div>
+                  <div className="test2">
+                    <div className="font-size--14">1 guest</div>
+                  </div>
+                </label>
+                <div></div>
+              </div>
+            </div>
           </div>
         </div>
         <ul></ul>
