@@ -12,6 +12,12 @@ const Reservation = ({ userId, spotId, price }) => {
   const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
+  const [formData, setFormData] = useState({
+    adults: 1,
+    children: 0,
+    infants: 0,
+    pets: 0,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,10 +30,6 @@ const Reservation = ({ userId, spotId, price }) => {
     dispatch(reservationActions.setReservation(booking));
     history.push('/reservations');
   }
-
-  console.log(setStartDate);
-  console.log(setEndDate);
-  console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -80,7 +82,7 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
-      <GuestForm />
+      <GuestForm formData={formData} setFormData={setFormData} />
     </div>
   )
 }
