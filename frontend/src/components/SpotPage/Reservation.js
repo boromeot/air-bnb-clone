@@ -6,6 +6,7 @@ import GuestForm from "./GuestForm/GuestForm";
 import Star from "../SVGs/Star";
 import DownChevron from "../SVGs/DownChevron";
 import './SpotReservation.css';
+import CalendarForm from "./CalendarForm";
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
@@ -110,6 +111,7 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
+      <CalendarForm />
     </div>
   )
 }
