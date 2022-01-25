@@ -44,7 +44,16 @@ const CalendarForm = () => {
     rows.push(row);
   }
 
-  const next = () => {
+  const prevMonth = () => {
+    if (monthIndex === 0) {
+      setYearIndex(prev => prev - 1);
+      setMonthIndex(11);
+    } else {
+      setMonthIndex(prev => prev - 1);
+    }
+  }
+
+  const nextMonth = () => {
     if (monthIndex === 11) {
       setYearIndex(prev => prev + 1);
     }
@@ -83,7 +92,8 @@ const CalendarForm = () => {
           </table>
         </div>
       </div>
-      <div onClick={() => next()}>next</div>
+      <div onClick={() => prevMonth()}>prevMonth</div>
+      <div onClick={() => nextMonth()}>nextMonth</div>
     </div>
   )
 }
