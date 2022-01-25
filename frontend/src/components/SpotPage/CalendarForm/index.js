@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './CalendarForm.css';
 
 const CalendarForm = () => {
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
 
-  const today = new Date();
-  const monthName = today.toLocaleString('default', { month: 'long'});
-  const monthIndex = today.getMonth();
-  const yearIndex = today.getFullYear();
+  const [today, setToday] = useState(new Date());
+  const [monthIndex, setMonthIndex] = useState(today.getMonth())
+  const [yearIndex, setYearIndex] = useState(today.getFullYear())
+  const [monthName, setMonthName] = useState(months[monthIndex]);
 
   let firstDay = (new Date(yearIndex, monthIndex)).getDay();
 
@@ -17,26 +21,36 @@ const CalendarForm = () => {
   let rows = [];
   let date = 1;
   for (let i = 0; i < 6; i++) {
-    let x = [];
+    let cells = [];
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
-        let td = <td className="calendar-available-td">
-          <div className="calendar-available-div"></div>
-        </td>
-        x.push(td);
+        let td =
+          <td className="calendar-available-td">
+            <div className="calendar-available-div"></div>
+          </td>
+        cells.push(td);
       } else if (date > daysInMonth(yearIndex, monthIndex)) {
         break;
       } else {
-        let td = <td className="calendar-available-td">
-          <div className="calendar-available-div">{date}</div>
-        </td>
-        x.push(td);
+        let td =
+          <td className="calendar-available-td">
+            <div className="calendar-available-div">{date}</div>
+          </td>
+        cells.push(td);
         date++;
       }
     }
-    let tr = <tr>{[...x]}</tr>
-    rows.push(tr);
+    let row = <tr>{[...cells]}</tr>
+    rows.push(row);
   }
+
+  const next = () => {
+    setMonthIndex(prev => prev + 1);
+  }
+
+  useEffect(() => {
+    setMonthName(months[monthIndex]);
+  }, [monthIndex])
 
   return (
     <div style={{width: '660px'}}>
@@ -44,12 +58,12 @@ const CalendarForm = () => {
         <div className="calendar-days-container">
           <ul className="calendar-days-list">
             <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Su</li>
+            <li className="calendar-day">Mo</li>
+            <li className="calendar-day">Tu</li>
+            <li className="calendar-day">We</li>
+            <li className="calendar-day">Th</li>
+            <li className="calendar-day">Fr</li>
+            <li className="calendar-day">Sa</li>
           </ul>
         </div>
         <div className="calendar-days-container"></div>
@@ -66,6 +80,7 @@ const CalendarForm = () => {
           </table>
         </div>
       </div>
+      <div onClick={() => next()}>next</div>
     </div>
   )
 }
