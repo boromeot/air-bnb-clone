@@ -7,7 +7,7 @@ const CalendarForm = () => {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const [today, setToday] = useState(new Date());
+  const today = new Date();
   const [monthIndex, setMonthIndex] = useState(today.getMonth())
   const [yearIndex, setYearIndex] = useState(today.getFullYear())
   const [monthName, setMonthName] = useState(months[monthIndex]);
@@ -45,7 +45,10 @@ const CalendarForm = () => {
   }
 
   const next = () => {
-    setMonthIndex(prev => prev + 1);
+    if (monthIndex === 11) {
+      setYearIndex(prev => prev + 1);
+    }
+    setMonthIndex(prev => (prev + 1) % 12);
   }
 
   useEffect(() => {
