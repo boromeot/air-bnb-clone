@@ -22,8 +22,8 @@ const Reservation = ({ userId, spotId, price }) => {
     infants: 0,
     pets: 0,
     totalGuests: 1,
-    startDate: '',
-    endDate: '',
+    startDate: {},
+    endDate: {},
   });
 
   const guestCount = formData.adults + formData.children;
@@ -113,7 +113,8 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
-      <CalendarForm />
+      <CalendarForm setFormData={setFormData}/>
+      <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }

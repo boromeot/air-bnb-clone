@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Calendar.css';
 
-const Calendar = ({}) => {
+const Calendar = ({ setDate }) => {
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -34,7 +34,11 @@ const Calendar = ({}) => {
       } else {
         let lexicalDate = date;
         let td =
-          <td className="calendar-available-td" onClick={() => console.log(monthIndex, lexicalDate, yearIndex)}>
+          <td className="calendar-available-td" onClick={() => setDate({
+            date: lexicalDate,
+            month: monthIndex,
+            year: yearIndex,
+          })}>
             <div className="calendar-available-div">{date}</div>
           </td>
         cells.push(td);
