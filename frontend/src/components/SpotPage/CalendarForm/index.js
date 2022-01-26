@@ -32,8 +32,9 @@ const CalendarForm = () => {
       } else if (date > daysInMonth(yearIndex, monthIndex)) {
         break;
       } else {
+        let lexicalDate = date;
         let td =
-          <td className="calendar-available-td">
+          <td className="calendar-available-td" onClick={() => console.log(monthIndex, lexicalDate, yearIndex)}>
             <div className="calendar-available-div">{date}</div>
           </td>
         cells.push(td);
