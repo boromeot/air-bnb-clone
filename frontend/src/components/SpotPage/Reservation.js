@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import * as reservationActions from "../../store/reservation";
 import GuestForm from "./GuestForm/GuestForm";
+import CalendarForm from "./CalendarForm";
 import Star from "../SVGs/Star";
 import DownChevron from "../SVGs/DownChevron";
 import './SpotReservation.css';
-import CalendarForm from "./CalendarForm";
 
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
@@ -22,6 +22,8 @@ const Reservation = ({ userId, spotId, price }) => {
     infants: 0,
     pets: 0,
     totalGuests: 1,
+    startDate: '',
+    endDate: '',
   });
 
   const guestCount = formData.adults + formData.children;
