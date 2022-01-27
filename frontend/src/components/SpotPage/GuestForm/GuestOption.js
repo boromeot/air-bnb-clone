@@ -29,7 +29,6 @@ const GuestOption = ({ name, ageRange, formData, setFormData }) => {
   }
 
   const increment = e => {
-    console.log(formData['totalGuests'] < maxGuests, formData['totalGuests'], '<', maxGuests);
     const name = e.currentTarget.name;
     if (name === 'infants') { //If infants just increase the infant count
       setFormData(prev => {

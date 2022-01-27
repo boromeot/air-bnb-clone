@@ -114,7 +114,6 @@ const Reservation = ({ userId, spotId, price }) => {
         <div></div>
       </div>
       <CalendarForm setFormData={setFormData}/>
-      <div onClick={() => console.log(formData)}>log</div>
     </div>
   )
 }
