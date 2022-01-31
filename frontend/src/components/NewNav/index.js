@@ -7,21 +7,20 @@ const Nav = () => {
   return (
     <header className="new-nav">
       <div className="nav-container">
-        <div className="nav-logo-container">
+        <div className="nav-logo-container"> {/* 1 */}
           <a href='/' className="nav-logo">
             <AirbnbNavLogo style={{height: '32px', width: '102px', fill: 'white'}} />
           </a>
         </div>
-        <div className="nav-search"></div>
-        <div className="nav-buttons-container">
-          <div className="nav-host-container">
-            <a href='/' className="nav-host-link">
-              <div className="nav-switch-hosting">Switch to hosting</div>
-            </a>
-            <div className="nav-globe">
-              <button className="nav-globe-button"><Globe /></button>
+        <div className="nav-search"></div> {/* 2 */}
+        <div className="nav-buttons-container"> {/* 3 */}
+          <nav className="nav-host-container">
+            <div className="nav-switch-host-container">
+              <a className="nav-switch-host-link">
+                <div className="nav-switch-host">Switch to hosting</div>
+              </a>
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </header>

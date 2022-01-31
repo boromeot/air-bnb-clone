@@ -47,21 +47,16 @@
 }
 
 .nav-buttons-container {
-	-moz-box-pack: end;
-	-moz-box-align: center;
-	position: relative;
-	align-items: center;
-	justify-content: flex-end;
-	height: 80px;
-	display: flex;
   flex: 1 0 140px;
 }
   .nav-host-container {
     -moz-box-pack: end;
+    -moz-box-align: center;
+    position: relative;
     display: flex;
-    flex: 1 1 auto;
+    align-items: center;
     justify-content: flex-end;
-    margin-right: 8px;
+    height: 80px;
   }
   .nav-host-link {
     appearance: none;
@@ -86,20 +81,15 @@
     color: white;
   }
 
-  .nav-switch-hosting {
-    -moz-box-align: center !important;
-    align-items: center !important;
-    display: flex !important;
-    height: 100% !important;
-    position: relative !important;
-    z-index: 1 !important;
+  .nav-switch-host-container {
+    -moz-box-pack: end;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    margin-right: 8px;
   }
 
-  .nav-globe {
-    display: inline;
-  }
-
-  .nav-globe-button {
+  .nav-switch-host-link {
     appearance: none;
     background: transparent none repeat scroll 0% 0%;
     border: 0px none;
@@ -119,5 +109,16 @@
     position: relative;
     white-space: nowrap;
     z-index: 1;
+    color: rgb(255, 255, 255);
+  }
+
+  .nav-switch-host {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: inherit;
+    white-space: nowrap;
     color: rgb(255, 255, 255);
   }
