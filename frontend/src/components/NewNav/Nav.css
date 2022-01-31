@@ -1,0 +1,39 @@
+.new-nav {
+    height: 80px;
+    left: 0px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    --header-brand-color: #FF385C;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-container {
+	-moz-box-align: center;
+	-moz-box-pack: justify;
+  padding-left: 80px;
+  padding-right: 80px;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+	max-width: 1440px;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin: 0px auto;
+}
+
+.nav-logo {
+	-moz-box-align: center;
+	outline: currentcolor none medium;
+	align-items: center;
+	display: inline-flex;
+	height: 80px;
+	position: relative;
+	vertical-align: middle;
+	z-index: 1;
+	color: rgb(255, 255, 255);
+}
