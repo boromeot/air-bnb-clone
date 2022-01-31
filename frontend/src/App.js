@@ -8,7 +8,6 @@ import SpotPage from "./components/SpotPage";
 import HomePage from "./components/HomePage";
 import ResevervationsPage from "./components/ReservationsPage";
 import NewFormPage from "./components/NewFormPage/Index";
-import Nav from "./components/NewNav";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ function App() {
           <Route exact path='/'>
             <HomePage >
               <Navigation isLoaded={isLoaded} />
-              <Nav />
             </HomePage>
           </Route>
           <Route path='/s/home'>

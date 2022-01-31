@@ -1,11 +1,13 @@
 .new-nav {
-    height: 80px;
-    left: 0px;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    --header-brand-color: #FF385C;
-    z-index: 100;
-    width: 100%;
+  height: 80px;
+  left: 0px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  --header-brand-color: #FF385C;
+  z-index: 100;
+  width: 100%;
+  border: 1px solid black;
+  background-color: black;
 }
 
 .nav-container {
@@ -37,3 +39,42 @@
 	z-index: 1;
 	color: rgb(255, 255, 255);
 }
+
+.nav-buttons-container {
+	-moz-box-pack: end;
+	-moz-box-align: center;
+	position: relative;
+	align-items: center;
+	justify-content: flex-end;
+	height: 80px;
+	display: flex;
+}
+  .nav-host-container {
+    -moz-box-pack: end;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    margin-right: 8px;
+  }
+  .nav-host-link {
+    appearance: none;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 0px;
+    outline: currentcolor none medium;
+    overflow: visible;
+    padding: 12px;
+    text-align: inherit;
+    text-decoration: none;
+    user-select: auto;
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+    color: white;
+  }
