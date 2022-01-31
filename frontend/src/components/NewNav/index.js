@@ -19,6 +19,13 @@ const Nav = () => {
               <a className="nav-switch-host-link">
                 <div className="nav-switch-host">Switch to hosting</div>
               </a>
+              <div className="nav-globe-container">
+                <button className="nav-globe-button">
+                  <div className="nav-globe-svg-container">
+                    <Globe className='icon-16 fill-white' viewBox='0 0 16 16' />
+                  </div>
+                </button>
+              </div>
             </div>
           </nav>
         </div>

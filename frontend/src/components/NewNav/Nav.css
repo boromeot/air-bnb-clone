@@ -122,3 +122,42 @@
     white-space: nowrap;
     color: rgb(255, 255, 255);
   }
+
+  .nav-globe-container {
+    display: inline;
+    position: relative;
+  }
+
+  .nav-globe-button {
+    appearance: none;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px;
+    outline: currentcolor none medium;
+    overflow: visible;
+    padding: 12px;
+    text-align: inherit;
+    text-decoration: none;
+    user-select: auto;
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+
+  .nav-globe-svg-container {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: inherit;
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
