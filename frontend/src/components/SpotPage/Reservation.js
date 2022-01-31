@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import * as reservationActions from "../../store/reservation";
 import GuestForm from "./GuestForm/GuestForm";
+import CalendarForm from "./CalendarForm";
 import Star from "../SVGs/Star";
 import DownChevron from "../SVGs/DownChevron";
 import './SpotReservation.css';
@@ -10,8 +11,8 @@ import './SpotReservation.css';
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState(); console.log(setStartDate);
+  const [endDate, setEndDate] = useState(); console.log(setEndDate);
 
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
@@ -21,6 +22,8 @@ const Reservation = ({ userId, spotId, price }) => {
     infants: 0,
     pets: 0,
     totalGuests: 1,
+    startDate: {},
+    endDate: {},
   });
 
   const guestCount = formData.adults + formData.children;
@@ -54,7 +57,7 @@ const Reservation = ({ userId, spotId, price }) => {
     }
     dispatch(reservationActions.setReservation(booking));
     history.push('/reservations');
-  }
+  }; console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -110,6 +113,7 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
+      <CalendarForm setFormData={setFormData}/>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { userSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import React from "react";
 import Minus from '../../SVGs/Minus';
 import Plus from '../../SVGs/Plus';
@@ -22,14 +22,13 @@ const GuestOption = ({ name, ageRange, formData, setFormData }) => {
       setFormData(prev => {
         return {
           ...prev,
-          ['totalGuests'] : prev['totalGuests'] - 1,
+          'totalGuests' : prev['totalGuests'] - 1,
         }
       })
     }
   }
 
   const increment = e => {
-    console.log(formData['totalGuests'] < maxGuests, formData['totalGuests'], '<', maxGuests);
     const name = e.currentTarget.name;
     if (name === 'infants') { //If infants just increase the infant count
       setFormData(prev => {
@@ -43,7 +42,7 @@ const GuestOption = ({ name, ageRange, formData, setFormData }) => {
         return {
           ...prev,
           [name]: prev[name] + 1,
-          ['totalGuests']: prev['totalGuests'] + 1,
+          'totalGuests': prev['totalGuests'] + 1,
         };
       });
     }
