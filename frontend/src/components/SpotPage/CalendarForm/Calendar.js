@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import './Calendar.css';
 
 const Calendar = ({ setDate }) => {
-  const months = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
+  const months = useMemo(() => {
+      return [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+  }, [])
 
   const today = new Date();
   const [monthIndex, setMonthIndex] = useState(today.getMonth())
@@ -67,7 +69,7 @@ const Calendar = ({ setDate }) => {
 
   useEffect(() => {
     setMonthName(months[monthIndex]);
-  }, [monthIndex])
+  }, [months, monthIndex])
 
   return (
     <div style={{width: '330px'}}>

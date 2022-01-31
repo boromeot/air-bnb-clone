@@ -11,8 +11,8 @@ import './SpotReservation.css';
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState(); console.log(setStartDate);
+  const [endDate, setEndDate] = useState(); console.log(setEndDate);
 
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
@@ -57,7 +57,7 @@ const Reservation = ({ userId, spotId, price }) => {
     }
     dispatch(reservationActions.setReservation(booking));
     history.push('/reservations');
-  }
+  }; console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
