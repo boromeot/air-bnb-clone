@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Nav from "./components/NewNav";
 import SpotsPage from "./components/SpotsPage";
 import SpotPage from "./components/SpotPage";
 import HomePage from "./components/HomePage";
@@ -25,8 +26,9 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
+
             <HomePage >
-              <Navigation isLoaded={isLoaded} />
+              <Nav />
             </HomePage>
           </Route>
           <Route path='/s/home'>

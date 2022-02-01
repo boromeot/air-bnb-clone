@@ -35,7 +35,7 @@
 }
 
 .profile * {
-  color: rgb(113, 113, 113);
+  color: rgb(34, 34, 34);
 }
 
 .profile:hover {
@@ -48,27 +48,4 @@
 
 .host {
   font-weight: 600;
-}
-
-.dropdown {
-  position: absolute;
-  top: 70px;
-  width: 225px;
-  transform: translateX(-165px);
-  overflow: hidden;
-  border: 10px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 2px -2px 8px rgba(0, 0, 0, 0.18);
-  z-index: 1;
-}
-
-.dropdown-item {
-  display: block;
-  padding: 15px 0;
-  padding-left: 10px;
-}
-
-.dropdown-item:hover {
-  background-color: rgba(0, 0, 0, 0.03);
 }
