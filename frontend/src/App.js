@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
+import Nav from "./components/Nav";
 import SpotsPage from "./components/SpotsPage";
 import SpotPage from "./components/SpotPage";
 import HomePage from "./components/HomePage";
@@ -26,22 +26,22 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <HomePage >
-              <Navigation isLoaded={isLoaded} />
+              <Nav />
             </HomePage>
           </Route>
           <Route path='/s/home'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <SpotsPage />
           </Route>
           <Route path='/become-a-host'>
             <NewFormPage />
           </Route>
           <Route path='/spots/:spotId'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <SpotPage />
           </Route>
           <Route path='/reservations'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <ResevervationsPage />
           </Route>
         </Switch>
