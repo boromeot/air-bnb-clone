@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+
 import LoginFormModal from "../FormModal";
 import LoginForm from "../FormModal/LoginForm";
 import SignupForm from '../FormModal/SignupForm';
-import DropDown from '../Navigation/DropDown';
-
 
 import AirbnbNavLogo from "../SVGs/AirbnbNavLogo";
 import Globe from "../SVGs/Globe";
@@ -77,7 +76,7 @@ const Nav = () => {
                   <img className="nav-profile-icon" src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=3' alt="" />
                 </div>
               </button>
-              {showDropDown && <DropDown links={sessionLinks} />}
+              {showDropDown && <div className='dropdown'>{sessionLinks}</div>}
             </div>
           </nav>
         </div>
