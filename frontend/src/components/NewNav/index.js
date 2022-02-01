@@ -10,7 +10,7 @@ const Nav = () => {
     <header className="new-nav">
       <div className="nav-container">
         <div className="nav-logo-container"> {/* 1 */}
-          <NavLink to='#' className="nav-logo">
+          <NavLink to='/' className="nav-logo">
             <AirbnbNavLogo style={{height: '32px', width: '102px', fill: 'white'}} />
           </NavLink>
         </div>
@@ -18,7 +18,7 @@ const Nav = () => {
         <div className="nav-buttons-container"> {/* 3 */}
           <nav className="nav-host-container">
             <div className="nav-switch-host-container">
-              <NavLink className="nav-switch-host-link" to="#">
+              <NavLink className="nav-switch-host-link" to="/become-a-host">
                 <div className="nav-switch-host">Switch to hosting</div>
               </NavLink>
               <div className="nav-globe-container">
@@ -34,7 +34,7 @@ const Nav = () => {
                 <div className="nav-hamburger-container">
                   <HamburgerLines className='icon-16 fill-black' viewBox='0 0 32 32' style={{stroke: 'currentcolor', strokeWidth: '3px'}}/>
                 </div>
-                <div className="nav-profile-container">
+                <div className="nav-profile-icon-container">
                   <img className="nav-profile-icon" src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=3' alt="" />
                 </div>
               </button>
