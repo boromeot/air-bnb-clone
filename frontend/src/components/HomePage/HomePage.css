@@ -1,6 +1,13 @@
 .section-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   height: 90vh;
-  background-image: url('https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560');
+  background-image: url('https://a0.muscache.com/im/pictures/53e51dcb-8fad-4ce8-b61c-8a7a369267bf.jpg?im_w=2560');
+  /*
+    https://a0.muscache.com/im/pictures/53e51dcb-8fad-4ce8-b61c-8a7a369267bf.jpg?im_w=2560
+    https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560
+  */
   background-size: cover;
   background-position: bottom;
 }
@@ -11,37 +18,43 @@
   justify-content: space-evenly;
   align-items: center;
   height: 140px;
-  width: 260px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 7%;
 }
 
 .cta-header {
   font-size: 18px;
   font-weight: 600;
-  animation: moveToRight;
-  animation-duration: 2s;
+}
+
+.cta-header {
+	white-space: pre-line;
+	max-width: 100%;
+	font-size: 48px;
+	font-weight: 600;
+	letter-spacing: -0.96px;
+	line-height: 54px;
+	color:white;
+	-webkit-line-clamp: none;
 }
 
 .cta-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 64px;
+  padding: 14px 32px;
   border-radius: 54px;
   background-color: white;
   text-align: center;
   box-shadow: rgb(0, 0, 0, 0.12) 0px 6px 16px 0px;
-  animation: moveToLeft;
-  animation-duration: 2s;
 }
 
 .cta-btn:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
-  transition: 0.3s;
+  background-color: rgb(247, 247, 247);
+}
+
+.cta-btn:focus {
+  transform: scale(.94);
+  transition: transform 0.2s;
 }
 
 .cta-btn-text {

@@ -10,7 +10,7 @@ const HomePage = ({ children }) => {
         <div className='call-to-action'>
           <span className='cta-header'>Not sure where to go? Perfect.</span>
           <NavLink className='cta-btn' to='/s/home'>
-            <span className='cta-btn-text'>I'm flexible</span>
+            <span className='cta-btn-text'>I’m flexible</span>
           </NavLink>
         </div>
       </section>
