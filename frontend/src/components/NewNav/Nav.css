@@ -161,3 +161,67 @@
     color: rgb(255, 255, 255);
     font-weight: 600;
   }
+
+  .nav-profile-container {
+    display: inline;
+    position: relative;
+  }
+
+  .nav-profile-buttons {
+    -moz-box-align: center;
+    appearance: none;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    border: 1px solid rgb(221, 221, 221);
+    color: rgb(34, 34, 34);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0px;
+    outline: currentcolor none medium;
+    overflow: visible;
+    padding: 5px 5px 5px 12px;
+    text-align: inherit;
+    text-decoration: none;
+    user-select: auto;
+    align-items: center;
+    border-radius: 21px;
+    height: 42px;
+    position: relative;
+    vertical-align: middle;
+    transition: box-shadow 0.2s ease 0s;
+    z-index: 1;
+  }
+
+  .nav-hamburger-container {
+    color: rgb(34, 34, 34);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    height: 16px;
+    width: 16px;
+  }
+
+  .nav-profile-container {
+    color: rgb(113, 113, 113);
+    flex: 0 0 30px;
+    height: 30px;
+    margin-left: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+    z-index: 1;
+  }
+
+  .nav-profile-icon {
+    background-color: currentcolor;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
