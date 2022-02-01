@@ -31,7 +31,7 @@ function App() {
             </HomePage>
           </Route>
           <Route path='/s/home'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <SpotsPage />
           </Route>
           <Route path='/become-a-host'>
@@ -42,7 +42,7 @@ function App() {
             <SpotPage />
           </Route>
           <Route path='/reservations'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <ResevervationsPage />
           </Route>
         </Switch>
