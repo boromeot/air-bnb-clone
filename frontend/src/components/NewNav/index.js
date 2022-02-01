@@ -15,9 +15,13 @@ import './Nav.css';
 
 const Nav = () => {
   const sessionUser = useSelector(state => state.session.user);
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
   const [showDropDown, setShowDropDown] = useState(false);
+
+  const toggleDropDown = () => {
+    setShowDropDown(prev => !prev);
+  }
 
   const logout = () => {
     dispatch(sessionActions.logOut());
@@ -62,10 +66,10 @@ const Nav = () => {
                 </button>
               </div>
             </div>
-            <div className="nav-profile-container"
-              onClick={() => setShowDropDown(prev => !prev)}
-            >
-              <button className="nav-profile-buttons">
+            <div className="nav-profile-container">
+              <button className="nav-profile-buttons"
+                onClick={toggleDropDown}
+              >
                 <div className="nav-hamburger-container">
                   <HamburgerLines className='icon-16 fill-black' viewBox='0 0 32 32' style={{stroke: 'currentcolor', strokeWidth: '3px'}}/>
                 </div>

@@ -5,11 +5,16 @@ import './Form.css';
 function LoginFormModal({ className, title, children }) {
   const [showModal, setShowModal] = useState(false);
 
+  const toggleModal = e => {
+    e.stopPropagation();
+    setShowModal(prev => !prev);
+  }
+
   return (
     <>
-      <span onClick={() => setShowModal(true) } className={className}>{title}</span>
+      <span onClick={ toggleModal } className={className}>{title}</span>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal onClose={ toggleModal }>
           {children}
         </Modal>
       )}

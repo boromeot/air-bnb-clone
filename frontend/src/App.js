@@ -26,7 +26,6 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
-
             <HomePage >
               <Nav />
             </HomePage>
@@ -39,7 +38,7 @@ function App() {
             <NewFormPage />
           </Route>
           <Route path='/spots/:spotId'>
-            <Navigation isLoaded={isLoaded} />
+            <Nav />
             <SpotPage />
           </Route>
           <Route path='/reservations'>
