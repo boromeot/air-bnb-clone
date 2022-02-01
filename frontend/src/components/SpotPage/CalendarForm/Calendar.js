@@ -2,6 +2,8 @@ import React, { useState, useMemo } from "react";
 import './Calendar.css';
 
 const Calendar = ({ setDate }) => {
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   const months = useMemo(() => {
       return [
       "January", "February", "March", "April", "May", "June",
@@ -30,37 +32,40 @@ const Calendar = ({ setDate }) => {
     return 32 - new Date(iYear, iMonth, 32).getDate();
   }
 
-  const getRows = (yearIndex, monthIndex) => {
-    let rows = [];
+  const Cell = ({ monthIndex, date, yearIndex }) => {
+    const thisDate = `${monthIndex}/${date}/${yearIndex}`;
+    return (
+      <td className="calendar-available-td"
+        onClick={() => {
+          if (startDate) {
+            setEndDate(thisDate);
+          } else {
+            setStartDate(thisDate);
+          }
+        }}
+      >
+        <div className={startDate === thisDate || endDate === thisDate ? "calendar-selected-day" : "calendar-available-div"}>{date}</div>
+      </td>
+    )
+  }
+
+  const Rows = ({ yearIndex, monthIndex }) => {
     let date = 1;
+    let rows = [];
     const firstDay = (new Date(yearIndex, monthIndex)).getDay();
     for (let i = 0; i < 6; i++) {
       let cells = [];
       for (let j = 0; j < 7; j++) {
         if (i === 0 && j < firstDay) {
-          let td =
-            <td className="calendar-available-td">
-              <div className="calendar-available-div"></div>
-            </td>
-          cells.push(td);
+          cells.push(<Cell date={null} />);
         } else if (date > daysInMonth(yearIndex, monthIndex)) {
           break;
         } else {
-          let lexicalDate = date;
-          let td =
-            <td className="calendar-available-td" onClick={() => setDate({
-              date: lexicalDate,
-              month: monthIndex,
-              year: yearIndex,
-            })}>
-              <div className="calendar-available-div">{date}</div>
-            </td>
-          cells.push(td);
+          cells.push(<Cell monthIndex={monthIndex} date={date} yearIndex={yearIndex} />);
           date++;
         }
       }
-      let row = <tr>{[...cells]}</tr>
-      rows.push(row);
+      rows.push(<tr>{[...cells]}</tr>);
     }
     return rows;
   }
@@ -105,7 +110,7 @@ const Calendar = ({ setDate }) => {
             </div>
             <table className="calendar-table">
               <tbody>
-                {getRows(yearIndex, monthIndex)}
+                <Rows yearIndex={yearIndex} monthIndex={monthIndex} />
               </tbody>
             </table>
           </div>
@@ -135,13 +140,11 @@ const Calendar = ({ setDate }) => {
             </div>
             <table className="calendar-table">
               <tbody>
-                {getRows(yearIndex, monthIndex + 1)}
+              <Rows yearIndex={yearIndex} monthIndex={monthIndex + 1} />
               </tbody>
             </table>
           </div>
         </div>
-        <div onClick={() => prevMonth()}>prevMonth</div>
-        <div onClick={() => nextMonth()}>nextMonth</div>
       </div>
     </>
   )
