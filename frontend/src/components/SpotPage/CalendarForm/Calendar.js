@@ -118,8 +118,6 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
             </table>
           </div>
         </div>
-        <div onClick={() => prevMonth()}>prevMonth</div>
-        <div onClick={() => nextMonth()}>nextMonth</div>
       </div>
       <div style={{width: '330px'}}>
         <div className="relative">
