@@ -111,7 +111,11 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
         <div style={{width: '320px'}}>
           <div className="calendar-spacer">
             <div className="calendar-header-contianer">
-              <LeftChevron className='icon-12 calendar-left' viewBox='0 0 18 18' />
+              <div>
+                <LeftChevron className='icon-12 calendar-left' viewBox='0 0 18 18'
+                  onClick={() => prevMonth()}
+                />
+              </div>
               <h3 className="calendar-header">{`${getMonthName(monthIndex)} ${yearIndex}`}</h3>
             </div>
             <table className="calendar-table">
@@ -141,7 +145,9 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
           <div className="calendar-spacer">
             <div className="calendar-header-contianer">
               <h3 className="calendar-header">{`${getMonthName(monthIndex + 1)} ${getYearIndex(monthIndex, yearIndex)}`}</h3>
-              <RightChevron className='icon-12 calendar-right' viewBox='0 0 18 18' />
+              <RightChevron className='icon-12 calendar-right' viewBox='0 0 18 18'
+                onClick={() => nextMonth()}
+              />
             </div>
             <table className="calendar-table">
               <tbody>
