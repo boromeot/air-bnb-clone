@@ -38,7 +38,7 @@ const GuestOption = ({ x, formData, setFormData })  => {
               <button className="btn btn-minus flex align-center justify-center"
                 onClick={decrement}
               >
-                <Minus className='icon-12' viewBox='0 0 30 30'/>
+                <Minus className='icon-12 stroke-width-5' viewBox='0 0 30 30'/>
               </button>
               <div>
                 <span>{count}</span>
@@ -46,7 +46,7 @@ const GuestOption = ({ x, formData, setFormData })  => {
               <button className="btn btn-plus flex align-center justify-center"
                 onClick={increment}
               >
-                <Plus className='icon-12' viewBox='0 0 30 30'/>
+                <Plus className='icon-12 stroke-width-5' viewBox='0 0 30 30'/>
               </button>
             </div>
           </div>

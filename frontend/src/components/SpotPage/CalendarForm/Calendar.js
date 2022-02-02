@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from "react";
+import LeftChevron from '../../SVGs/LeftChevron';
+import RightChevron from '../../SVGs/RightChevron';
 import './Calendar.css';
 
 const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
@@ -109,6 +111,7 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
         <div style={{width: '320px'}}>
           <div className="calendar-spacer">
             <div className="calendar-header-contianer">
+              <LeftChevron className='icon-12 calendar-left' viewBox='0 0 18 18' />
               <h3 className="calendar-header">{`${getMonthName(monthIndex)} ${yearIndex}`}</h3>
             </div>
             <table className="calendar-table">
@@ -138,6 +141,7 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
           <div className="calendar-spacer">
             <div className="calendar-header-contianer">
               <h3 className="calendar-header">{`${getMonthName(monthIndex + 1)} ${getYearIndex(monthIndex, yearIndex)}`}</h3>
+              <RightChevron className='icon-12 calendar-right' viewBox='0 0 18 18' />
             </div>
             <table className="calendar-table">
               <tbody>

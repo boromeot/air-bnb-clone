@@ -32,6 +32,8 @@
 }
 
 .calendar-header-contianer {
+	display: flex;
+	align-items: center;
 	font-size: 16px;
 	line-height: 20px;
 	color: rgb(34, 34, 34);
@@ -53,6 +55,25 @@
 	line-height: inherit;
 	margin: 0px;
 	padding: 0px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.calendar-left, .calendar-right {
+	position: absolute;
+
+}
+
+.calendar-left:hover, .calendar-right:hover {
+	cursor: pointer;
+}
+
+.calendar-left {
+	left: 25px;
+}
+
+.calendar-right {
+	right: 35px;
 }
 
 .calendar-available-td {
