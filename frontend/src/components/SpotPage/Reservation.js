@@ -27,6 +27,8 @@ const Reservation = ({ userId, spotId, price }) => {
   const guestCount = formData.adults + formData.children;
   const infantCount = formData.infants;
 
+  const [showCalendar, setShowCalendar] = useState(false);
+
   const dateFormat = formDate => {
     const {monthIndex, date, yearIndex} = formDate;
     let dateString = '';
@@ -73,14 +75,16 @@ const Reservation = ({ userId, spotId, price }) => {
             </div>
             <div style={{marginTop: '8px'}}>
               <span className="flex font-size--13 font-weight--600 soft-black">
-                <span className='mr1'><Star className='icon-14 fill-red' viewBox='0 0 32 32' /></span>
+                <span className='mr1 flex align-center'><Star className='icon-14 fill-red' viewBox='0 0 32 32' /></span>
                 <span className='mr1'>4.85 ·</span>
                 <span className='mr1 underline'>440 reviews</span>
               </span>
             </div>
           </div>
           <div className="mb3">
-            <div className="reservation-check-container">
+            <div className="reservation-check-container"
+              onClick={() => setShowCalendar(prev => !prev)}
+            >
               <div className='reservation-check'> {/* check in */}
                 <div className='reservation-text'>CHECK-IN</div>
                 <div className="reservation-date">{dateFormat(formData.startDate) ? dateFormat(formData.startDate) : 'Add date'}</div>
@@ -105,7 +109,7 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
-            <CalendarForm formData={formData} setFormData={setFormData}/>
+            { showCalendar && <CalendarForm formData={formData} setFormData={setFormData}/>}
             { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
           </div>
           <div>
