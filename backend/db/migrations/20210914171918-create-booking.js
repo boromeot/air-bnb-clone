@@ -23,11 +23,23 @@ module.exports = {
         },
       },
       startDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       endDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      monthIndex: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      date: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      yearIndex: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {
