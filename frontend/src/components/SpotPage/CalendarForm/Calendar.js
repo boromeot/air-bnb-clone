@@ -1,9 +1,7 @@
 import React, { useState, useMemo } from "react";
 import './Calendar.css';
 
-const Calendar = ({ setDate }) => {
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
   const months = useMemo(() => {
       return [
       "January", "February", "March", "April", "May", "June",
@@ -32,19 +30,23 @@ const Calendar = ({ setDate }) => {
     return 32 - new Date(iYear, iMonth, 32).getDate();
   }
 
-  const Cell = ({ monthIndex, date, yearIndex }) => {
-    const thisDate = `${monthIndex}/${date}/${yearIndex}`;
+  const Cell = ({ monthName, date, yearIndex }) => {
+    const thisDate = {
+      monthName,
+      date,
+      year: yearIndex
+    }
     return (
       <td className="calendar-available-td"
         onClick={() => {
-          if (startDate) {
-            setEndDate(thisDate);
-          } else {
+          if (Object.keys(startDate).length === 0) {
             setStartDate(thisDate);
+          } else {
+            setEndDate(thisDate);
           }
         }}
       >
-        <div className={startDate === thisDate || endDate === thisDate ? "calendar-selected-day" : "calendar-available-div"}>{date}</div>
+        <div className={JSON.stringify(startDate) === JSON.stringify(thisDate) || JSON.stringify(endDate) === JSON.stringify(thisDate) ? "calendar-selected-day" : "calendar-available-div"}>{date}</div>
       </td>
     )
   }
@@ -61,7 +63,7 @@ const Calendar = ({ setDate }) => {
         } else if (date > daysInMonth(yearIndex, monthIndex)) {
           break;
         } else {
-          cells.push(<Cell monthIndex={monthIndex} date={date} yearIndex={yearIndex} />);
+          cells.push(<Cell monthName={months[monthIndex]} date={date} yearIndex={yearIndex} />);
           date++;
         }
       }

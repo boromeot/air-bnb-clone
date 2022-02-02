@@ -11,8 +11,6 @@ import './SpotReservation.css';
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [startDate, setStartDate] = useState(); console.log(setStartDate);
-  const [endDate, setEndDate] = useState(); console.log(setEndDate);
 
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
@@ -47,17 +45,12 @@ const Reservation = ({ userId, spotId, price }) => {
     return `${guestString}${infantString}`
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    const booking = {
-      userId,
-      spotId,
-      startDate,
-      endDate
-    }
-    dispatch(reservationActions.setReservation(booking));
+    dispatch(reservationActions.setReservation(formData));
     history.push('/reservations');
-  }; console.log(handleSubmit);
+  };
+  console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -113,7 +106,7 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
-      <CalendarForm setFormData={setFormData}/>
+      <CalendarForm formData={formData} setFormData={setFormData}/>
     </div>
   )
 }
