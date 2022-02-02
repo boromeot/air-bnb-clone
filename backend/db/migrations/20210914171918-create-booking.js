@@ -30,18 +30,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      monthIndex: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      date: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      yearIndex: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

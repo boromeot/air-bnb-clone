@@ -21,12 +21,16 @@ router.get('/user/:userId', asyncHandler(async (req, res) => {
 }));
 
 router.post('/', asyncHandler(async (req, res) => {
-  const {userId, spotId, startDate, endDate} = req.body;
+  const {userId, spotId, startDate, endDate, monthIndex, date, yearIndex} = req.body;
+  console.log(req.body);
   const booking = await Booking.create({
     userId,
     spotId,
     startDate,
     endDate,
+    monthIndex,
+    date,
+    yearIndex
   });
 
   return res.json({

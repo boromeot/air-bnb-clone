@@ -5,9 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     spotId: DataTypes.INTEGER,
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
-    monthIndex: DataTypes.STRING,
-    date: DataTypes.STRING,
-    yearIndex: DataTypes.STRING,
   }, {});
   Booking.associate = function(models) {
     // associations can be defined here
