@@ -27,6 +27,16 @@ const Reservation = ({ userId, spotId, price }) => {
   const guestCount = formData.adults + formData.children;
   const infantCount = formData.infants;
 
+  const dateFormat = formDate => {
+    const {monthIndex, date, yearIndex} = formDate;
+    let dateString = '';
+    if (monthIndex && date && yearIndex) {
+      dateString += `${monthIndex}/${date}/${yearIndex}`;
+    }
+    return dateString;
+  }
+
+
   const guestInfantStringFormatter = (guestCount, infantCount) => {
     let guestString = '';
     let infantString = '';
@@ -73,11 +83,11 @@ const Reservation = ({ userId, spotId, price }) => {
             <div className="reservation-check-container">
               <div className='reservation-check'> {/* check in */}
                 <div className='reservation-text'>CHECK-IN</div>
-                <div className="reservation-date">4/20/2021</div>
+                <div className="reservation-date">{dateFormat(formData.startDate) ? dateFormat(formData.startDate) : 'Add date'}</div>
               </div>
               <div className='reservation-check' style={{borderLeft: '1px solid rgb(176, 176, 176)'}}> {/* check in */}
                 <div className='reservation-text'>CHECKOUT</div>
-                <div className="reservation-date">4/23/2021</div>
+                <div className="reservation-date">{dateFormat(formData.endDate) ? dateFormat(formData.endDate) : 'Add date'}</div>
               </div>
             </div>
             <div className="reservation-guest-container"
@@ -95,6 +105,7 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
+            <CalendarForm formData={formData} setFormData={setFormData}/>
             { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
           </div>
           <div>
@@ -106,7 +117,6 @@ const Reservation = ({ userId, spotId, price }) => {
         <ul></ul>
         <div></div>
       </div>
-      <CalendarForm formData={formData} setFormData={setFormData}/>
     </div>
   )
 }

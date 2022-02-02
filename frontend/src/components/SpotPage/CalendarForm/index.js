@@ -24,8 +24,7 @@ const CalendarForm = ({ formData, setFormData }) => {
   }
 
   return (
-    <div className='flex' style={{width: '660px'}}>
-      <div onClick={() => console.log(formData)}>log</div>
+    <div className='calendar-form-container'>
       <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
     </div>
   )

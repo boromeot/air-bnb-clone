@@ -30,11 +30,12 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
     return 32 - new Date(iYear, iMonth, 32).getDate();
   }
 
-  const Cell = ({ monthName, date, yearIndex }) => {
+  const Cell = ({ monthIndex, date, yearIndex }) => {
     const thisDate = {
-      monthName,
+      monthIndex,
       date,
-      year: yearIndex
+      yearIndex,
+      monthName: months[monthIndex]
     }
     return (
       <td className="calendar-available-td"
@@ -63,7 +64,7 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
         } else if (date > daysInMonth(yearIndex, monthIndex)) {
           break;
         } else {
-          cells.push(<Cell monthName={months[monthIndex]} date={date} yearIndex={yearIndex} />);
+          cells.push(<Cell monthIndex={monthIndex} date={date} yearIndex={yearIndex} />);
           date++;
         }
       }
