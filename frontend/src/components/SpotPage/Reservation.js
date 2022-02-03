@@ -43,7 +43,6 @@ const Reservation = ({ userId, spotId, price }) => {
     return dateString;
   }
 
-
   const guestInfantStringFormatter = (guestCount, infantCount) => {
     let guestString = '';
     let infantString = '';
