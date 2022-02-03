@@ -10,6 +10,9 @@ const CalendarForm = ({ formData, setFormData }) => {
       return {
         ...prev,
         'startDate': date,
+        'monthIndex': date.monthIndex,
+        'date': date.date,
+        'yearIndex': date.yearIndex,
       }
     })
   }
@@ -19,6 +22,9 @@ const CalendarForm = ({ formData, setFormData }) => {
       return {
         ...prev,
         'endDate': date,
+        'monthIndex': date.monthIndex,
+        'date': date.date,
+        'yearIndex': date.yearIndex,
       }
     })
   }

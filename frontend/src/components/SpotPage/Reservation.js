@@ -15,6 +15,8 @@ const Reservation = ({ userId, spotId, price }) => {
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
+    userId,
+    spotId,
     adults: 1,
     children: 0,
     infants: 0,
@@ -22,6 +24,9 @@ const Reservation = ({ userId, spotId, price }) => {
     totalGuests: 1,
     startDate: {},
     endDate: {},
+    monthIndex: 0,
+    date: 0,
+    yearIndex: 0,
   });
 
   const guestCount = formData.adults + formData.children;
@@ -59,10 +64,10 @@ const Reservation = ({ userId, spotId, price }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(reservationActions.setReservation(formData));
-    history.push('/reservations');
+    const x = dispatch(reservationActions.setReservation(formData));
+    console.log(x, 'dispatch');
+    // history.push('/reservations');
   };
-  console.log(handleSubmit);
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -114,7 +119,11 @@ const Reservation = ({ userId, spotId, price }) => {
           </div>
           <div>
             <button className="reservation-button">
-              <div>Reserve</div>
+              <div
+                onClick={handleSubmit}
+              >
+                Reserve
+              </div>
             </button>
           </div>
         </div>
