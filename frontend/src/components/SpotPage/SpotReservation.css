@@ -91,7 +91,7 @@
   align-items: center;
 }
 
-.reservation-button {
+.reservation-button, .reservation-button-disabled {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
@@ -107,4 +107,8 @@
 	background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) repeat scroll 0% 0%;
 	color: rgb(255, 255, 255);
 	width: 100%;
+}
+
+.reservation-button-disabled:hover {
+  cursor: not-allowed;
 }

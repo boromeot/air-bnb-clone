@@ -14,6 +14,7 @@ const Reservation = ({ userId, spotId, price }) => {
 
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
   const [formData, setFormData] = useState({
     userId,
     spotId,
@@ -31,8 +32,7 @@ const Reservation = ({ userId, spotId, price }) => {
 
   const guestCount = formData.adults + formData.children;
   const infantCount = formData.infants;
-
-  const [showCalendar, setShowCalendar] = useState(false);
+  const allowButton = formData.totalGuests && Object.keys(formData.startDate).length > 0 && Object.keys(formData.endDate).length > 0;
 
   const dateFormat = formDate => {
     const {monthIndex, date, yearIndex} = formDate;
@@ -64,9 +64,8 @@ const Reservation = ({ userId, spotId, price }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const x = dispatch(reservationActions.setReservation(formData));
-    console.log(x, 'dispatch');
-    // history.push('/reservations');
+    dispatch(reservationActions.setReservation(formData));
+    history.push('/reservations');
   };
 
   return (
@@ -118,10 +117,11 @@ const Reservation = ({ userId, spotId, price }) => {
             { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
           </div>
           <div>
-            <button className="reservation-button">
-              <div
-                onClick={handleSubmit}
-              >
+            <button className={allowButton ?  "reservation-button" : "reservation-button-disabled"}
+              disabled={!allowButton}
+              onClick={handleSubmit}
+            >
+              <div>
                 Reserve
               </div>
             </button>
