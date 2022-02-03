@@ -11,7 +11,7 @@ const ResevervationsPage = () => {
   const session = useSelector(state => state.session);
 
   useEffect(() => {
-    dispatch(reservationsActions.getReservations(session.user && session.user.id));
+    dispatch(reservationsActions.getReservations(session.user?.id));
   }, [dispatch, session.user])
 
   const getShortDay = dateObj => {
@@ -22,10 +22,10 @@ const ResevervationsPage = () => {
     return dateObj.toLocaleString('en-US', { month: 'short'});
   }
 
-  const handleDelete = (e, bookingId) => {
-    e.preventDefault();
-    dispatch(reservationsActions.deleteReservation(bookingId));
-  }
+  // const handleDelete = (e, bookingId) => {
+  //   e.preventDefault();
+  //   dispatch(reservationsActions.deleteReservation(bookingId));
+  // }
 
   if (!session.user) return <Redirect to="/" />;
 
@@ -35,10 +35,9 @@ const ResevervationsPage = () => {
       <div className='reservations-container'>
         {bookings &&
           bookings.map(booking => {
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             const startDate = new Date(booking.startDate);
-            const startDateString = `${getShortDay(startDate)}, ${getShortMonth(startDate)} ${startDate.getDate()}`
             const endDate = new Date(booking.endDate);
+            const startDateString = `${getShortDay(startDate)}, ${getShortMonth(startDate)} ${startDate.getDate()}`
             const endDateString = `${getShortDay(endDate)}, ${getShortMonth(endDate)} ${endDate.getDate()}`
 
             return (
@@ -60,14 +59,10 @@ const ResevervationsPage = () => {
                 </div>
               </div>
               <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
-              {/* <button onClick={(e) => handleDelete(e, booking.id)}>Delete</button> */}
             </div>
           )})
         }
       </div>
-      {/* <div onClick={() => console.log(bookings)}>
-        log
-      </div> */}
     </div>
   )
 }
