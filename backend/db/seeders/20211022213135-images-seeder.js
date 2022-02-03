@@ -123,6 +123,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 5,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-beachhouse--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 5,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-beachhouse--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 5,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-beachhouse--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 5,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-beachhouse--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 5,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-beachhouse--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
