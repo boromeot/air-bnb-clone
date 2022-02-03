@@ -303,6 +303,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 11,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/C-cabin--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 11,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/C-cabin--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 11,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/C-cabin--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 11,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/C-cabin--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 11,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/C-cabin--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 

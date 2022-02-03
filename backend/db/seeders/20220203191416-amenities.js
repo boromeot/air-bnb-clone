@@ -219,6 +219,18 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 11,
+        name: 'Patio',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 11,
+        name: 'Indoor fireplace',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
