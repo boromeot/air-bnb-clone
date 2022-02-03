@@ -51,6 +51,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 4,
+        name: 'Patio',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        name: 'BBQ grill',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        name: 'Outdoor dining area',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 

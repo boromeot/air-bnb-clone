@@ -93,6 +93,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 4,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/D-treehouse--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/D-treehouse--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/D-treehouse--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/D-treehouse--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 4,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/D-treehouse--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
