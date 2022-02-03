@@ -393,6 +393,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 14,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-tinyhouse--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 14,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-tinyhouse--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 14,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-tinyhouse--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 14,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-tinyhouse--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 14,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-tinyhouse--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
