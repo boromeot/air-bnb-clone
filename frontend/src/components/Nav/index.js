@@ -54,8 +54,10 @@ const Nav = () => {
         <div className="nav-buttons-container"> {/* 3 */}
           <nav className="nav-host-container">
             <div className="nav-switch-host-container">
-              <NavLink className="nav-switch-host-link" to="/become-a-host">
-                <div className="nav-switch-host">Switch to hosting</div>
+              <NavLink className="nav-switch-host-link" to={sessionUser ? "/become-a-host" : "#"}
+                onClick={!sessionUser && toggleDropDown}
+              >
+                <div className="nav-switch-host">{sessionUser ? 'Switch to hosting' : 'Login to host'}</div>
               </NavLink>
               <div className="nav-globe-container">
                 <button className="nav-globe-button">
