@@ -45,7 +45,7 @@ const PriceSection = ({ setFormData, formPrice }) => {
           <button className='flex btn-minus align-center justify-center' style={{flexShrink: '0', height: '48px', width: '48px'}}
             onClick={decrement}
           >
-            <Minus className='icon-12' viewBox='0 0 32 32' />
+            <Minus className='icon-12 stroke-width-5' viewBox='0 0 32 32' />
           </button>
           <div className="mz--8 text-center">
             <div className="mz--32 flex radius-8 box-shadow-gray">
@@ -62,7 +62,7 @@ const PriceSection = ({ setFormData, formPrice }) => {
           <button className="flex btn-plus align-center justify-center" style={{flexShrink: '0', height: '48px', width: '48px'}}
             onClick={increment}
           >
-            <Plus className='icon-12' viewBox='0 0 32 32' />
+            <Plus className='icon-12 stroke-width-5' viewBox='0 0 32 32' />
           </button>
         </div>
         <div className="pt2">per night</div>

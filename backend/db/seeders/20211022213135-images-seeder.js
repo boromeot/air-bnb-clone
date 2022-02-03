@@ -135,6 +135,31 @@ module.exports = {
     url: 'https://a0.muscache.com/im/pictures/9bd1da8f-788d-4802-9dd2-e36893917182.jpg?im_w=720',
     createdAt: new Date(),
     updatedAt: new Date(),
+  },{
+    spotId: 6,
+    url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse2.webp',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },{
+    spotId: 6,
+    url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse3.webp',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },{
+    spotId: 6,
+    url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse4.webp',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },{
+    spotId: 6,
+    url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse5.webp',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },{
+    spotId: 6,
+    url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse1.webp',
+    createdAt: new Date(),
+    updatedAt: new Date(),
   }], {});
   },
 

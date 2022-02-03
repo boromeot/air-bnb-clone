@@ -11,12 +11,13 @@ import './SpotReservation.css';
 const Reservation = ({ userId, spotId, price }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [startDate, setStartDate] = useState(); console.log(setStartDate);
-  const [endDate, setEndDate] = useState(); console.log(setEndDate);
 
   const maxGuests = useSelector(state => state.spot.guests);
   const [showForm, setShowForm] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
   const [formData, setFormData] = useState({
+    userId,
+    spotId,
     adults: 1,
     children: 0,
     infants: 0,
@@ -24,10 +25,24 @@ const Reservation = ({ userId, spotId, price }) => {
     totalGuests: 1,
     startDate: {},
     endDate: {},
+    monthIndex: 0,
+    date: 0,
+    yearIndex: 0,
   });
 
   const guestCount = formData.adults + formData.children;
   const infantCount = formData.infants;
+  const allowButton = formData.totalGuests && Object.keys(formData.startDate).length > 0 && Object.keys(formData.endDate).length > 0;
+
+  const dateFormat = formDate => {
+    const {monthIndex, date, yearIndex} = formDate;
+    let dateString = '';
+    if (monthIndex && date && yearIndex) {
+      dateString += `${monthIndex}/${date}/${yearIndex}`;
+    }
+    return dateString;
+  }
+
 
   const guestInfantStringFormatter = (guestCount, infantCount) => {
     let guestString = '';
@@ -47,17 +62,11 @@ const Reservation = ({ userId, spotId, price }) => {
     return `${guestString}${infantString}`
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    const booking = {
-      userId,
-      spotId,
-      startDate,
-      endDate
-    }
-    dispatch(reservationActions.setReservation(booking));
+    dispatch(reservationActions.setReservation(formData));
     history.push('/reservations');
-  }; console.log(handleSubmit);
+  };
 
   return (
     <div className='mt8 sticky' style={{top: '46px'}}>
@@ -70,21 +79,23 @@ const Reservation = ({ userId, spotId, price }) => {
             </div>
             <div style={{marginTop: '8px'}}>
               <span className="flex font-size--13 font-weight--600 soft-black">
-                <span className='mr1'><Star className='icon-14 fill-red' viewBox='0 0 32 32' /></span>
+                <span className='mr1 flex align-center'><Star className='icon-14 fill-red' viewBox='0 0 32 32' /></span>
                 <span className='mr1'>4.85 ·</span>
                 <span className='mr1 underline'>440 reviews</span>
               </span>
             </div>
           </div>
           <div className="mb3">
-            <div className="reservation-check-container">
+            <div className="reservation-check-container"
+              onClick={() => setShowCalendar(prev => !prev)}
+            >
               <div className='reservation-check'> {/* check in */}
                 <div className='reservation-text'>CHECK-IN</div>
-                <div className="reservation-date">4/20/2021</div>
+                <div className="reservation-date">{dateFormat(formData.startDate) ? dateFormat(formData.startDate) : 'Add date'}</div>
               </div>
               <div className='reservation-check' style={{borderLeft: '1px solid rgb(176, 176, 176)'}}> {/* check in */}
                 <div className='reservation-text'>CHECKOUT</div>
-                <div className="reservation-date">4/23/2021</div>
+                <div className="reservation-date">{dateFormat(formData.endDate) ? dateFormat(formData.endDate) : 'Add date'}</div>
               </div>
             </div>
             <div className="reservation-guest-container"
@@ -102,18 +113,23 @@ const Reservation = ({ userId, spotId, price }) => {
                 </div>
               </div>
             </div>
+            { showCalendar && <CalendarForm formData={formData} setFormData={setFormData}/>}
             { showForm && <GuestForm maxGuests={maxGuests} formData={formData} setFormData={setFormData} />}
           </div>
           <div>
-            <button className="reservation-button">
-              <div>Reserve</div>
+            <button className={allowButton ?  "reservation-button" : "reservation-button-disabled"}
+              disabled={!allowButton}
+              onClick={handleSubmit}
+            >
+              <div>
+                Reserve
+              </div>
             </button>
           </div>
         </div>
         <ul></ul>
         <div></div>
       </div>
-      <CalendarForm setFormData={setFormData}/>
     </div>
   )
 }

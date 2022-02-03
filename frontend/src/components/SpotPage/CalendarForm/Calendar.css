@@ -32,6 +32,8 @@
 }
 
 .calendar-header-contianer {
+	display: flex;
+	align-items: center;
 	font-size: 16px;
 	line-height: 20px;
 	color: rgb(34, 34, 34);
@@ -53,6 +55,25 @@
 	line-height: inherit;
 	margin: 0px;
 	padding: 0px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.calendar-left, .calendar-right {
+	position: absolute;
+
+}
+
+.calendar-left:hover, .calendar-right:hover {
+	cursor: pointer;
+}
+
+.calendar-left {
+	left: 25px;
+}
+
+.calendar-right {
+	right: 35px;
 }
 
 .calendar-available-td {
@@ -86,4 +107,38 @@
 	font-weight: 600;
 	color: rgb(34, 34, 34);
 	border: 1.5px solid rgb(255, 255, 255);
+}
+
+.calendar-selected-day {
+	-moz-box-direction: normal;
+	-moz-box-orient: vertical;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+	margin-left: 1px;
+	margin-right: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 100%;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	border: 1.5px solid rgb(34, 34, 34);
+	color: rgb(255, 255, 255);
+	position: relative;
+	background: rgb(34, 34, 34) none repeat scroll 0% 0%;
+	width: 40px;
+	height: 40px;
+}
+
+.calendar-inbetween-td {
+	box-sizing: border-box;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+	border: 0px none;
+	color: rgb(34, 34, 34);
+	padding: 0px;
+	background: rgb(247, 247, 247) none repeat scroll 0% 0%;
 }

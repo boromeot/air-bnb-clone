@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
+import LeftChevron from '../../SVGs/LeftChevron';
+import RightChevron from '../../SVGs/RightChevron';
 import './Calendar.css';
 
-const Calendar = ({ setDate }) => {
+const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
   const months = useMemo(() => {
       return [
       "January", "February", "March", "April", "May", "June",
@@ -10,45 +12,67 @@ const Calendar = ({ setDate }) => {
   }, [])
 
   const today = new Date();
-  const [monthIndex, setMonthIndex] = useState(today.getMonth())
-  const [yearIndex, setYearIndex] = useState(today.getFullYear())
-  const [monthName, setMonthName] = useState(months[monthIndex]);
+  const [monthIndex, setMonthIndex] = useState(today.getMonth());
+  const [yearIndex, setYearIndex] = useState(today.getFullYear());
 
-  let firstDay = (new Date(yearIndex, monthIndex)).getDay();
+  const getYearIndex = (firstCalendarMonthIndex, yearIndex) => {
+    if (firstCalendarMonthIndex === 11) {
+      return yearIndex + 1;
+    } else {
+      return yearIndex;
+    }
+  }
+
+  const getMonthName = monthIndex => {
+    let i = monthIndex % 12;
+    return months[i];
+  }
 
   const daysInMonth = (iYear, iMonth) => {
     return 32 - new Date(iYear, iMonth, 32).getDate();
   }
 
-  let rows = [];
-  let date = 1;
-  for (let i = 0; i < 6; i++) {
-    let cells = [];
-    for (let j = 0; j < 7; j++) {
-      if (i === 0 && j < firstDay) {
-        let td =
-          <td className="calendar-available-td">
-            <div className="calendar-available-div"></div>
-          </td>
-        cells.push(td);
-      } else if (date > daysInMonth(yearIndex, monthIndex)) {
-        break;
-      } else {
-        let lexicalDate = date;
-        let td =
-          <td className="calendar-available-td" onClick={() => setDate({
-            date: lexicalDate,
-            month: monthIndex,
-            year: yearIndex,
-          })}>
-            <div className="calendar-available-div">{date}</div>
-          </td>
-        cells.push(td);
-        date++;
-      }
+  const Cell = ({ monthIndex, date, yearIndex }) => {
+    const thisDate = {
+      monthIndex,
+      date,
+      yearIndex,
+      monthName: months[monthIndex]
     }
-    let row = <tr>{[...cells]}</tr>
-    rows.push(row);
+    return (
+      <td className="calendar-available-td"
+        onClick={() => {
+          if (Object.keys(startDate).length === 0) {
+            setStartDate(thisDate);
+          } else {
+            setEndDate(thisDate);
+          }
+        }}
+      >
+        <div className={JSON.stringify(startDate) === JSON.stringify(thisDate) || JSON.stringify(endDate) === JSON.stringify(thisDate) ? "calendar-selected-day" : "calendar-available-div"}>{date}</div>
+      </td>
+    )
+  }
+
+  const Rows = ({ yearIndex, monthIndex }) => {
+    let date = 1;
+    let rows = [];
+    const firstDay = (new Date(yearIndex, monthIndex)).getDay();
+    for (let i = 0; i < 6; i++) {
+      let cells = [];
+      for (let j = 0; j < 7; j++) {
+        if (i === 0 && j < firstDay) {
+          cells.push(<Cell date={null} />);
+        } else if (date > daysInMonth(yearIndex, monthIndex)) {
+          break;
+        } else {
+          cells.push(<Cell monthIndex={monthIndex} date={date} yearIndex={yearIndex} />);
+          date++;
+        }
+      }
+      rows.push(<tr>{[...cells]}</tr>);
+    }
+    return rows;
   }
 
   const prevMonth = () => {
@@ -67,43 +91,74 @@ const Calendar = ({ setDate }) => {
     setMonthIndex(prev => (prev + 1) % 12);
   }
 
-  useEffect(() => {
-    setMonthName(months[monthIndex]);
-  }, [months, monthIndex])
-
   return (
-    <div style={{width: '330px'}}>
-      <div className="relative">
-        <div className="calendar-days-container">
-          <ul className="calendar-days-list">
-            <li className="calendar-day">Su</li>
-            <li className="calendar-day">Mo</li>
-            <li className="calendar-day">Tu</li>
-            <li className="calendar-day">We</li>
-            <li className="calendar-day">Th</li>
-            <li className="calendar-day">Fr</li>
-            <li className="calendar-day">Sa</li>
-          </ul>
-        </div>
-        <div className="calendar-days-container"></div>
-      </div>
-      <div style={{width: '320px'}}>
-        <div className="calendar-spacer">
-          <div className="calendar-header-contianer">
-            <h3 className="calendar-header">{`${monthName} ${yearIndex}`}</h3>
+    <>
+      <div style={{width: '330px'}}>
+        <div className="relative">
+          <div className="calendar-days-container">
+            <ul className="calendar-days-list">
+              <li className="calendar-day">Su</li>
+              <li className="calendar-day">Mo</li>
+              <li className="calendar-day">Tu</li>
+              <li className="calendar-day">We</li>
+              <li className="calendar-day">Th</li>
+              <li className="calendar-day">Fr</li>
+              <li className="calendar-day">Sa</li>
+            </ul>
           </div>
-          <table className="calendar-table">
-            <tbody>
-              {rows}
-            </tbody>
-          </table>
+          <div className="calendar-days-container"></div>
+        </div>
+        <div style={{width: '320px'}}>
+          <div className="calendar-spacer">
+            <div className="calendar-header-contianer">
+              <div>
+                <LeftChevron className='icon-12 calendar-left' viewBox='0 0 18 18'
+                  onClick={() => prevMonth()}
+                />
+              </div>
+              <h3 className="calendar-header">{`${getMonthName(monthIndex)} ${yearIndex}`}</h3>
+            </div>
+            <table className="calendar-table">
+              <tbody>
+                <Rows yearIndex={yearIndex} monthIndex={monthIndex} />
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-      <div onClick={() => prevMonth()}>prevMonth</div>
-      <div onClick={() => nextMonth()}>nextMonth</div>
-    </div>
+      <div style={{width: '330px'}}>
+        <div className="relative">
+          <div className="calendar-days-container">
+            <ul className="calendar-days-list">
+              <li className="calendar-day">Su</li>
+              <li className="calendar-day">Mo</li>
+              <li className="calendar-day">Tu</li>
+              <li className="calendar-day">We</li>
+              <li className="calendar-day">Th</li>
+              <li className="calendar-day">Fr</li>
+              <li className="calendar-day">Sa</li>
+            </ul>
+          </div>
+          <div className="calendar-days-container"></div>
+        </div>
+        <div style={{width: '320px'}}>
+          <div className="calendar-spacer">
+            <div className="calendar-header-contianer">
+              <h3 className="calendar-header">{`${getMonthName(monthIndex + 1)} ${getYearIndex(monthIndex, yearIndex)}`}</h3>
+              <RightChevron className='icon-12 calendar-right' viewBox='0 0 18 18'
+                onClick={() => nextMonth()}
+              />
+            </div>
+            <table className="calendar-table">
+              <tbody>
+              <Rows yearIndex={yearIndex} monthIndex={monthIndex + 1} />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
 export default Calendar;
-//<path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"></path>

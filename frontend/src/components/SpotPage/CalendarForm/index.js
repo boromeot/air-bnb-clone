@@ -2,13 +2,17 @@ import React from "react";
 import Calendar from "./Calendar";
 import './CalendarForm.css';
 
-const CalendarForm = ({ setFormData }) => {
+const CalendarForm = ({ formData, setFormData }) => {
+  const { startDate, endDate } = formData;
 
   const setStartDate = date => {
     setFormData(prev => {
       return {
         ...prev,
         'startDate': date,
+        'monthIndex': date.monthIndex,
+        'date': date.date,
+        'yearIndex': date.yearIndex,
       }
     })
   }
@@ -18,14 +22,16 @@ const CalendarForm = ({ setFormData }) => {
       return {
         ...prev,
         'endDate': date,
+        'monthIndex': date.monthIndex,
+        'date': date.date,
+        'yearIndex': date.yearIndex,
       }
     })
   }
 
   return (
-    <div className='flex' style={{width: '660px'}}>
-      <Calendar setDate={setStartDate} />
-      <Calendar setDate={setEndDate} />
+    <div className='calendar-form-container'>
+      <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
     </div>
   )
 }

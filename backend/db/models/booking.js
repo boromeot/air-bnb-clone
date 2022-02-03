@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     spotId: DataTypes.INTEGER,
     startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE
+    endDate: DataTypes.DATE,
   }, {});
   Booking.associate = function(models) {
     // associations can be defined here

@@ -15,6 +15,17 @@ const PhotoSection = ({ setFormData }) => {
     });
   };
 
+  const updateImage = async e => {
+    e.preventDefault();
+    const file = e.target.files[0];;
+    setFormData(prevState => {
+      return {
+        ...prevState,
+        photos: [...prevState.photos, file]
+      };
+    });
+  }
+
   return (
     <div id="FMP-target" name='photo1' className="FMP-target relative mz--24 w100p"
       onDragOver={e => e.preventDefault()}
@@ -27,7 +38,12 @@ const PhotoSection = ({ setFormData }) => {
               <Photos className='icon-64' viewBox='0 0 64 64' />
               <div className="pb--8 pt--16 font-size--22 font-weight--600 ">Drag your photos here</div>
               <div className="pz--64 font--size--16">Add at least 5 photos</div>
-              <div className='absolute' style={{bottom: '80px'}}>Upload from your device</div>
+              <div className='absolute pointer' style={{bottom: '80px'}}>
+                <input type='file' className="absolute pointer" style={{opacity: '0', zIndex: '1'}}
+                  onChange={updateImage}
+                />
+                <span className="underline">Upload</span> from your device
+              </div>
             </div>
           </div>
         </div>

@@ -3,15 +3,15 @@ import { csrfFetch } from "./csrf";
 const SET_RESERVATION = 'reservation/setReservation';
 
 
-const set_Reservation = (reservation) => {
+const set_Reservation = reservation => {
   return {
     type: SET_RESERVATION,
     payload: reservation,
   };
 };
 
-export const setReservation = (booking) => async dispatch => {
-  const { userId, spotId, startDate, endDate } = booking;
+export const setReservation = booking => async dispatch => {
+  const { userId, spotId, startDate, endDate, monthIndex, date, yearIndex } = booking;
   const response = await csrfFetch('/api/bookings', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -20,8 +20,11 @@ export const setReservation = (booking) => async dispatch => {
       spotId,
       startDate,
       endDate,
+      monthIndex,
+      date,
+      yearIndex
     })
-  })
+  });
   const data = await response.json();
   dispatch(set_Reservation(data));
   return response;

@@ -1,0 +1,10 @@
+.calendar-form-container {
+  width: 660px;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 20px;
+  z-index: 1;
+  right: -6px;
+  border-radius: 16px;
+}

@@ -56,11 +56,11 @@ const GuestOption = ({ name, ageRange, formData, setFormData }) => {
       </div>
       <div className="guest-form-button-container">
         <button className="guest-form-button" name={name} onClick={decrement}>
-          <Minus className='icon-12' viewBox='0 0 32 32' />
+          <Minus className='icon-12 stroke-width-5' viewBox='0 0 32 32' />
         </button>
         <div className="soft-black">{optionCount}</div>
         <button className="guest-form-button" name={name} onClick={increment}>
-          <Plus className='icon-12' viewBox='0 0 32 32' />
+          <Plus className='icon-12 stroke-width-5' viewBox='0 0 32 32' />
         </button>
       </div>
     </div>
