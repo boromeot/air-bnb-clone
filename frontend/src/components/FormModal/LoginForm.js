@@ -19,6 +19,16 @@ function LoginForm() {
     );
   };
 
+  const demoLogin = e => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+  }
+
   return (
     <div className='modal-container'>
       <div className='header flex-center'>
@@ -52,6 +62,11 @@ function LoginForm() {
           </label>
           <button className='login-btn' type="submit">
             <div className='btn-text'>Continue</div>
+          </button>
+          <button className="login-btn btn-text"
+            onClick={demoLogin}
+          >
+            Demo login
           </button>
         </form>
       </div>
