@@ -153,6 +153,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 6,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-beachhouse--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 6,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-beachhouse--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 6,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-beachhouse--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 6,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-beachhouse--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 6,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-beachhouse--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
