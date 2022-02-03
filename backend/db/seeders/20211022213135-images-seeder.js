@@ -32,7 +32,37 @@ module.exports = {
         url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse5.webp',
         createdAt: new Date(),
         updatedAt: new Date(),
-      }
+      },
+      {
+        spotId: 2,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-treehouse--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 2,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-treehouse--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 2,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-treehouse--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 2,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-treehouse--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 2,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-treehouse--5.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
