@@ -275,7 +275,31 @@ module.exports = {
       },
       {
         spotId: 10,
-        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/A-cabin--5.jpeg',
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-cabin--1.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 10,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-cabin--2.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 10,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-cabin--3.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 10,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-cabin--4.jpeg',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 10,
+        url: 'https://care-bnb.s3.us-west-1.amazonaws.com/B-cabin--5.jpeg',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
