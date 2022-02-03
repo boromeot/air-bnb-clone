@@ -28,9 +28,6 @@ router.post('/', asyncHandler(async (req, res) => {
     spotId,
     startDate,
     endDate,
-    monthIndex,
-    date,
-    yearIndex
   });
 
   return res.json({

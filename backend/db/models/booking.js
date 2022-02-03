@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
     userId: DataTypes.INTEGER,
     spotId: DataTypes.INTEGER,
-    startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE,
+    startDate: DataTypes.STRING,
+    endDate: DataTypes.STRING,
   }, {});
   Booking.associate = function(models) {
     // associations can be defined here

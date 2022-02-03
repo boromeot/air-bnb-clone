@@ -44,6 +44,9 @@ const ResevervationsPage = () => {
           )})
         }
       </div>
+      <div onClick={() => console.log(bookings)}>
+        log
+      </div>
     </>
   )
 }
