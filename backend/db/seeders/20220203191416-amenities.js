@@ -303,6 +303,30 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 16,
+        name: 'Patio',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 16,
+        name: 'Outdoor dining area',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 16,
+        name: 'BBQ grill',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 16,
+        name: 'Pool',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
