@@ -34,7 +34,7 @@ const Calendar = ({ startDate, setStartDate, endDate, setEndDate }) => {
 
   const Cell = ({ monthIndex, date, yearIndex }) => {
     const thisDate = {
-      monthIndex,
+      monthIndex: monthIndex + 1,
       date,
       yearIndex,
       monthName: months[monthIndex]

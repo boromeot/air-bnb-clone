@@ -11,40 +11,59 @@ const ResevervationsPage = () => {
   const session = useSelector(state => state.session);
 
   useEffect(() => {
-    dispatch(reservationsActions.getReservations(session.user && session.user.id));
+    dispatch(reservationsActions.getReservations(session.user?.id));
   }, [dispatch, session.user])
 
-  const handleDelete = (e, bookingId) => {
-    e.preventDefault();
-    dispatch(reservationsActions.deleteReservation(bookingId));
+  const getShortDay = dateObj => {
+    return dateObj.toLocaleString('en-US', { weekday: 'short'});
   }
+
+  const getShortMonth = dateObj => {
+    return dateObj.toLocaleString('en-US', { month: 'short'});
+  }
+
+  // const handleDelete = (e, bookingId) => {
+  //   e.preventDefault();
+  //   dispatch(reservationsActions.deleteReservation(bookingId));
+  // }
 
   if (!session.user) return <Redirect to="/" />;
 
   return (
-    <>
-      <h1>My reservations </h1>
+    <div className='reservation-spacer'>
+      <h1 className='mb3 text-center'>My reservations </h1>
       <div className='reservations-container'>
         {bookings &&
           bookings.map(booking => {
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            let startDate = new Date(booking.startDate);
-            startDate = `${months[startDate.getMonth()]} ${startDate.getDate()} ${startDate.getFullYear()}`
-
-            let endDate = new Date(booking.endDate);
-            endDate = `${months[endDate.getMonth()]} ${endDate.getDate()} ${endDate.getFullYear()}`
+            const startDate = new Date(booking.startDate);
+            const endDate = new Date(booking.endDate);
+            const startDateString = `${getShortDay(startDate)}, ${getShortMonth(startDate)} ${startDate.getDate()}`
+            const endDateString = `${getShortDay(endDate)}, ${getShortMonth(endDate)} ${endDate.getDate()}`
 
             return (
-            <div className='reservation-container'>
+            <div className='reservation-container' key={booking.id}>
+              <div className='reservation-page-check-container'>
+                <div className='reservation-page-check'>
+                  CHECK-IN
+                  <div className='reservation-page-check-date'>
+                    { startDateString }
+                    <div className='reservation-page-time'>3:00 PM </div>
+                  </div>
+                </div>
+                <div className='reservation-page-check'>
+                  CHECKOUT
+                  <div className='reservation-page-check-date'>
+                    { endDateString }
+                    <div className='reservation-page-time'>11:00 AM </div>
+                  </div>
+                </div>
+              </div>
               <SpotCard id={booking.Spot.id} city={booking.Spot.city} state={booking.Spot.state} price={booking.Spot.price} images={booking.Spot.Images} />
-              <div>{`check in: ${startDate}`}</div>
-              <div>{`check out: ${endDate}`}</div>
-              <button onClick={(e) => handleDelete(e, booking.id)}>Delete</button>
             </div>
           )})
         }
       </div>
-    </>
+    </div>
   )
 }
 

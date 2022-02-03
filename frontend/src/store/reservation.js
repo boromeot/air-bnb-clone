@@ -11,18 +11,15 @@ const set_Reservation = reservation => {
 };
 
 export const setReservation = booking => async dispatch => {
-  const { userId, spotId, startDate, endDate, monthIndex, date, yearIndex } = booking;
+  const { userId, spotId, startDate, endDate } = booking;
   const response = await csrfFetch('/api/bookings', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       userId,
       spotId,
-      startDate,
-      endDate,
-      monthIndex,
-      date,
-      yearIndex
+      startDate: `${startDate.monthIndex}/${startDate.date}/${startDate.yearIndex}`,
+      endDate: `${endDate.monthIndex}/${endDate.date}/${endDate.yearIndex}`
     })
   });
   const data = await response.json();

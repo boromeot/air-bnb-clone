@@ -1,5 +1,37 @@
+.reservation-spacer {
+  max-width: 1280px;
+	padding-left: 80px;
+	padding-right: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .reservations-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.reservation-page-check-container {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(34, 34, 34);
+}
+
+.reservation-page-check {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.reservation-page-check-date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.reservation-page-time {
+  font-size: 18px;
+  margin-top: 5px;
 }
