@@ -285,6 +285,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        spotId: 15,
+        name: 'Patio',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 15,
+        name: 'Hot tub',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        spotId: 15,
+        name: 'Outdoor dining area',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
