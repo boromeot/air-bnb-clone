@@ -6,7 +6,6 @@ const { awsConfig } = require('../../config');
 const { Image } = require('../../db/models');
 
 router.post('/', asyncHandler(async (req, res) => {
-  console.log(req.files, 'files');
 
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
