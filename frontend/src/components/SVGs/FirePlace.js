@@ -1,8 +1,8 @@
 import React from "react";
 
-const FirePlace = ({ className, viewBox, transform }) => {
+const FirePlace = props => {
   return (
-    <svg className={className} viewBox={viewBox} >
+    <svg {...props} >
         <g transform={transform}>
           <path stroke="#222222" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeWidth="2" strokeOpacity="1" d=" M32 38 C32,38 32,53 32,53 C32,53 32,53 32,53 C32,53 28,53 28,53 C28,53 28,31 28,31 C28,31 52,31 52,31 C52,31 52,53 52,53 C52,53 48,53 48,53 C48,53 48,38 48,38 C48,37.45 47.55,37 47,37 C47,37 33,37 33,37 C32.45,37 32,37.45 32,38z "></path>
           <path stroke="#222222" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeWidth="2" strokeOpacity="1" d=" M25 31 C25,31 55,31 55,31 "></path>
