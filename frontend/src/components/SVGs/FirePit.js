@@ -1,8 +1,8 @@
 import React from "react";
 
-const FirePit = ({ className, viewBox, transform }) => {
+const FirePit = props => {
   return (
-    <svg className={ className } viewBox={ viewBox }>
+    <svg {...props}>
       <g transform={transform}>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M-5.41 2.17 C-5.14,2.17 -4.91,2.4 -4.91,2.67 C-4.91,2.95 -5.14,3.17 -5.41,3.17 C-5.69,3.17 -5.91,2.95 -5.91,2.67 C-5.91,2.4 -5.69,2.17 -5.41,2.17z "></path>
         <path fill="#222222" fillOpacity="1" fillRule="nonzero" d=" M-5.41 1.67 C-4.86,1.67 -4.41,2.12 -4.41,2.67 C-4.41,3.23 -4.86,3.67 -5.41,3.67 C-5.97,3.67 -6.41,3.23 -6.41,2.67 C-6.41,2.12 -5.97,1.67 -5.41,1.67z "></path>
