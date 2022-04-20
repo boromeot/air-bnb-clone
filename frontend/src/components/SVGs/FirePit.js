@@ -1,6 +1,6 @@
 import React from "react";
 
-const FirePit = props => {
+const FirePit = ({ props, transform }) => {
   return (
     <svg {...props}>
       <g transform={transform}>
