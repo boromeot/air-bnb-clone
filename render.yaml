@@ -4,9 +4,10 @@
 services:
   - type: web # valid values: https://render.com/docs/yaml-spec#type
     name: air-bnb-clone-aa
-    env: docker # valid values: https://render.com/docs/yaml-spec#environment
-    dockerfilePath: Dockerfile.render
+    env: node # valid values: https://render.com/docs/yaml-spec#environment
     plan: free # optional; defaults to starter
+    buildCommand: npm install
+    startCommand: npm start
     numInstances: 1
     envVars:
       - key: JWT_EXPIRES_IN # Imported from Heroku app
