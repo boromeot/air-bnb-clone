@@ -1,8 +1,12 @@
 'use strict';
-
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;  // define your schema in options object
+}
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Images', [
+    options.tableName = 'Images';
+    return queryInterface.bulkInsert(options, [
       {
         spotId: 1,
         url: 'https://care-bnb.s3.us-west-1.amazonaws.com/treehouse1.webp',
@@ -487,6 +491,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-   return queryInterface.bulkDelete('Images', null, {});
+    options.tableName = 'Images';
+   return queryInterface.bulkDelete(options);
   }
 };

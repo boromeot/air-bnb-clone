@@ -1,17 +1,16 @@
 {
   "name": "authenticate-me",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm run build --prefix frontend",
+    "render-postbuild": "npm run build --prefix frontend",
     "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
     "dev:backend": "npm install --prefix backend start",
     "dev:frontend": "npm install --prefix frontend start",
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend",
-    "build": "sequelize db:migrate"
+    "build": "npm run build --prefix backend"
   },
   "repository": {
     "type": "git",
@@ -23,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/boromeot/air-bnb-clone/issues"
   },
-  "homepage": "https://github.com/boromeot/air-bnb-clone#readme"
+  "homepage": "https://github.com/boromeot/air-bnb-clone#readme",
+  "description": ""
 }
